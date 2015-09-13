@@ -7,15 +7,6 @@
 // Organizations
 var organizations = [
     {
-        "id": "fftf",
-        "title": "Fight for the Future",
-        "isPooling": false,
-        "showNewPage": true,
-        "newCallTool": true,
-        "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>"
-    },
-
-    {
         "id": "dp",
         "title": "Demand Progress",
         "isPooling": true,
@@ -23,10 +14,17 @@ var organizations = [
     },
 
     {
+        "id": "fftf",
+        "title": "Fight for the Future",
+        "isPooling": false,
+        "newCallTool": true,
+        "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>"
+    },
+
+    {
         "id": "dp-ns",
         "title": "Demand Progress",
         "isPooling": false,
-        "showNewPage": true,
         "newCallTool": true,
         "disclaimer": "I will receive updates from <a href=\"https://demandprogress.org\" target=\"_blank\">Demand Progress</a>."
     },
@@ -105,7 +103,6 @@ var organizations = [
         "id": "fp",
         "title": "Free Press Action Fund",
         "isPooling": false,
-        "showNewPage": true,
         "newCallTool": true,
         "disclaimer": "I will receive updates from <a href=\"http://www.freepress.net\" target=\"_blank\">Free Press Action Fund</a>."
     },
@@ -140,11 +137,6 @@ var maverick = false;
 if (!org) {
     maverick = true;
     org = organizations[0];
-}
-
-if ((typeof org.showNewPage === 'undefined' || !org.showNewPage) && window.location.href.indexOf('/action') == -1) {
-    window.location.replace('/action/?ref='+org.id);
-    return;
 }
 
 
