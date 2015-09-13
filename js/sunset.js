@@ -1,5 +1,5 @@
 (function() { // Begin closure
-    
+
 
 
 
@@ -207,17 +207,17 @@ document.querySelector('.email_signup form').addEventListener('submit', function
     thanks.clientWidth;
     thanks.style.opacity = 1;
 
-    // Send to Queue
-    var xhr1 = new XMLHttpRequest();
-    xhr1.onreadystatechange = function() {
-        if (xhr1.readyState === 4) {
-            // console.log('response:', xhr1.response);
-        }
-    };
-    xhr1.open('post', 'https://queue.fightforthefuture.org/action', true);
-    xhr1.send(data);
+    // // Send to Queue
+    // var xhr1 = new XMLHttpRequest();
+    // xhr1.onreadystatechange = function() {
+    //     if (xhr1.readyState === 4) {
+    //         // console.log('response:', xhr1.response);
+    //     }
+    // };
+    // xhr1.open('post', 'https://queue.fightforthefuture.org/action', true);
+    // xhr1.send(data);
 
-    modal_show('call_tool');
+    modal_show('thank-you');
     document.querySelector('input[type=tel]').focus();
 }, false);
 
@@ -257,6 +257,7 @@ bindModalEvents('share_modal');
 bindModalEvents('call_tool');
 bindModalEvents('call_tool_script');
 bindModalEvents('letter');
+bindModalEvents('thank-you');
 bindModalEvents('drop_in');
 
 var fb = document.querySelectorAll('a.facebook');
