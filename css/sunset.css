@@ -71,7 +71,7 @@ h3 {
 }
 h4 {
     text-align: center;
-    
+
     color: #f0d88d;
     font-size: 38px;
     letter-spacing: 1px;
@@ -85,7 +85,7 @@ h5 {
     text-align: center;
     font-size: 36px;
     color: #cfcfcf;
-    
+
     font-size: 23px;
     font-weight: 500;
     letter-spacing: 0px;
@@ -94,7 +94,7 @@ h5 {
 }
 h6 {
     text-align: center;
-    
+
     color: #f0d88d;
     font-size: 29px;
     letter-spacing: 1px;
@@ -423,7 +423,7 @@ section .share {
     background-color: #3089ef;
 }
 .logos {
-    margin: 50px 0px 0px 0px; 
+    margin: 50px 0px 0px 0px;
     overflow: hidden;
 }
 .logos a {
@@ -741,7 +741,7 @@ div.social-buttons a.email {
 
 /* Checkbox */
 .squaredFour {
-    width: 20px;    
+    width: 20px;
     margin: 20px auto;
     position: relative;
     line-height: 1.2;
@@ -853,7 +853,7 @@ h3.nopad {
     font-size: 29px;
     text-transform: uppercase;
     color: white;
-    margin: 0 0 25px 0; 
+    margin: 0 0 25px 0;
 }
 .flyer a {
     color: #33e5a8;
@@ -863,6 +863,7 @@ h3.nopad {
     color: #13c588;
 }
 .bottom {
+    display: none;
     position: fixed;
     bottom: 0px;
     left: 0px;
