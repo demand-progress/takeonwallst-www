@@ -161,6 +161,7 @@ var requiredFields = [
     'email',
     'street_address',
     'postcode',
+    'reason',
 ];
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
@@ -212,6 +213,15 @@ document.querySelector('.email_signup form').addEventListener('submit', function
     modal_show('thank-you');
     document.querySelector('input[type=tel]').focus();
 }, false);
+
+var reasonEl = document.querySelector('.email_signup form #reason');
+reasonEl.addEventListener('change', onReasonChange, false);
+function onReasonChange() {
+    console.log(reasonEl.value);
+    console.log(reasonEl.value.length);
+    reasonEl.setAttribute('selected', !!reasonEl.value);
+}
+onReasonChange();
 
 function modal_show(id) {
     var overlayNode = document.getElementById(id);
@@ -275,12 +285,6 @@ for (var i = 0; i < ems.length; i++) {
         window.location.href = 'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) + '&body=https%3A%2F%2Fwww.sunsetthepatriotact.com%2F';
     }, false);
 }
-
-document.querySelector('.action h4 a.letter').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    modal_show('letter');
-});
 
 /*
 document.querySelector('a.open-call-tool').addEventListener('click', function(e) {

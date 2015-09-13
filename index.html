@@ -51,9 +51,10 @@ It would be a tragic irony if courts struck down the Network Neutrality rules an
                 <input type="text" id="first_name" placeholder="Your name"/><input type="email" id="email" placeholder="Email"/><input type="text" id="street_address" placeholder="Street address"/><input type="text" id="postcode" placeholder="Zip code"/>
 
                 <style type="text/css">
-                form .reasons {
+                form .reason {
                     border: none;
                     border-top: 1px solid #ccc;
+                    color: rgba(0, 0, 0, 0.6);
                     font-family: "Open Sans";
                     font-size: 25px;
                     font-weight: 100;
@@ -62,20 +63,24 @@ It would be a tragic irony if courts struck down the Network Neutrality rules an
                     padding: 0px 20px;
                     width: 100%;
                 }
-                form .reasons option:nth-of-type(1) {
-                    color: #ccc;
+                form .reason[selected=true],
+                form .reason option {
+                    color: #000;
                 }
-                form .reasons option {
+                form .reason option:nth-of-type(1) {
+                    color: rgba(0, 0, 0, 0.6);
+                }
+                form .reason option {
                     padding: 10px 20px;
                 }
                 </style>
 
-                <select class="reasons">
-                    <option>Reason for supporting</option>
-                    <option>Activism</option>
-                    <option>Education</option>
-                    <option>Freedom</option>
-                    <option>Liberty</option>
+                <select class="reason" id="reason" required>
+                    <option value="">Select reason</option>
+                    <option value="activism">Activism</option>
+                    <option value="education">Education</option>
+                    <option value="freedom">Freedom</option>
+                    <option value="liberty">Liberty</option>
                 </select>
 
                 <div class="squaredFour">
@@ -97,7 +102,7 @@ It would be a tragic irony if courts struck down the Network Neutrality rules an
                     <label class="checkbox" for="pooling-opt-in"></label>
                     <label class="text" for="pooling-opt-in">I consent to being added to the email list of one or more participating orgs.</label>
                 </div>
-
+                <div class="clear"></div>
 
                 <div id="thanks">Thanks!</div>
                 <button type="submit">Send now</button>
