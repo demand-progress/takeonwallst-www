@@ -166,7 +166,7 @@ var requiredFields = [
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
     e.preventDefault();
-    var tag = 'sunsetthepatriotact';
+    var tag = 'netneutralitybrief';
 
     var data = new FormData();
     data.append('guard', '');
@@ -266,7 +266,7 @@ var fb = document.querySelectorAll('a.facebook');
 for (var i = 0; i < fb.length; i++) {
     fb[i].addEventListener('click', function(e) {
         e.preventDefault();
-        window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnetneutralitybrief.com.com%2F%3Fref%3D' + org.id);
+        window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnetneutralitybrief.com%2F%3Fref%3D' + org.id);
     }, false);
 }
 
@@ -282,7 +282,7 @@ var ems = document.querySelectorAll('a.email');
 for (var i = 0; i < ems.length; i++) {
     ems[i].addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = 'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) + '&body=https%3A%2F%2Fwww.sunsetthepatriotact.com%2F';
+        window.location.href = 'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) + '&body=http%3A%2F%2Fnetneutralitybrief.com%2F';
     }, false);
 }
 
