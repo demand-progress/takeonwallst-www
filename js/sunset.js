@@ -242,7 +242,6 @@ function removeNode(target) {
 }
 
 var disclaimer = document.querySelector('.disclaimer');
-console.log(org);
 if (org.isPooling) {
     if (org.disclaimer === false) {
         removeNode('.disclaimer');
