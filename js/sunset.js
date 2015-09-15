@@ -156,6 +156,13 @@ if (navigator.userAgent.match(/Android 2\.3/)) {
 
 
 
+// Fill in dynamic form fields
+document.querySelector('[name=action_user_agent]').value = navigator.userAgent;
+document.querySelector('[name=source]').value = org.id;
+document.querySelector('[name=url]').value = location.href;
+
+
+
 var requiredFields = [
     'first_name',
     'email',
@@ -165,40 +172,22 @@ var requiredFields = [
 ];
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var tag = 'netneutralitybrief';
-
-    var data = new FormData();
-    data.append('guard', '');
-    data.append('hp_enabled', true);
-    data.append('tag', tag);
-    data.append('org', org.id);
-    data.append('maverick', maverick);
-    data.append('subject', 'Let Section 215 expire');
-    data.append('action_comment', document.querySelector('.overlay.letter p').textContent.trim());
-
     for (var i = 0; i < requiredFields.length; i++) {
         var field = requiredFields[i];
 
         if (!document.getElementById(field).value) {
-            alert('Please enter your ' + field + '.');
+            e.preventDefault();
+            alert('Please enter your ' + field.replace(/-/g, ' ') + '.');
             return document.getElementById(field).focus();
         }
-
-        data.append('member[' + field + ']', document.getElementById(field).value);
     }
 
-    var checkbox = document.getElementById('pooling-opt-in');
-    if (org.isPooling && !checkbox.checked) {
-        data.append('opt_out', 1);
-    }
-
-    document.activeElement.blur();
-    var thanks = document.getElementById('thanks');
-    document.querySelector('form button').setAttribute('disabled', true);
-    thanks.style.display = 'block';
-    thanks.clientWidth;
-    thanks.style.opacity = 1;
+    // document.activeElement.blur();
+    // var thanks = document.getElementById('thanks');
+    // document.querySelector('form button').setAttribute('disabled', true);
+    // thanks.style.display = 'block';
+    // thanks.clientWidth;
+    // thanks.style.opacity = 1;
 
     // // Send to Queue
     // var xhr1 = new XMLHttpRequest();
@@ -210,15 +199,13 @@ document.querySelector('.email_signup form').addEventListener('submit', function
     // xhr1.open('post', 'https://queue.fightforthefuture.org/action', true);
     // xhr1.send(data);
 
-    modal_show('thank-you');
-    document.querySelector('input[type=tel]').focus();
+    // modal_show('thank-you');
+    // document.querySelector('input[type=tel]').focus();
 }, false);
 
 var reasonEl = document.querySelector('.email_signup form #reason');
 reasonEl.addEventListener('change', onReasonChange, false);
 function onReasonChange() {
-    console.log(reasonEl.value);
-    console.log(reasonEl.value.length);
     reasonEl.setAttribute('selected', !!reasonEl.value);
 }
 onReasonChange();
