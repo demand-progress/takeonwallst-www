@@ -92,12 +92,17 @@ var requiredFields = [
 ];
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
+    var eligible = document.querySelector('[name=eligible]');
+    if (!eligible.checked) {
+        return alert('Signers must be citizens or permanent residents of the United States, who are 18 years of age or older. You can also help by sharing the page. Thanks for your support!');
+    }
+
     for (var i = 0; i < requiredFields.length; i++) {
         var field = requiredFields[i];
 
         if (!document.getElementById(field).value) {
             e.preventDefault();
-            alert('Please enter your ' + field.replace(/-/g, ' ') + '.');
+            alert('Please enter your ' + field.replace(/_/g, ' ') + '.');
             return document.getElementById(field).focus();
         }
     }
