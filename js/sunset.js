@@ -88,7 +88,6 @@ var requiredFields = [
     'email',
     'street_address',
     'postcode',
-    'reason',
 ];
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
@@ -128,13 +127,6 @@ document.querySelector('.email_signup form').addEventListener('submit', function
     // modal_show('thank-you');
     // document.querySelector('input[type=tel]').focus();
 }, false);
-
-var reasonEl = document.querySelector('.email_signup form #reason');
-reasonEl.addEventListener('change', onReasonChange, false);
-function onReasonChange() {
-    reasonEl.setAttribute('selected', !!reasonEl.value);
-}
-onReasonChange();
 
 function modal_show(id) {
     var overlayNode = document.getElementById(id);
