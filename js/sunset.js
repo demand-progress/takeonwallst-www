@@ -14,8 +14,22 @@ var organizations = [
     },
 
     {
+        "disclaimer": true,
+        "id": "dp-ns",
+        "isPooling": true,
+        "title": "Demand Progress",
+    },
+
+    {
         "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>",
         "id": "fftf",
+        "isPooling": false,
+        "title": "Fight for the Future",
+    },
+
+    {
+        "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>",
+        "id": "fftf-ns",
         "isPooling": false,
         "title": "Fight for the Future",
     },
