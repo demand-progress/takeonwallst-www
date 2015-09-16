@@ -40,6 +40,13 @@ var organizations = [
         "isPooling": true,
         "title": "Color of Change",
     },
+
+    {
+        "disclaimer": true,
+        "id": "ra",
+        "isPooling": true,
+        "title": "RootsAction",
+    },
 ];
 
 var ref = location.search.match(/ref=([\w-]+)/);
