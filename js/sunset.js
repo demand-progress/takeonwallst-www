@@ -68,6 +68,13 @@ var organizations = [
         "isPooling": true,
         "title": "RootsAction",
     },
+
+    {
+        "disclaimer": true,
+        "id": "wd",
+        "isPooling": true,
+        "title": "Watchdog.net",
+    },
 ];
 
 var ref = location.search.match(/ref=([\w-]+)/);
