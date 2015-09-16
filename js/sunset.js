@@ -181,12 +181,14 @@ var bindModalEvents = function(modal) {
         modal_hide(modal.id);
     }.bind(this), false);
 }
-bindModalEvents('share_modal');
 bindModalEvents('call_tool');
 bindModalEvents('call_tool_script');
-bindModalEvents('letter');
-bindModalEvents('thank-you');
+bindModalEvents('confirmed');
 bindModalEvents('drop_in');
+bindModalEvents('letter');
+bindModalEvents('sent');
+bindModalEvents('share_modal');
+bindModalEvents('thank-you');
 
 var fb = document.querySelectorAll('a.facebook');
 for (var i = 0; i < fb.length; i++) {
@@ -292,6 +294,22 @@ function directOpenCallModal() {
 }
 if (window.location.href.indexOf('call=1') != -1) {
     directOpenCallModal()
+}
+
+// Hashes
+if (location.hash === '#confirmed') {
+    modal_show('confirmed');
+    showThanks();
+} else if (location.hash === '#sent') {
+    modal_show('sent');
+    showThanks();
+}
+
+function showThanks() {
+    var thanks = document.getElementById('thanks');
+    document.querySelector('form button').setAttribute('disabled', true);
+    thanks.style.display = 'block';
+    thanks.style.opacity = 1;
 }
 
 
