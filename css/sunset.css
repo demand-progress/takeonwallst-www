@@ -205,6 +205,23 @@ header ul li {
     margin-left: 20px;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 799px) {
+    header h1 {
+        font-size: 28px;
+        letter-spacing: 7px;
+    }
+
+    header h2 {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    header .hide-on-mobile {
+        display: none;
+    }
+}
+
 .action {
     background: #353535;
     margin: 35px auto 50px auto;
