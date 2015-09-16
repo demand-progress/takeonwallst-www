@@ -8,6 +8,13 @@
 var organizations = [
     {
         "disclaimer": true,
+        "id": "maverick",
+        "isPooling": true,
+        "title": "Maverick",
+    },
+
+    {
+        "disclaimer": true,
         "id": "dp",
         "isPooling": true,
         "title": "Demand Progress",
