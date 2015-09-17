@@ -179,25 +179,34 @@ function modal_hide(id) {
     }, 400);
 }
 
-var bindModalEvents = function(modal) {
+var bindModalEvents = function(modal, permanent) {
     modal = document.getElementById(modal);
+
     if (!modal)
         return;
+
+    var closeButton = modal.querySelector('.modal .close');
+
+    if (permanent) {
+        closeButton.parentElement.removeChild(closeButton);
+        return;
+    }
+
+    closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal_hide(modal.id);
+    }, false);
+
     modal.querySelector('.gutter').addEventListener('click', function(e) {
         if (e.target === e.currentTarget) {
             e.preventDefault();
             modal_hide(modal.id);
         }
-    }.bind(this), false);
-
-    modal.querySelector('.modal .close').addEventListener('click', function(e) {
-        e.preventDefault();
-        modal_hide(modal.id);
-    }.bind(this), false);
+    }, false);
 }
 bindModalEvents('call_tool');
 bindModalEvents('call_tool_script');
-bindModalEvents('confirmed');
+bindModalEvents('confirmed', true);
 bindModalEvents('drop_in');
 bindModalEvents('letter');
 bindModalEvents('sent');
