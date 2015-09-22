@@ -222,6 +222,10 @@ header ul li {
     }
 }
 
+.hide-on-mobile {
+    display: none;
+}
+
 .action {
     background: #353535;
     margin: 35px auto 50px auto;
@@ -634,6 +638,22 @@ section .share {
 
 .overlay.confirmed {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.overlay.goodbye_modal p strong {
+    font-weight: bold;
+}
+
+.overlay.goodbye_modal p a {
+    color: #4099FF;
+    font-weight: bold;
+    line-height: 1.6;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.overlay.goodbye_modal p a:hover {
+    color: #50aaFF;
 }
 
 .overlay.call_tool .modal a.share {

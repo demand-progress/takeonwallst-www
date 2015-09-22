@@ -208,6 +208,7 @@ bindModalEvents('call_tool');
 bindModalEvents('call_tool_script');
 bindModalEvents('confirmed', true);
 bindModalEvents('drop_in');
+bindModalEvents('goodbye_modal', true);
 bindModalEvents('letter');
 bindModalEvents('sent');
 bindModalEvents('share_modal');
@@ -325,6 +326,9 @@ if (location.hash === '#confirmed') {
     showThanks();
 } else if (location.hash === '#sent') {
     modal_show('sent');
+    showThanks();
+} else {
+    modal_show('goodbye_modal');
     showThanks();
 }
 
