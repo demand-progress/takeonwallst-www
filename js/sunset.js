@@ -327,9 +327,6 @@ if (location.hash === '#confirmed') {
 } else if (location.hash === '#sent') {
     modal_show('sent');
     showThanks();
-} else {
-    modal_show('goodbye_modal');
-    showThanks();
 }
 
 function showThanks() {
