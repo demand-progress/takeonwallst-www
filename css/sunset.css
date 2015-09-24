@@ -21,6 +21,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 * html .clear {height: 1%;}
 .clear {display: block;}
 /* */
+
+/*
+
+Palette:
+#962D3E
+#343642
+#979C9C
+#F2EBC7
+#348899
+
+ */
+
 * {
     box-sizing: border-box;
 }
