@@ -693,6 +693,9 @@ section .share {
     letter-spacing: 1px;
     margin-bottom: 25px;
 }
+.overlay .modal strong {
+    font-weight: bold;
+}
 .overlay .modal h2 {
     font-size: 16px;
     line-height: 20px;
