@@ -590,7 +590,7 @@ section .share {
 .logos {
     background-color: #343642 ;
     margin: 24px 0px 0px 0px;
-    padding: 24px 0 0;
+    padding: 48px 0 24px;
     overflow: hidden;
 }
 .logos a {
@@ -676,7 +676,7 @@ section .share {
     opacity: .6;
 }
 .overlay .modal h1 {
-    background: #20cba1;
+    background: #348899;
     color: white;
     text-align: center;
     padding: 30px 10px;
