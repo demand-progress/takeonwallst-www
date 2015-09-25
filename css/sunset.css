@@ -90,7 +90,10 @@ h4 {
     padding: 0 32px;
 }
 h4 a {
-    color: #f0d88d;
+    color: #F2EBC7;
+}
+h4 a:hover {
+    color: #fff;
 }
 h5 {
     text-align: center;
@@ -155,7 +158,7 @@ img.demo {
 header {
 }
 header .desktop p {
-    padding-top: 24px;
+    padding-top: 44px;
 }
 
 header .mobile .fight-back {
@@ -163,7 +166,7 @@ header .mobile .fight-back {
 }
 header p.fight-back {
     color: #A82424;
-    padding-top: 12px;
+    padding-top: 16px;
     font-weight: bold;
 }
 header em {
@@ -204,33 +207,33 @@ header .headlines .fade {
     width: 100%;
 }
 header .headlines h1 {
-    background-color: rgba(52, 136, 153, 0.94);
-    color: #962D3E;
+    background-color: rgba(150, 45, 62, 0.98);
+    color: #fff;
     display: inline-block;
     font-size: 56px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin: 4px;
-    padding: 8px;
+    margin: 0;
+    padding: 8px 16px;
 }
 header .headlines h2 {
-    background-color: rgba(52, 136, 153, 0.94);
-    color: #962D3E;
+    background-color: rgba(52, 136, 153, 0.75);
+    color: #fff;
     display: inline-block;
     font-size: 36px;
     font-weight: bold;
-    margin: 4px;
-    padding: 8px;
+    margin: 0;
+    padding: 8px 16px;
 }
 header .headlines h3 {
-    background-color: rgba(52, 136, 153, 0.94);
-    color: #962D3E;
+    background-color: rgba(52, 136, 153, 0.75);
+    color: #F2EBC7;
     display: inline-block;
     font-size: 28px;
     font-style: italic;
     font-weight: normal;
-    margin: 4px;
-    padding: 8px;
+    margin: 0;
+    padding: 8px 16px;
 }
 /*
 #962D3E
@@ -299,6 +302,7 @@ header ul li {
 }
 
 .action h4 {
+    color: #F2EBC7;
     font-size: 20px;
     line-height: 1.2;
 }
@@ -358,10 +362,10 @@ header ul li {
 }
 .action .email_signup button {
     width: 100%;
-    background: #36c994;
+    background: #348899;
 }
 .action .email_signup button:hover {
-    background: #26b984;
+    background: #3b9cb0;
 }
 .action .or {
     display: inline-block;
@@ -396,7 +400,7 @@ header ul li {
 }
 .action span.disclaimer {
     clear: both;
-    color: #898989;
+    color: #979C9C;
     display: block;
     font-size: 15px;
     line-height: 1.4;
@@ -455,10 +459,42 @@ p.explanation {
     border-right: 1px solid #323232;
 }
 
-section {
-    background: #282828;
-    padding: 10px 0px 25px 0px;
+.protest {
+    background-image: url(../images/bg-protest.jpg);
+    background-size: cover;
+    height: 260px;
+    width: 100%;
 }
+
+.protest h4 {
+    background-color: rgba(52, 136, 153, 0.75);
+    color: #962D3E;
+    display: inline-block;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 96px 0;
+    padding: 8px 16px;
+    text-transform: uppercase;
+}
+
+.protest h4 .white {
+    color: #fff;
+}
+
+section {
+    color: #222;
+    padding: 42px 0px 25px 0px;
+}
+
+section a {
+    color: #348899;
+    font-weight: bold;
+}
+
+section a:hover {
+    color: #3b9cb0;
+}
+
 section.dark {
     background: #171717;
 }
@@ -478,13 +514,37 @@ section p {
     margin: 0px auto 25px auto;
     text-align: center;
     font-size: 18px;
-    color: #d5d5d5;
     font-weight: 300;
     line-height: 24px;
     padding: 0 32px;
 }
-section p strong, header p strong {
+section ul {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 36px auto 24px;
+    max-width: 800px;
+    padding: 0 32px;
+    text-align: left;
+}
+section ul li {
+    margin: 0 64px 16px;
+}
+@media screen and (max-width: 479px) {
+    section ul li {
+        margin: 0 32px 16px;
+    }
+}
+section p strong, header p strong, section ul strong {
     font-weight: bold;
+}
+section button.add-your-name {
+    background-color: #348899;
+    margin: 8px 0 0;
+    padding: 0 32px;
+}
+section button.add-your-name:hover {
+    background-color: #3b9cb0;
 }
 .share {
     border-radius: 60px;
@@ -528,7 +588,9 @@ section .share {
     background-color: #3089ef;
 }
 .logos {
-    margin: 50px 0px 0px 0px;
+    background-color: #343642 ;
+    margin: 24px 0px 0px 0px;
+    padding: 24px 0 0;
     overflow: hidden;
 }
 .logos a {

@@ -246,6 +246,16 @@ document.querySelector('a.open-call-tool').addEventListener('click', function(e)
 });
 */
 
+document.querySelector('a.the-letter').addEventListener('click', function(e) {
+    e.preventDefault();
+    modal_show('letter');
+});
+
+document.querySelector('button.add-your-name').addEventListener('click', function(e) {
+    e.preventDefault();
+    location.hash = 'add-your-name';
+});
+
 document.querySelector('.call_tool a.share').addEventListener('click', function(e) {
     e.preventDefault();
 
