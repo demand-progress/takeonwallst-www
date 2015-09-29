@@ -207,32 +207,32 @@ header .headlines .fade {
     width: 100%;
 }
 header .headlines h1 {
-    background-color: rgba(150, 45, 62, 0.98);
-    color: #fff;
+    background-color: rgba(150, 45, 62, 0.91);
+    color: #F6F4EA;
     display: inline-block;
     font-size: 56px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin: 0;
+    margin: 0 0 3px;
     padding: 8px 16px;
 }
 header .headlines h2 {
-    background-color: rgba(52, 136, 153, 0.75);
-    color: #fff;
+    background-color: rgba(52, 136, 153, 0.91);
+    color: #F6F4EA;
     display: inline-block;
     font-size: 36px;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 3px;
     padding: 8px 16px;
 }
 header .headlines h3 {
-    background-color: rgba(52, 136, 153, 0.75);
+    background-color: rgba(52, 136, 153, 0.91);
     color: #F2EBC7;
     display: inline-block;
     font-size: 28px;
     font-style: italic;
     font-weight: normal;
-    margin: 0;
+    margin: 0 0 3px;
     padding: 8px 16px;
 }
 /*
@@ -467,7 +467,7 @@ p.explanation {
 }
 
 .protest h4 {
-    background-color: rgba(52, 136, 153, 0.75);
+    background-color: rgba(52, 136, 153, 0.91);
     color: #962D3E;
     display: inline-block;
     font-size: 42px;
@@ -478,7 +478,7 @@ p.explanation {
 }
 
 .protest h4 .white {
-    color: #fff;
+    color: #F6F4EA;
 }
 
 section {
