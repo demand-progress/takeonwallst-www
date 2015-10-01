@@ -50,6 +50,7 @@ body {
     background: #f2ebc7;
     font-family: "Open Sans";
     text-align: center;
+    min-width: 320px;
 }
 h1 {
     font-family: "Open Sans";
@@ -294,11 +295,38 @@ header ul li {
     display: none;
 }
 
+.action-wrapper {
+    position: relative;
+}
+
+.action-wrapper .red-bar {
+    background-color: #962d3e;
+    height: calc(100% - 270px);
+    margin-top: 135px;
+    position: absolute;
+    width: 100%;
+}
+
 .action {
     background: #353535;
     margin: 35px auto 50px auto;
     max-width: 600px;
     padding: 24px 60px 32px;
+    position: relative;
+}
+
+.action h2 {
+    color: #F2EBC7;
+    font-size: 36px;
+    letter-spacing: normal;
+    padding: 0px 0px 16px;
+}
+
+@media screen and (max-width: 479px) {
+    .action h2 {
+        font-size: 32px;
+        padding: 0px 0px 16px;
+    }
 }
 
 .action h4 {

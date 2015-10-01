@@ -119,19 +119,11 @@ document.querySelector('[name=url]').value = location.href;
 
 
 var requiredFields = [
-    'first_name',
     'email',
-    'street_address',
     'postcode',
 ];
 
 document.querySelector('.email_signup form').addEventListener('submit', function(e) {
-    var eligible = document.querySelector('[name=eligible]');
-    if (!eligible.checked) {
-        e.preventDefault();
-        return alert('Signers must be citizens or permanent residents of the United States, who are 18 years of age or older. You can also help by sharing the page. Thanks for your support!');
-    }
-
     for (var i = 0; i < requiredFields.length; i++) {
         var field = requiredFields[i];
 
