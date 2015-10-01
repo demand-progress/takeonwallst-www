@@ -517,6 +517,12 @@ p.explanation {
     color: #F6F4EA;
 }
 
+@media screen and (max-width: 479px) {
+    .protest h4 {
+        font-size: 32px;
+    }
+}
+
 section {
     color: #222;
     padding: 42px 0px 25px 0px;
