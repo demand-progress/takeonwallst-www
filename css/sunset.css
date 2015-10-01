@@ -385,9 +385,14 @@ header ul li {
 .action .email_signup input:nth-of-type(2) {
     border-top: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
+    .action .email_signup input:nth-of-type(1),
     .action .email_signup input:nth-of-type(2) {
-        border-top: 1px solid #ccc;
+        display: none;
+    }
+
+    .action .email_signup input:nth-of-type(3) {
+        border-top: none;
     }
 
     .action .email_signup input,
@@ -721,7 +726,7 @@ section .share {
     background: #348899;
     color: white;
     text-align: center;
-    padding: 30px 10px;
+    padding: 30px 16px;
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 10px;
     -moz-border-radius-topleft: 10px;
@@ -853,7 +858,7 @@ section .share {
     border: 1px solid #ccc;
     border-bottom: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
     .overlay.call_tool .modal input {
         font-size: 18px;
     }
@@ -936,7 +941,7 @@ div.social-buttons {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
     div.social-buttons {
         display: none;
     }
