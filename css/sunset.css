@@ -337,6 +337,12 @@ header ul li {
     line-height: 1.2;
 }
 
+@media screen and (max-width: 479px) {
+    .action h4 {
+        padding: 0;
+    }
+}
+
 .action .email_signup {
     max-width: 430px;
     width: 100%;
