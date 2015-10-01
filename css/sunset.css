@@ -636,7 +636,7 @@ section .share {
 }
 .logos {
     background-color: #343642 ;
-    margin: 24px 0px 0px 0px;
+    margin: 0;
     padding: 48px 0 24px;
     overflow: hidden;
 }
@@ -975,6 +975,14 @@ div.social-buttons a.email {
     background-image: url(../images/social/icon-email.gif);
 }
 
+section.midnight-share-train {
+    background-color: #22242D;
+    margin: 32px 0 0;
+}
+
+section.midnight-share-train a:hover {
+    color: #fff;
+}
 
 
 /* Checkbox */
