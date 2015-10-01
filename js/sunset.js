@@ -196,15 +196,11 @@ var bindModalEvents = function(modal, permanent) {
         }
     }, false);
 }
-bindModalEvents('call_tool');
-bindModalEvents('call_tool_script');
 bindModalEvents('confirmed', true);
-bindModalEvents('drop_in');
 bindModalEvents('goodbye_modal', true);
 bindModalEvents('letter');
 bindModalEvents('sent');
 bindModalEvents('share_modal');
-bindModalEvents('thank-you');
 
 var fb = document.querySelectorAll('a.facebook');
 for (var i = 0; i < fb.length; i++) {
@@ -230,14 +226,6 @@ for (var i = 0; i < ems.length; i++) {
     }, false);
 }
 
-/*
-document.querySelector('a.open-call-tool').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    modal_show('call_tool');
-});
-*/
-
 document.querySelector('a.the-letter').addEventListener('click', function(e) {
     e.preventDefault();
     modal_show('letter');
@@ -247,41 +235,6 @@ document.querySelector('button.add-your-name').addEventListener('click', functio
     e.preventDefault();
     location.hash = 'add-your-name';
 });
-
-document.querySelector('.call_tool a.share').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    modal_hide('call_tool');
-    modal_show('share_modal');
-});
-
-document.querySelector('.call_tool form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    var zip = document.getElementById('postcode').value || '';
-
-    var phone = document.querySelector('input[type=tel]').value.replace(/[^\d]/g, '');
-
-    if (phone.length < 10) {
-        return alert('Please enter your 10 digit phone number.');
-    }
-
-    if (org.newCallTool)
-        var url = 'https://call-congress.fightforthefuture.org/create?campaignId=endsurveillance&userPhone=' + phone + '&zipcode=' + zip;
-    else
-        var url = 'https://dp-call-congress.herokuapp.com/create?campaignId=sunsetthepatriotact&userPhone=' + phone + '&zipcode=' + zip;
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            console.log(xhr.response);
-        }
-    };
-    xhr.open('get', url, true);
-    xhr.send();
-
-    modal_hide('call_tool');
-    modal_show('call_tool_script');
-}, false);
 
 function removeNode(target) {
     var node = document.querySelector(target);
