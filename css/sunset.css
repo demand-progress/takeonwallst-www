@@ -48,6 +48,8 @@ a:hover {
 }
 body {
     background: #f2ebc7;
+    background-image: url(../images/cream.png);
+    background-size: 160px;
     font-family: "Open Sans";
     text-align: center;
     min-width: 320px;
