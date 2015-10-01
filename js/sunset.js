@@ -3,6 +3,24 @@
 
 
 
+// Share text
+var DOMAIN = "fightbigmoney.com";
+var TWEET_TEXT = "I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://" + DOMAIN + "/?ref=${source}-twshare";
+var EMAIL_SUBJECT = "Sign this petition to fight big money in politics?";
+var EMAIL_BODY = "Hi,\
+\n\n\
+I just signed the petition telling the presidential candidates to lay out a concrete, serious plan to fight big money in politics.\
+\n\n\
+The only way we'll make progress is if candidates know the American people are demanding a change. Could you sign, too?\
+\n\n\
+http://www." + DOMAIN + "/?source=${source}-emailshare\
+\n\n\
+Thanks!";
+
+
+
+
+
 
 // Organizations
 var organizations = [
@@ -206,7 +224,10 @@ var fb = document.querySelectorAll('a.facebook');
 for (var i = 0; i < fb.length; i++) {
     fb[i].addEventListener('click', function(e) {
         e.preventDefault();
-        window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnetneutralitybrief.com%2F%3Fref%3D' + org.id);
+        window.open(
+            'https://www.facebook.com/sharer/sharer.php?u=' +
+            encodeURIComponent(DOMAIN + '/?source=' + org.id + '-fbshare')
+        );
     }, false);
 }
 
@@ -214,7 +235,12 @@ var tws = document.querySelectorAll('a.twitter');
 for (var i = 0; i < tws.length; i++) {
     tws[i].addEventListener('click', function(e) {
         e.preventDefault();
-        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(TWEET_TEXT) + org.id);
+        window.open(
+            'https://twitter.com/intent/tweet?text=' +
+            encodeURIComponent(
+                TWEET_TEXT.replace('${source}', org.id)
+            )
+        );
     }, false);
 }
 
@@ -222,7 +248,11 @@ var ems = document.querySelectorAll('a.email');
 for (var i = 0; i < ems.length; i++) {
     ems[i].addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = 'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) + '&body=http%3A%2F%2Fnetneutralitybrief.com%2F';
+        window.location.href =
+            'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
+            '&body=' + encodeURIComponent(
+                EMAIL_BODY.replace('${source}', org.id)
+            );
     }, false);
 }
 
