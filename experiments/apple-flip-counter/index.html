@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Apple-Style Flip Counter Demo</title>
+	<meta name="description" content="A more functional version of my Apple-Style Flip Counter." />
+	<meta name="keywords" content="HTML,CSS,JavaScript,counter,apple-style,flip,animate,digit,demo" />
+	<meta name="author" content="Chris Nanney" />
+
+	<!-- My flip counter script, REQUIRED -->
+	<script type="text/javascript" src="js/flipcounter.js"></script>
+	<!-- Style sheet for the counter, REQUIRED -->
+	<link rel="stylesheet" type="text/css" href="css/counter.css" />
+
+</head>
+
+<body>
+
+	<div id="wrapper"><div id="flip-counter" class="flip-counter"></div></div>
+
+	<script type="text/javascript">
+	var counter = new flipCounter('flip-counter', {
+		value: 100000,
+	});
+	counter.incrementTo(189000, 3, 120);
+	</script>
+</body>
+
+</html>
