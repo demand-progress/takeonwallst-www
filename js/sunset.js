@@ -321,6 +321,29 @@ function showThanks() {
     thanks.style.opacity = 1;
 }
 
+function shuffleLogos() {
+    // Get array of logos
+    var logos = Array.prototype.slice.call(document.querySelectorAll('.logos .clamp a'));
+
+    // Randomize order
+    logos.forEach(function (logo) {
+        logo.randomValue = Math.random();
+    });
+
+    logos.sort(function (a, b) {
+        return a.randomValue - b.randomValue;
+    });
+
+    // Re-append all logos
+    logos.forEach(function (logo) {
+        var parent = logo.parentElement;
+        parent.removeChild(logo);
+        parent.appendChild(logo);
+    });
+}
+
+shuffleLogos();
+
 
 
 })(); // End closure
