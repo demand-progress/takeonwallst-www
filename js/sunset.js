@@ -342,7 +342,7 @@ function shuffleLogos() {
     });
 }
 
-shuffleLogos();
+// shuffleLogos();
 
 
 
