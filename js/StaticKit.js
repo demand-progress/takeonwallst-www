@@ -1,5 +1,9 @@
 var StaticKit = {};
 
+StaticKit.copy = {
+    zipErrorAlert: 'Please enter a valid ZIP code.',
+};
+
 StaticKit.query = (function () {
     var pairs = location.search.slice(1).split('&');
 
@@ -41,6 +45,6 @@ if (StaticKit.query.error_zip) {
         el.focus();
     }
     setTimeout(function () {
-        alert('Please enter a valid ZIP code. Thanks!');
+        alert(StaticKit.copy.zipErrorAlert);
     }, 250);
 }
