@@ -238,27 +238,6 @@ header .headlines h3 {
     margin: 0 0 3px;
     padding: 8px 16px;
 }
-/*
-#962D3E
-#343642
-#979C9C
-#F2EBC7
-#348899
- */
-header ul {
-    list-style-type: disc;
-    margin: 25px auto;
-    max-width: 780px;
-    padding: 0 50px;
-}
-header ul li {
-    font-size: 17px;
-    color: #c5c5c5;
-    line-height: 24px;
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
 
 @media screen and (max-width: 799px) {
     header .headlines h1 {
@@ -298,6 +277,7 @@ header ul li {
 }
 
 .action-wrapper {
+    margin: 0 0 48px;
     position: relative;
 }
 
@@ -312,10 +292,11 @@ header ul li {
 .action {
     background: #353535;
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
-    margin: 35px auto 50px auto;
+    margin: 35px auto 0;
     max-width: 600px;
     padding: 24px 60px 32px;
     position: relative;
+    z-index: 99;
 }
 
 .action h2 {
@@ -449,6 +430,36 @@ header ul li {
     margin: 20px auto 0;
     max-width: 430px;
     text-align: center;
+}
+
+.action-wrapper.counter-is-visible {
+    margin: 0 0 140px;
+}
+
+.action-wrapper.counter-is-visible .counter {
+    display: block;
+}
+
+.action-wrapper .counter {
+    background-color: #979c9c;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+    display: none;
+    height: 100px;
+    left: calc(50% - 160px);
+    position: absolute;
+    width: 320px;
+}
+
+.action-wrapper .flip-counter {
+    height: 45px;
+    margin: 14px auto 8px;
+    overflow: hidden;
+}
+
+.action-wrapper .counter .label {
+    clear: both;
+    color: #333542;
+    font-weight: bold;
 }
 
 button {
@@ -963,6 +974,7 @@ div.social-buttons {
     position: fixed;
     top: calc((100% - 115px) / 2);
     width: 100px;
+    z-index: 999;
 }
 
 @media screen and (max-width: 1100px) {

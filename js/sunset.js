@@ -241,6 +241,46 @@ function shuffleLogos() {
     });
 }
 
+function fetchActionKitCount() {
+    // Embed https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount
+    var script = document.createElement('script');
+    script.src = 'https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount';
+    document.head.appendChild(script);
+}
+
+function onActionKitCount(data) {
+    createCounter(data.total.actions);
+}
+window.onActionKitCount = onActionKitCount;
+
+if (StaticKit.query.testCounterAt) {
+    createCounter(StaticKit.query.testCounterAt);
+} else if (StaticKit.query.testCounterFetch) {
+    var wrapperEl = document.querySelector('.action-wrapper');
+    wrapperEl.className += ' counter-is-visible';
+    fetchActionKitCount();
+}
+
+function createCounter(size) {
+    var wrapperEl = document.querySelector('.action-wrapper');
+    wrapperEl.className += ' counter-is-visible';
+
+    var counterDestinationLength = size.toString().length;
+    var counterStartingNumber = Math.pow(10, counterDestinationLength - 1);
+    var counter = new flipCounter('flip-counter', {
+        value: counterStartingNumber,
+
+        // Sizing
+        bFH: 40,
+        bOffset: 200,
+        fW: 30,
+        tFH: 20,
+    });
+    counter.incrementTo(size, 1.6, 120);
+    var el = document.querySelector('#flip-counter');
+    el.style.width = counterDestinationLength * 30 + Math.floor((counterDestinationLength - 1) / 3) * 7 + 'px';
+}
+
 // shuffleLogos();
 
 
