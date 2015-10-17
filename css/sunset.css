@@ -650,12 +650,16 @@ section .share {
 .logos {
     background-color: #fff ;
     margin: 0;
-    padding: 64px 0 32px;
+    padding: 64px 0 48px;
     overflow: hidden;
 }
 .logos .clamp {
     margin: 0 auto;
     max-width: 970px;
+}
+.logos h4 {
+    color: #348899;
+    font-size: 24px;
 }
 .logos a {
 }
@@ -667,6 +671,21 @@ section .share {
     margin: 0px 20px 32px;
     max-width: 280px;
     vertical-align: middle;
+}
+.logos .smaller img {
+    max-width: 210px;
+}
+.logos .larger {
+    margin-bottom: 54px;
+}
+.logos .larger img {
+    max-width: 320px;
+}
+.logos .medium {
+    margin-bottom: 54px;
+}
+.logos .medium img {
+    max-width: 280px;
 }
 .press {
     font-size: 22px;
