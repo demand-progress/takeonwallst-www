@@ -5,7 +5,7 @@
 
 // Share text
 var DOMAIN = "fightbigmoney.com";
-var TWEET_TEXT = "I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://" + DOMAIN + "/?ref=${source}-twshare";
+var TWEET_TEXT = "I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://" + DOMAIN + "/?source=${source}";
 var EMAIL_SUBJECT = "Sign this petition to fight big money in politics?";
 var EMAIL_BODY = "Hi,\
 \n\n\
@@ -13,104 +13,11 @@ I just signed the petition telling the presidential candidates to lay out a conc
 \n\n\
 The only way we'll make progress is if candidates know the American people are demanding a change. Could you sign, too?\
 \n\n\
-http://www." + DOMAIN + "/?source=${source}-emailshare\
+http://www." + DOMAIN + "/?source=${source}\
 \n\n\
 Thanks!";
 
 
-
-
-
-
-// Organizations
-var organizations = [
-    {
-        "disclaimer": true,
-        "id": "maverick",
-        "isPooling": true,
-        "title": "Maverick",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "dp",
-        "isPooling": true,
-        "title": "Demand Progress",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "dp-ns",
-        "isPooling": false,
-        "title": "Demand Progress",
-    },
-
-    {
-        "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>",
-        "id": "fftf",
-        "isPooling": true,
-        "title": "Fight for the Future",
-    },
-
-    {
-        "disclaimer": "<a href=\"http://www.fightforthefuture.org/\" target=\"_blank\">Fight for the Future</a> will contact you about future campaigns. <a href=\"http://www.fightforthefuture.org/privacy/\" target=\"_blank\">Privacy Policy</a>.</p>",
-        "id": "fftf-ns",
-        "isPooling": false,
-        "title": "Fight for the Future",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "dk",
-        "isPooling": true,
-        "title": "Daily Kos",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "om",
-        "isPooling": true,
-        "title": "OpenMedia",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "cc",
-        "isPooling": true,
-        "title": "Color of Change",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "ra",
-        "isPooling": true,
-        "title": "RootsAction",
-    },
-
-    {
-        "disclaimer": true,
-        "id": "wd",
-        "isPooling": true,
-        "title": "Watchdog.net",
-    },
-];
-
-var ref = location.search.match(/ref=([\w-]+)/);
-var org;
-if (ref) {
-    for (var i = 0; i < organizations.length; i++) {
-        if (ref[1] === organizations[i].id) {
-            org = organizations[i];
-            break;
-        }
-    }
-}
-
-var maverick = false;
-if (!org) {
-    maverick = true;
-    org = organizations[0];
-}
 
 
 
@@ -131,7 +38,7 @@ if (navigator.userAgent.match(/Android 2\.3/)) {
 
 // Fill in dynamic form fields
 document.querySelector('[name=action_user_agent]').value = navigator.userAgent;
-document.querySelector('[name=source]').value = org.id;
+document.querySelector('[name=source]').value = StaticKit.getTaggedSource('');
 document.querySelector('[name=url]').value = location.href;
 
 
@@ -226,7 +133,7 @@ for (var i = 0; i < fb.length; i++) {
         e.preventDefault();
         window.open(
             'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(DOMAIN + '/?source=' + org.id + '-fbshare')
+            encodeURIComponent(DOMAIN + '/?source=' + getTaggedSource('-fbshare'))
         );
     }, false);
 }
@@ -238,7 +145,7 @@ for (var i = 0; i < tws.length; i++) {
         window.open(
             'https://twitter.com/intent/tweet?text=' +
             encodeURIComponent(
-                TWEET_TEXT.replace('${source}', org.id)
+                TWEET_TEXT.replace('${source}', getTaggedSource('-twshare'))
             )
         );
     }, false);
@@ -248,10 +155,11 @@ var ems = document.querySelectorAll('a.email');
 for (var i = 0; i < ems.length; i++) {
     ems[i].addEventListener('click', function(e) {
         e.preventDefault();
+
         window.location.href =
             'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
             '&body=' + encodeURIComponent(
-                EMAIL_BODY.replace('${source}', org.id)
+                EMAIL_BODY.replace('${source}', getTaggedSource('-emailshare'))
             );
     }, false);
 }
@@ -272,14 +180,6 @@ function removeNode(target) {
 }
 
 var disclaimer = document.querySelector('.disclaimer');
-if (org.isPooling) {
-    if (org.disclaimer === false) {
-        removeNode('.disclaimer');
-    }
-} else {
-    removeNode('.squaredFour.pooling');
-    document.querySelector('.disclaimer').innerHTML = org.disclaimer;
-}
 
 var resizeTimeout = false;
 window.addEventListener('resize', function(e) {

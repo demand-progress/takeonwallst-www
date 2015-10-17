@@ -311,6 +311,7 @@ header ul li {
 
 .action {
     background: #353535;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     margin: 35px auto 50px auto;
     max-width: 600px;
     padding: 24px 60px 32px;
@@ -575,11 +576,16 @@ section ul {
     text-align: left;
 }
 section ul li {
-    margin: 0 64px 16px;
+    margin: 0 64px 16px 100px;
+}
+section ul li .fa {
+    font-size: 24px;
+    margin: 0 0 0 -36px;
+    position: absolute;
 }
 @media screen and (max-width: 479px) {
     section ul li {
-        margin: 0 32px 16px;
+        margin: 0 16px 16px 52px;
     }
 }
 section p strong, header p strong, section ul strong {
