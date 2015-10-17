@@ -133,7 +133,7 @@ for (var i = 0; i < fb.length; i++) {
         e.preventDefault();
         window.open(
             'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(DOMAIN + '/?source=' + StaticKit.query.source + '-fbshare')
+            encodeURIComponent(DOMAIN + '/?source=' + StaticKit.query.cleanedSource + '-fbshare')
         );
     }, false);
 }
@@ -145,7 +145,7 @@ for (var i = 0; i < tws.length; i++) {
         window.open(
             'https://twitter.com/intent/tweet?text=' +
             encodeURIComponent(
-                TWEET_TEXT.replace('${source}', StaticKit.query.source + '-twittershare')
+                TWEET_TEXT.replace('${source}', StaticKit.query.cleanedSource + '-twittershare')
             )
         );
     }, false);
@@ -159,7 +159,7 @@ for (var i = 0; i < ems.length; i++) {
         window.location.href =
             'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
             '&body=' + encodeURIComponent(
-                EMAIL_BODY.replace('${source}', StaticKit.query.source + '-emailshare')
+                EMAIL_BODY.replace('${source}', StaticKit.query.cleanedSource + '-emailshare')
             );
     }, false);
 }
