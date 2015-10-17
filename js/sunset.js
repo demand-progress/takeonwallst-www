@@ -38,7 +38,7 @@ if (navigator.userAgent.match(/Android 2\.3/)) {
 
 // Fill in dynamic form fields
 document.querySelector('[name=action_user_agent]').value = navigator.userAgent;
-document.querySelector('[name=source]').value = StaticKit.getTaggedSource('');
+document.querySelector('[name=source]').value = StaticKit.query.source;
 document.querySelector('[name=url]').value = location.href;
 
 
@@ -133,7 +133,7 @@ for (var i = 0; i < fb.length; i++) {
         e.preventDefault();
         window.open(
             'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(DOMAIN + '/?source=' + StaticKit.getTaggedSource('-fbshare'))
+            encodeURIComponent(DOMAIN + '/?source=' + StaticKit.query.source + '-fbshare')
         );
     }, false);
 }
@@ -145,7 +145,7 @@ for (var i = 0; i < tws.length; i++) {
         window.open(
             'https://twitter.com/intent/tweet?text=' +
             encodeURIComponent(
-                TWEET_TEXT.replace('${source}', StaticKit.getTaggedSource('-twshare'))
+                TWEET_TEXT.replace('${source}', StaticKit.query.source + '-twittershare')
             )
         );
     }, false);
@@ -159,7 +159,7 @@ for (var i = 0; i < ems.length; i++) {
         window.location.href =
             'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
             '&body=' + encodeURIComponent(
-                EMAIL_BODY.replace('${source}', StaticKit.getTaggedSource('-emailshare'))
+                EMAIL_BODY.replace('${source}', StaticKit.query.source + '-emailshare')
             );
     }, false);
 }

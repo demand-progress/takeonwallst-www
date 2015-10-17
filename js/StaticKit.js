@@ -16,17 +16,7 @@ StaticKit.query = (function () {
     return JSON.parse(JSON.stringify(result));
 })();
 
-StaticKit.query.source = (StaticKit.query.source || '').split(/[^\w-]/)[0];
-
-StaticKit.getTaggedSource = function (tag) {
-    var taggedSource = this.query.source;
-
-    if (!this.query.source.match(tag)) {
-        taggedSource += tag;
-    }
-
-    return taggedSource;
-}
+StaticKit.query.source = (StaticKit.query.source || '').split(/[^\w]/)[0];
 
 StaticKit.fillForm = function (params) {
     for (var key in params) {
