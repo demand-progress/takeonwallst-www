@@ -125,7 +125,6 @@ bindModalEvents('confirmed', true);
 bindModalEvents('goodbye_modal', true);
 bindModalEvents('letter');
 bindModalEvents('sent');
-bindModalEvents('share_modal');
 
 var fb = document.querySelectorAll('a.facebook');
 for (var i = 0; i < fb.length; i++) {

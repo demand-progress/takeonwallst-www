@@ -601,7 +601,7 @@ section button.add-your-name:hover {
 }
 .share {
     border-radius: 60px;
-    padding: 10px;
+    padding: 10px 10px 0;
     background: #222;
     display: inline-block;
 }
@@ -622,7 +622,7 @@ section .share {
     text-decoration: none;
     padding-left: 30px;
     font-size: 20px;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 10px 10px 10px;
     border-radius: 20px;
     font-weight: 500;
 }
@@ -639,6 +639,13 @@ section .share {
 }
 .share a.twitter:hover {
     background-color: #3089ef;
+}
+.share a.email {
+    background: #14ac2b url(../images/email_white.png) 15px 8px no-repeat;
+    background-size: 25px 25px;
+}
+.share a.email:hover {
+    background-color: #10A526;
 }
 .logos {
     background-color: #fff ;
@@ -987,6 +994,18 @@ section.midnight-share-train {
 
 section.midnight-share-train a:hover {
     color: #fff;
+}
+
+section.midnight-share-train h3 {
+    font-size: 32px;
+    color: #F6F4EA;
+    font-weight: bold;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+section.midnight-share-train p {
+    color: #F6F4EA;
 }
 
 
