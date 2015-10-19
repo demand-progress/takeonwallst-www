@@ -16,9 +16,25 @@ StaticKit.query = (function () {
     return JSON.parse(JSON.stringify(result));
 })();
 
-StaticKit.query.source = StaticKit.query.source || 'website';
+// Loading source
+if (!StaticKit.query.source) {
+    try {
+        StaticKit.query.source = sessionStorage.savedSource;
+    } catch (e) {}
+}
+
+// Defaulting source
+if (!StaticKit.query.source) {
+    StaticKit.query.source = 'website';
+}
+
 StaticKit.query.source = StaticKit.query.source.split(/[^\w-]/)[0] || '';
 StaticKit.query.cleanedSource = StaticKit.query.source.split(/[^\w]/)[0];
+
+// Saving source
+try {
+    sessionStorage.savedSource = StaticKit.query.source;
+} catch (e) {}
 
 StaticKit.fillForm = function (params) {
     for (var key in params) {
