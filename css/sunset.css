@@ -204,9 +204,16 @@ header .headlines {
     background-size: cover;
     padding: 28px 0 0;
 }
+header .headlines .fade-wrapper {
+    height: 75px;
+    position: relative;
+    width: 100%;
+}
 header .headlines .fade {
     background-image: url(../images/bg-gradient-fade.png);
     height: 75px;
+    position: absolute;
+    top: 2px;
     width: 100%;
 }
 header .headlines h1 {
