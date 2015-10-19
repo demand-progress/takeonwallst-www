@@ -678,7 +678,6 @@ section .share {
     margin: 0px 20px 32px;
     max-width: 280px;
     vertical-align: middle;
-    width: 85%;
 }
 .logos .smaller img {
     max-width: 210px;
@@ -688,6 +687,7 @@ section .share {
 }
 .logos .larger img {
     max-width: 320px;
+    width: 85%;
 }
 .logos .medium {
     margin-bottom: 54px;
