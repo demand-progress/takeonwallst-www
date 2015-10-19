@@ -22,17 +22,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .clear {display: block;}
 /* */
 
-/*
-
-Palette:
-#962D3E
-#343642
-#979C9C
-#F2EBC7
-#348899
-
- */
-
 * {
     box-sizing: border-box;
 }
@@ -689,6 +678,7 @@ section .share {
     margin: 0px 20px 32px;
     max-width: 280px;
     vertical-align: middle;
+    width: 85%;
 }
 .logos .smaller img {
     max-width: 210px;
