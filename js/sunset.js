@@ -255,14 +255,6 @@ function onActionKitCount(data) {
 }
 window.onActionKitCount = onActionKitCount;
 
-if (StaticKit.query.testCounterAt) {
-    createCounter(StaticKit.query.testCounterAt);
-} else if (StaticKit.query.testCounterFetch) {
-    var wrapperEl = document.querySelector('.action-wrapper');
-    wrapperEl.className += ' counter-is-visible';
-    fetchActionKitCount();
-}
-
 function createCounter(size) {
     var wrapperEl = document.querySelector('.action-wrapper');
     wrapperEl.className += ' counter-is-visible';
@@ -283,6 +275,7 @@ function createCounter(size) {
     el.style.width = counterDestinationLength * 30 + Math.floor((counterDestinationLength - 1) / 3) * 7 + 'px';
 }
 
+fetchActionKitCount();
 // shuffleLogos();
 
 
