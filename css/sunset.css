@@ -657,7 +657,7 @@ section .share {
 .logos {
     background-color: #fff ;
     margin: 0;
-    padding: 64px 0 48px;
+    padding: 64px 0 0;
     overflow: hidden;
 }
 .logos .clamp {
@@ -1210,4 +1210,23 @@ h3.nopad {
             -ms-transform: scale(0.8);
                 transform: scale(0.8);
     }
+}
+
+.privacy {
+    background-color: #fff;
+    margin: 0;
+    clear: both;
+    overflow: hidden;
+    padding: 32px 32px 64px;
+}
+
+.privacy a {
+    color: #348899;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.privacy a:hover {
+    color: #3b9cb0;
 }
