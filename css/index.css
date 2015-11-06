@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
@@ -20,11 +17,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* hide IE mac \*/
 * html .clear {height: 1%;}
 .clear {display: block;}
-/* */
+* {box-sizing: border-box;}
+/* end Reset */
 
-* {
-    box-sizing: border-box;
-}
+
+/* Styles */
 a {
     color: #ccc;
     text-decoration: underline;
@@ -277,7 +274,7 @@ header .headlines h3 {
     position: relative;
 }
 
-.action-wrapper .red-bar {
+.action-wrapper .background-bar {
     background-color: #962d3e;
     height: calc(100% - 270px);
     margin-top: 135px;
@@ -321,14 +318,14 @@ header .headlines h3 {
     }
 }
 
-.action .email_signup {
+.action .form-wrapper {
     max-width: 430px;
     width: 100%;
     position: relative;
     vertical-align: top;
     margin: 0 auto;
 }
-.action .email_signup #thanks {
+.action .form-wrapper #thanks {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -345,7 +342,7 @@ header .headlines h3 {
     display: none;
     opacity: 0;
 }
-.action .email_signup input {
+.action .form-wrapper input {
     width: 50%;
     vertical-align: top;
     box-sizing: border-box;
@@ -359,31 +356,31 @@ header .headlines h3 {
     border-right: 1px solid #ccc;
     border-top: 1px solid #ccc;
 }
-.action .email_signup input:nth-of-type(1),
-.action .email_signup input:nth-of-type(2) {
+.action .form-wrapper input:nth-of-type(1),
+.action .form-wrapper input:nth-of-type(2) {
     border-top: none;
 }
 @media screen and (max-width: 479px) {
-    .action .email_signup input:nth-of-type(1),
-    .action .email_signup input:nth-of-type(2) {
+    .action .form-wrapper input:nth-of-type(1),
+    .action .form-wrapper input:nth-of-type(2) {
         display: none;
     }
 
-    .action .email_signup input:nth-of-type(3) {
+    .action .form-wrapper input:nth-of-type(3) {
         border-top: none;
     }
 
-    .action .email_signup input,
-    .action .email_signup select {
+    .action .form-wrapper input,
+    .action .form-wrapper select {
         width: 100%;
         font-size: 18px;
     }
 }
-.action .email_signup button {
+.action .form-wrapper button {
     width: 100%;
     background: #348899;
 }
-.action .email_signup button:hover {
+.action .form-wrapper button:hover {
     background: #3b9cb0;
 }
 .action .or {
@@ -740,7 +737,7 @@ section .share {
 }
 .overlay .gutter .modal {
     max-width: 550px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     background: white;
     color: black;
     margin: 0px auto;
@@ -764,20 +761,14 @@ section .share {
 .overlay .modal h1 {
     background: #348899;
     color: white;
-    text-align: center;
-    padding: 30px 16px;
-    -webkit-border-top-left-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -moz-border-radius-topright: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    font-family: "Open Sans";
     font-size: 26px;
     font-weight: bold;
-    line-height: 31px;
-    font-family: "Open Sans";
     letter-spacing: 1px;
+    line-height: 31px;
     margin-bottom: 25px;
+    padding: 30px 16px;
+    text-align: center;
 }
 .overlay .modal strong {
     font-weight: bold;
@@ -1230,3 +1221,4 @@ h3.nopad {
 .privacy a:hover {
     color: #3b9cb0;
 }
+/* end Styles */

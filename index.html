@@ -6,7 +6,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
-        
+
         <!-- Stylesheets -->
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en">
@@ -42,15 +42,17 @@
             <div class="anchor" id="add-your-name"></div>
 
             <div class="action-wrapper counter-is-visible">
-                <div class="red-bar"></div>
+                <div class="background-bar"></div>
                 <div class="action">
                     <h2>
                         SIGN THE PETITION
                     </h2>
+
                     <h4>
                         Here’s <a class="the-letter" href="#">the letter</a> we’ll send to the candidates for president:
                     </h4>
-                    <div class="email_signup">
+
+                    <div class="form-wrapper">
                         <form method="POST" action="https://act.demandprogress.org/act/" accept-charset="utf-8">
                             <input
                                 id="first_name"
@@ -95,10 +97,12 @@
                             </div>
                         </form>
                     </div>
+
                     <span class="disclaimer">
                         One or more of the participating organizations may contact you about future campaigns.
                     </span>
                 </div>
+
                 <div class="counter">
                     <div id="flip-counter" class="flip-counter"></div>
                     <div class="label">
@@ -292,9 +296,16 @@
         <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/lodash.min.js"></script>
         <script src="js/StaticKit.js"></script>
-        <script src="js/global.js" async></script>
+        <script src="js/modal.js"></script>
+        <script src="js/global.js"></script>
         <!-- end Scripts -->
 
+        <!--[if IE 9]>
+        <script src="js/vendor/placeholders.jquery.min.js"></script>
+        <script type="text/javascript">
+            console.log('111');
+        </script>
+    	<![endif]-->
 
     </body>
 </html>
