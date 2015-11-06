@@ -17,7 +17,7 @@ So you can have multiple counters on a page, just make sure each one has a class
 }
 
 .flip-counter li {
-    background: url(../images/digits.png) 0 0 no-repeat;
+    background: url(../../images/digits.png) 0 0 no-repeat;
 }
 
 .flip-counter li.t {
