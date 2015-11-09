@@ -1,5 +1,12 @@
-$(function() {
+const _ = require('./vendor/lodash.min');
+const $ = require('./vendor/jquery.min');
+const FlipCounter = require('./vendor/flipcounter.min');
+const Modal = require('./modal');
+const StaticKit = require('./statickit');
 
+window.$ = window.jQuery = $;
+
+$(() => {
 
     // Defining Constants
     var DOMAIN = 'presidentobamaslegacy.com';
@@ -49,7 +56,7 @@ Thanks!';
 
     var petitionWasSentToWH = false;
     var $form = $('.action form');
-    $form.on('submit', function(e) {
+    $form.on('submit', (e) => {
         if (petitionWasSentToWH) {
             return true;
         }
@@ -58,7 +65,7 @@ Thanks!';
 
         var valid = true;
 
-        _.each(requiredFields, function (field) {
+        _.each(requiredFields, (field) => {
             var $field = $('#' + field);
             var value = $field.val() && $field.val().trim();
             if (!value) {
@@ -84,7 +91,7 @@ Thanks!';
             first_name: $('#first_name').val(),
             last_name: $('#last_name').val(),
             petition_id: WTP_PETITION_ID,
-        }, function(res) {
+        }, (res) => {
             if (res.success) {
                 petitionWasSentToWH = true;
                 $form.submit();
@@ -94,7 +101,7 @@ Thanks!';
         });
     });
 
-    $('a.facebook').on('click', function(e) {
+    $('a.facebook').on('click', (e) => {
         e.preventDefault();
 
         window.open(
@@ -103,7 +110,7 @@ Thanks!';
         );
     });
 
-    $('a.twitter').on('click', function(e) {
+    $('a.twitter').on('click', (e) => {
         e.preventDefault();
 
         window.open(
@@ -114,7 +121,7 @@ Thanks!';
         );
     });
 
-    $('a.email').on('click', function(e) {
+    $('a.email').on('click', (e) => {
         e.preventDefault();
 
         window.location.href =
@@ -124,18 +131,18 @@ Thanks!';
             );
     });
 
-    $('a.the-letter').on('click', function(e) {
+    $('a.the-letter').on('click', (e) => {
         e.preventDefault();
         Modal.show('#letter');
     });
 
-    $('button.add-your-name').on('click', function(e) {
+    $('button.add-your-name').on('click', (e) => {
         e.preventDefault();
         location.hash = 'add-your-name';
     });
 
     var resizeTimeout = false;
-    $(window).on('resize', function(e) {
+    $(window).on('resize', (e) => {
         resizeTimeout = setTimeout(onResize, 300);
     }, false);
 

@@ -1,4 +1,6 @@
-var Modal = {
+const $ = require('./vendor/jquery.min');
+
+const Modal = {
     show: function(modal) {
         var $modal = $(modal);
 
@@ -53,3 +55,5 @@ var Modal = {
         });
     },
 };
+
+module.exports = Modal;
