@@ -160,6 +160,15 @@ Thanks!';
         location.hash = '';
     }
 
+    function showThanks() {
+        $('form button').attr('disabled', true);
+
+        $('#thanks').css({
+            display: 'block',
+            opacity: 1,
+        });
+    }
+
     function fetchPetitionCount() {
         $.getJSON(WTP_API_COUNT_URL, {
             key: WTP_API_COUNT_KEY,
