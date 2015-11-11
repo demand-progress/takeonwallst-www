@@ -1,4 +1,3 @@
-const _ = require('./vendor/lodash.min');
 const $ = require('./vendor/jquery.min');
 
 const StaticKit = {};
@@ -11,7 +10,7 @@ StaticKit.query = (() => {
     var pairs = location.search.slice(1).split('&');
 
     var result = {};
-    _.each(pairs, (pair) => {
+    pairs.forEach((pair) => {
         pair = pair.split('=');
         result[pair[0]] = decodeURIComponent(pair[1] || '');
     });

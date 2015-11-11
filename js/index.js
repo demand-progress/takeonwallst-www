@@ -1,5 +1,4 @@
 // Modules
-const _ = require('./vendor/lodash.min');
 const Modal = require('./modal');
 const StaticKit = require('./statickit');
 window.$ = window.jQuery = require('./vendor/jquery.min');
@@ -67,7 +66,7 @@ Thanks!';
 
         var valid = true;
 
-        _.each(requiredFields, (field) => {
+        requiredFields.forEach((field) => {
             var $field = $('#' + field);
             var value = $field.val() && $field.val().trim();
             if (!value) {
@@ -157,17 +156,8 @@ Thanks!';
     // Hashes
     if (location.hash === '#sent') {
         Modal.show('#sent');
-        showThanks();
+        showCheckYourEmailPrompt();
         location.hash = '';
-    }
-
-    function showThanks() {
-        $('form button').attr('disabled', true);
-
-        $('#thanks').css({
-            display: 'block',
-            opacity: 1,
-        });
     }
 
     function fetchPetitionCount() {
@@ -186,6 +176,17 @@ Thanks!';
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function showCheckYourEmailPrompt() {
+        const $prompt = $('.check-your-email-prompt');
+        $prompt.css({
+            display: 'block',
+        });
+        $prompt[0].offsetHeight; // Reflow
+        $prompt.css({
+            opacity: 1,
+        });
     }
 
 });
