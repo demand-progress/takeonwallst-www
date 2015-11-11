@@ -3,7 +3,6 @@
 
 // Modules
 var _ = require('./vendor/lodash.min');
-var FlipCounter = require('./vendor/flipcounter.min');
 var Modal = require('./modal');
 var StaticKit = require('./statickit');
 window.$ = window.jQuery = require('./vendor/jquery.min');
@@ -20,8 +19,10 @@ The only way we\'ll make progress is if candidates know the American people are 
 http://www.' + DOMAIN + '/?source=${source}\n\n\
 Thanks!';
     var TWEET_TEXT = 'I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://' + DOMAIN + '/?source=${source}';
-    var WTP_API_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
-    var WTP_API_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
+    var WTP_API_COUNT_KEY = '556180fe1250efc8e58f9b407c4d7180b784b77c233037ac28b1b9c0c028beec';
+    var WTP_API_COUNT_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/count?callback=?';
+    var WTP_API_SIGN_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
+    var WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
     var WTP_PETITION_ID = '2128396';
     // end Defining Constants
 
@@ -80,9 +81,9 @@ Thanks!';
         showThanks();
 
         // Sending request to WH API
-        $.getJSON(WTP_API_URL, {
+        $.getJSON(WTP_API_SIGN_URL, {
             email: $('#email').val(),
-            key: WTP_API_KEY,
+            key: WTP_API_SIGN_KEY,
             first_name: $('#first_name').val(),
             last_name: $('#last_name').val(),
             petition_id: WTP_PETITION_ID
@@ -151,42 +152,26 @@ Thanks!';
         });
     }
 
-    function fetchActionKitCount() {
-        // Embed https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount
-        var script = document.createElement('script');
-        script.src = 'https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount';
-        document.head.appendChild(script);
-    }
-
-    function onActionKitCount(data) {
-        createCounter(data.total.actions);
-    }
-    window.onActionKitCount = onActionKitCount;
-
-    function createCounter(size) {
-        var wrapperEl = document.querySelector('.action-wrapper');
-        wrapperEl.className += ' counter-is-visible';
-
-        var counterDestinationLength = size.toString().length;
-        var counterStartingNumber = Math.pow(10, counterDestinationLength - 1);
-        var counter = new FlipCounter('flip-counter', {
-            value: counterStartingNumber,
-
-            // Sizing
-            bFH: 40,
-            bOffset: 200,
-            fW: 30,
-            tFH: 20
+    function fetchPetitionCount() {
+        $.getJSON(WTP_API_COUNT_URL, {
+            key: WTP_API_COUNT_KEY,
+            petition_id: WTP_PETITION_ID
+        }, function (res) {
+            if (res.count) {
+                $('.counter').addClass('loaded');
+                $('.counter .number').text(numberWithCommas(res.count));
+            }
         });
-        counter.incrementTo(size, 1.6, 120);
-        var el = document.querySelector('#flip-counter');
-        el.style.width = counterDestinationLength * 30 + Math.floor((counterDestinationLength - 1) / 3) * 7 + 'px';
     }
 
-    fetchActionKitCount();
+    fetchPetitionCount();
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 });
 
-},{"./modal":2,"./statickit":3,"./vendor/flipcounter.min":4,"./vendor/jquery.min":5,"./vendor/lodash.min":6}],2:[function(require,module,exports){
+},{"./modal":2,"./statickit":3,"./vendor/jquery.min":4,"./vendor/lodash.min":5}],2:[function(require,module,exports){
 'use strict';
 
 var $ = require('./vendor/jquery.min');
@@ -249,7 +234,7 @@ var Modal = {
 
 module.exports = Modal;
 
-},{"./vendor/jquery.min":5}],3:[function(require,module,exports){
+},{"./vendor/jquery.min":4}],3:[function(require,module,exports){
 'use strict';
 
 var _ = require('./vendor/lodash.min');
@@ -320,198 +305,7 @@ StaticKit.start = function () {
 
 module.exports = StaticKit;
 
-},{"./vendor/jquery.min":5,"./vendor/lodash.min":6}],4:[function(require,module,exports){
-"use strict";
-
-/**
- * Apple-Style Flip Counter
- * Version 0.5.3 - May 7, 2011
- *
- * Copyright (c) 2010 Chris Nanney
- * http://cnanney.com/journal/code/apple-style-counter-revisited/
- *
- * Licensed under MIT
- * http://www.opensource.org/licenses/mit-license.php
- */
-module.exports = function (E, c) {
-  var p = { value: 0, inc: 1, pace: 1000, auto: true, tFH: 39, bFH: 64, fW: 53, bOffset: 390 };var G = window.document,
-      h = typeof E !== "undefined" && E !== "" ? E : "flip-counter",
-      s = G.getElementById(h);var w = {};for (var a in p) {
-    w[a] = a in c ? c[a] : p[a];
-  }var f = [],
-      F = [],
-      C,
-      i,
-      n,
-      l,
-      m = null,
-      j,
-      B,
-      b = { q: null, pace: 0, inc: 0 };this.setValue = function (d) {
-    if (q(d)) {
-      n = w.value;l = d;w.value = d;k(n, l);
-    }return this;
-  };this.setIncrement = function (d) {
-    w.inc = q(d) ? d : p.inc;return this;
-  };this.setPace = function (d) {
-    w.pace = q(d) ? d : p.pace;return this;
-  };this.setAuto = function (d) {
-    if (d && !w.auto) {
-      w.auto = true;e();
-    }if (!d && w.auto) {
-      if (m) {
-        t();
-      }w.auto = false;
-    }return this;
-  };this.step = function () {
-    if (!w.auto) {
-      e();
-    }return this;
-  };this.add = function (d) {
-    if (q(d)) {
-      n = w.value;w.value += d;l = w.value;k(n, l);
-    }return this;
-  };this.subtract = function (d) {
-    if (q(d)) {
-      n = w.value;w.value -= d;if (w.value >= 0) {
-        l = w.value;
-      } else {
-        l = "0";w.value = 0;
-      }k(n, l);
-    }return this;
-  };this.incrementTo = function (y, M, x) {
-    if (m) {
-      t();
-    }if (typeof M != "undefined") {
-      var H = q(M) ? M * 1000 : 10000,
-          d = typeof x != "undefined" && q(x) ? x : w.pace,
-          L = typeof y != "undefined" && q(y) ? y - w.value : 0,
-          J,
-          I,
-          o,
-          K = 0;b.q = null;d = H / L > d ? Math.round(H / L / 10) * 10 : d;J = Math.floor(H / d);I = Math.floor(L / J);o = D(L, J, I, d, H);if (L > 0) {
-        while (o.result === false && K < 100) {
-          d += 10;J = Math.floor(H / d);I = Math.floor(L / J);o = D(L, J, I, d, H);K++;
-        }if (K == 100) {
-          w.inc = b.inc;w.pace = b.pace;
-        } else {
-          w.inc = I;w.pace = d;
-        }A(y, true, J);
-      }
-    } else {
-      A(y);
-    }
-  };this.getValue = function () {
-    return w.value;
-  };this.stop = function () {
-    if (m) {
-      t();
-    }return this;
-  };function e() {
-    n = w.value;w.value += w.inc;l = w.value;k(n, l);if (w.auto === true) {
-      m = setTimeout(e, w.pace);
-    }
-  }function A(I, d, H) {
-    var y = w.value,
-        x = typeof d == "undefined" ? false : d,
-        o = typeof H == "undefined" ? 1 : H;if (x === true) {
-      o--;
-    }if (y != I) {
-      n = w.value, w.auto = true;if (y + w.inc <= I && o != 0) {
-        y += w.inc;
-      } else {
-        y = I;
-      }w.value = y;l = w.value;k(n, l);m = setTimeout(function () {
-        A(I, x, o);
-      }, w.pace);
-    } else {
-      w.auto = false;
-    }
-  }function k(o, K) {
-    f = u(o);F = u(K);var J,
-        H = f.length,
-        d = F.length;if (d > H) {
-      J = d - H;while (J > 0) {
-        r(d - J + 1, F[d - J]);J--;
-      }
-    }if (d < H) {
-      J = H - d;while (J > 0) {
-        v(H - J);J--;
-      }
-    }for (var I = 0; I < H; I++) {
-      if (F[I] != f[I]) {
-        g(I, f[I], F[I]);
-      }
-    }
-  }function g(y, L, o) {
-    var I,
-        H = 0,
-        K,
-        J,
-        d = ["-" + w.fW + "px -" + L * w.tFH + "px", w.fW * -2 + "px -" + L * w.tFH + "px", "0 -" + o * w.tFH + "px", "-" + w.fW + "px -" + (L * w.bFH + w.bOffset) + "px", w.fW * -2 + "px -" + (o * w.bFH + w.bOffset) + "px", w.fW * -3 + "px -" + (o * w.bFH + w.bOffset) + "px", "0 -" + (o * w.bFH + w.bOffset) + "px"];if (w.auto === true && w.pace <= 300) {
-      switch (y) {case 0:
-          I = w.pace / 6;break;case 1:
-          I = w.pace / 5;break;case 2:
-          I = w.pace / 4;break;case 3:
-          I = w.pace / 3;break;default:
-          I = w.pace / 1.5;break;}
-    } else {
-      I = 80;
-    }I = I > 80 ? 80 : I;function x() {
-      if (H < 7) {
-        K = H < 3 ? "t" : "b";J = G.getElementById(h + "_" + K + "_d" + y);if (J) {
-          J.style.backgroundPosition = d[H];
-        }H++;if (H != 3) {
-          setTimeout(x, I);
-        } else {
-          x();
-        }
-      }
-    }x();
-  }function u(d) {
-    return d.toString().split("").reverse();
-  }function r(o, x) {
-    var d = Number(o) - 1;j = G.createElement("ul");j.className = "cd";j.id = h + "_d" + d;j.innerHTML = '<li class="t" id="' + h + "_t_d" + d + '"></li><li class="b" id="' + h + "_b_d" + d + '"></li>';if (d % 3 == 0) {
-      B = G.createElement("ul");B.className = "cd";B.innerHTML = '<li class="s"></li>';s.insertBefore(B, s.firstChild);
-    }s.insertBefore(j, s.firstChild);G.getElementById(h + "_t_d" + d).style.backgroundPosition = "0 -" + x * w.tFH + "px";G.getElementById(h + "_b_d" + d).style.backgroundPosition = "0 -" + (x * w.bFH + w.bOffset) + "px";
-  }function v(x) {
-    var d = G.getElementById(h + "_d" + x);s.removeChild(d);var o = s.firstChild.firstChild;if ((" " + o.className + " ").indexOf(" s ") > -1) {
-      d = o.parentNode;s.removeChild(d);
-    }
-  }function z(I) {
-    var d = I.toString(),
-        x = d.length,
-        H = 1,
-        o;for (o = 0; o < x; o++) {
-      j = G.createElement("ul");j.className = "cd";j.id = h + "_d" + o;j.innerHTML = j.innerHTML = '<li class="t" id="' + h + "_t_d" + o + '"></li><li class="b" id="' + h + "_b_d" + o + '"></li>';s.insertBefore(j, s.firstChild);if (H != x && H % 3 == 0) {
-        B = G.createElement("ul");B.className = "cd";B.innerHTML = '<li class="s"></li>';s.insertBefore(B, s.firstChild);
-      }H++;
-    }var y = u(d);for (o = 0; o < x; o++) {
-      G.getElementById(h + "_t_d" + o).style.backgroundPosition = "0 -" + y[o] * w.tFH + "px";G.getElementById(h + "_b_d" + o).style.backgroundPosition = "0 -" + (y[o] * w.bFH + w.bOffset) + "px";
-    }if (w.auto === true) {
-      m = setTimeout(e, w.pace);
-    }
-  }function D(J, I, H, K, y) {
-    var o = { result: true },
-        x;o.cond1 = J / I >= 1 ? true : false;o.cond2 = I * H <= J ? true : false;o.cond3 = Math.abs(I * H - J) <= 10 ? true : false;o.cond4 = Math.abs(I * K - y) <= 100 ? true : false;o.cond5 = I * K <= y ? true : false;if (o.cond1 && o.cond2 && o.cond4 && o.cond5) {
-      x = Math.abs(J - I * H) + Math.abs(I * K - y);if (b.q === null) {
-        b.q = x;
-      }if (x <= b.q) {
-        b.pace = K;b.inc = H;
-      }
-    }for (var d = 1; d <= 5; d++) {
-      if (o["cond" + d] === false) {
-        o.result = false;
-      }
-    }return o;
-  }function q(d) {
-    return !isNaN(parseFloat(d)) && isFinite(d);
-  }function t() {
-    clearTimeout(m);m = null;
-  }z(w.value);
-};
-
-},{}],5:[function(require,module,exports){
+},{"./vendor/jquery.min":4,"./vendor/lodash.min":5}],4:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
@@ -2414,7 +2208,7 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
   }, (typeof b === "undefined" ? "undefined" : _typeof(b)) === U && (a.jQuery = a.$ = n), n;
 });
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 "use strict";
 

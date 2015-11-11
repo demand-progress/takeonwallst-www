@@ -236,7 +236,7 @@ header .headlines h3 {
     display: block;
 }
 .action-wrapper .counter {
-    background-color: #979c9c;
+    background-color: #101c30;
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     display: none;
     height: 100px;
@@ -244,15 +244,27 @@ header .headlines h3 {
     position: absolute;
     width: 320px;
 }
-.action-wrapper .flip-counter {
-    height: 45px;
-    margin: 14px auto 8px;
-    overflow: hidden;
+.action-wrapper .counter .number {
+    color: #f1f1f1;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 16px 0 0;
+    opacity: 0;
 }
 .action-wrapper .counter .label {
     clear: both;
-    color: #333542;
+    color: #96100f;
+    font-size: 28px;
     font-weight: bold;
+}
+.action-wrapper .counter .label,
+.action-wrapper .counter .number {
+    opacity: 0;
+    transition: opacity .32s;
+}
+.action-wrapper .counter.loaded .label,
+.action-wrapper .counter.loaded .number {
+    opacity: 1;
 }
 button {
     height: 60px;

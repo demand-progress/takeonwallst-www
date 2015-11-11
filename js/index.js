@@ -1,6 +1,5 @@
 // Modules
 const _ = require('./vendor/lodash.min');
-const FlipCounter = require('./vendor/flipcounter.min');
 const Modal = require('./modal');
 const StaticKit = require('./statickit');
 window.$ = window.jQuery = require('./vendor/jquery.min');
@@ -18,8 +17,10 @@ The only way we\'ll make progress is if candidates know the American people are 
 http://www.' + DOMAIN + '/?source=${source}\n\n\
 Thanks!';
     var TWEET_TEXT = 'I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://' + DOMAIN + '/?source=${source}';
-    var WTP_API_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
-    var WTP_API_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
+    var WTP_API_COUNT_KEY = '556180fe1250efc8e58f9b407c4d7180b784b77c233037ac28b1b9c0c028beec';
+    var WTP_API_COUNT_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/count?callback=?';
+    var WTP_API_SIGN_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
+    var WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
     var WTP_PETITION_ID = '2128396';
     // end Defining Constants
 
@@ -86,9 +87,9 @@ Thanks!';
         showThanks();
 
         // Sending request to WH API
-        $.getJSON(WTP_API_URL, {
+        $.getJSON(WTP_API_SIGN_URL, {
             email: $('#email').val(),
-            key: WTP_API_KEY,
+            key: WTP_API_SIGN_KEY,
             first_name: $('#first_name').val(),
             last_name: $('#last_name').val(),
             petition_id: WTP_PETITION_ID,
@@ -169,38 +170,22 @@ Thanks!';
         });
     }
 
-    function fetchActionKitCount() {
-        // Embed https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount
-        var script = document.createElement('script');
-        script.src = 'https://act.demandprogress.org/progress/fight-big-money?callback=onActionKitCount';
-        document.head.appendChild(script);
-    }
-
-    function onActionKitCount(data) {
-        createCounter(data.total.actions);
-    }
-    window.onActionKitCount = onActionKitCount;
-
-    function createCounter(size) {
-        var wrapperEl = document.querySelector('.action-wrapper');
-        wrapperEl.className += ' counter-is-visible';
-
-        var counterDestinationLength = size.toString().length;
-        var counterStartingNumber = Math.pow(10, counterDestinationLength - 1);
-        var counter = new FlipCounter('flip-counter', {
-            value: counterStartingNumber,
-
-            // Sizing
-            bFH: 40,
-            bOffset: 200,
-            fW: 30,
-            tFH: 20,
+    function fetchPetitionCount() {
+        $.getJSON(WTP_API_COUNT_URL, {
+            key: WTP_API_COUNT_KEY,
+            petition_id: WTP_PETITION_ID,
+        }, (res) => {
+            if (res.count) {
+                $('.counter').addClass('loaded');
+                $('.counter .number').text(numberWithCommas(res.count));
+            }
         });
-        counter.incrementTo(size, 1.6, 120);
-        var el = document.querySelector('#flip-counter');
-        el.style.width = counterDestinationLength * 30 + Math.floor((counterDestinationLength - 1) / 3) * 7 + 'px';
     }
 
-    fetchActionKitCount();
+    fetchPetitionCount();
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 
 });
