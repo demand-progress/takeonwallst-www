@@ -155,8 +155,8 @@ Thanks!';
 
     // Hashes
     if (location.hash === '#sent') {
-        Modal.show('#sent');
         showCheckYourEmailPrompt();
+        showThanks();
         location.hash = '';
     }
 

@@ -161,20 +161,22 @@ header .headlines h3 {
     vertical-align: top;
 }
 .action .form-wrapper #thanks {
-    position: absolute;
+    -webkit-transition: opacity 0.4s ease-out;
+    background: #96100f;
+    color: #f0f4f5;
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
     left: 0;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    max-width: 430px;
+    opacity: 0;
+    padding: 11px;
+    position: absolute;
+    transition: opacity 0.4s ease-out;
     width: 100%;
     z-index: 2;
-    background: #222;
-    z-index: 2;
-    line-height: 1.6;
-    font-size: 20px;
-    color: white;
-    padding: 14px;
-    -webkit-transition: opacity 0.4s ease-out;
-    transition: opacity 0.4s ease-out;
-    display: none;
-    opacity: 0;
 }
 .action .form-wrapper input {
     border: 0;
@@ -210,6 +212,7 @@ header .headlines h3 {
 }
 .action .form-wrapper button {
     background-color: #96100f;
+    color: #f0f4f5;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
