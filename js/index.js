@@ -1,11 +1,12 @@
+// Modules
 const _ = require('./vendor/lodash.min');
-const $ = require('./vendor/jquery.min');
 const FlipCounter = require('./vendor/flipcounter.min');
 const Modal = require('./modal');
 const StaticKit = require('./statickit');
+window.$ = window.jQuery = require('./vendor/jquery.min');
 
-window.$ = window.jQuery = $;
 
+// After the page loads
 $(() => {
 
     // Defining Constants

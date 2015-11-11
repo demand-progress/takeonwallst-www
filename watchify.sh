@@ -1,1 +1,1 @@
-watchify --full-path=false -o js/bundle.js -t [ babelify --presets [ es2015 ] ] js/global.js
+watchify --full-path=false -v -o js/bundle.js -t [ babelify --presets [ es2015 ] ] js/index.js
