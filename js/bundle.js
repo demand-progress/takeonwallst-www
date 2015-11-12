@@ -61,6 +61,10 @@ Thanks!';
         var valid = true;
 
         requiredFields.forEach(function (field) {
+            if (!valid) {
+                return;
+            }
+
             var $field = $('#' + field);
             var value = $field.val() && $field.val().trim();
             if (!value) {
@@ -68,7 +72,6 @@ Thanks!';
                 $field.focus();
 
                 valid = false;
-                return false;
             }
         });
 
