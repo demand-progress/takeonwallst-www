@@ -96,6 +96,13 @@ Thanks!';
         });
     });
 
+    $('.animated-scroll').on('click', function (e) {
+        var target = $(e.target).data('target');
+        $('body').stop().animate({
+            scrollTop: $(target).offset().top
+        }, 480);
+    });
+
     $('a.facebook').on('click', function (e) {
         e.preventDefault();
 
