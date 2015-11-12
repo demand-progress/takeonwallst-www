@@ -222,14 +222,21 @@ header .headlines h3 {
 .action .form-wrapper button:hover {
     background-color: #A90F0E;
 }
+.action hr {
+    background-color: #101c30;
+    border: none;
+    height: 1px;
+    margin: 30px auto 0;
+    max-width: 200px;
+    width: 100%;
+}
 .action span.disclaimer {
-    border-top: solid 1px #101c30;
     clear: both;
     color: #96a2ba;
     display: block;
     font-size: 14px;
     line-height: 1.4;
-    margin: 30px auto 0;
+    margin: 0 auto;
     padding: 16px 0 0;
     max-width: 260px;
     text-align: center;
