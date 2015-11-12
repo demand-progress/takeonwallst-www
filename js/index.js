@@ -107,7 +107,7 @@ Thanks!';
 
     $('.animated-scroll').on('click', (e) => {
         const target = $(e.target).data('target');
-        $('body').stop().animate({
+        $('html, body').stop().animate({
             scrollTop: $(target).offset().top,
         }, 480);
     });
