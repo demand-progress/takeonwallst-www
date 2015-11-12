@@ -176,7 +176,7 @@ Thanks!';
         }, (res) => {
             if (res.count) {
                 $('.counter').addClass('loaded');
-                $('.counter .number').text(numberWithCommas(res.count));
+                $('.counter .number-of-signatures').text(numberWithCommas(res.count));
             }
         });
     }

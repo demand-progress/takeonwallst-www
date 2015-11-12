@@ -251,29 +251,47 @@ header .headlines h3 {
     background-color: #101c30;
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     display: none;
-    height: 100px;
     margin: 0 auto;
     max-width: 413px;
 }
-.action-wrapper .counter .number {
+.action-wrapper .counter .number-of-signatures {
     color: #f1f1f1;
     font-size: 36px;
     font-weight: bold;
-    padding: 16px 0 0;
+    padding: 24px 0 4px;
     opacity: 0;
 }
-.action-wrapper .counter .label {
+.action-wrapper .counter .number-of-signatures-label {
     clear: both;
     color: #96100f;
     font-size: 28px;
     font-weight: bold;
 }
-.action-wrapper .counter .label, .action-wrapper .counter .number {
+.action-wrapper .counter hr {
+    background-color: #192c4b;
+    border: none;
+    height: 1px;
+    margin: 36px auto 0;
+    max-width: 200px;
+    width: 100%;
+}
+.action-wrapper .counter .label, .action-wrapper .counter .number-of-signatures {
     opacity: 0;
     transition: opacity .32s;
 }
-.action-wrapper .counter.loaded .label, .action-wrapper .counter.loaded .number {
+.action-wrapper .counter.loaded .label, .action-wrapper .counter.loaded .number-of-signatures {
     opacity: 1;
+}
+.action-wrapper .counter .signatures-needed {
+    color: #f1f1f1;
+    font-size: 34px;
+    padding: 28px 0 4px;
+}
+.action-wrapper .counter .signatures-needed-label {
+    color: #96100f;
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 0 0 32px;
 }
 button {
     height: 60px;
