@@ -703,7 +703,7 @@ section.midnight-share-train p {
     max-width: 260px;
     position: relative;
     text-align: left;
-    width: 100%;
+    width: calc(100% - 74px);
 }
 .squaredFour input[type=checkbox] {
     visibility: hidden;
