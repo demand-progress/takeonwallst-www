@@ -56,7 +56,7 @@ body {
     min-width: 320px;
     text-align: center;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 699px) {
     body {
         background-image: none;
     }
@@ -93,8 +93,7 @@ header .headlines h3 {
     letter-spacing: 1px;
     padding: 8px 16px 64px;
 }
-@media screen and (max-width: 799px) {}
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 699px) {
     header .headlines h1 {
         font-size: 40px;
         line-height: 1.2;
@@ -118,27 +117,51 @@ header .headlines h3 {
     max-width: 998px;
     overflow: hidden;
 }
+.petition-and-form-wrapper > .outer-padding {
+    padding: 0 16px;
+}
 .petition {
     background-color: #f1f1f1;
     color: #000812;
     font-size: 20px;
     line-height: 1.4;
-    min-height: 300px;
+    min-height: 705px;
     padding: 32px 452px 16px 40px;
     text-align: left;
+    position: relative;
+}
+@media screen and (max-width: 799px) {
+    .petition {
+        font-size: 16px;
+    }
 }
 .petition p {
+    font-size: 1em;
     padding: 0 0 24px;
 }
 .petition .large {
-    font-size: 30px;
+    font-size: 1.5em;
 }
 .petition strong {
     font-weight: bold;
 }
+.petition .sign-the-petition {
+    background-color: #96100f;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    left: 40px;
+    letter-spacing: 1px;
+    position: absolute;
+    transition: background-color 0.16s;
+    width: calc(100% - 80px);
+}
+.petition .sign-the-petition:hover {
+    background-color: #A90F0E;
+}
 .action-wrapper {
     float: right;
-    margin: 0;
+    margin: 0 auto;
     position: relative;
 }
 .action {
@@ -164,8 +187,31 @@ header .headlines h3 {
 .action .form-wrapper .input-grid {
     padding: 0 57px;
 }
-@media screen and (max-width: 639px) {
-    .action {}
+@media screen and (max-width: 699px) {
+    .petition,
+    .action-wrapper {
+        clear: both;
+        float: none;
+    }
+    .action-wrapper .counter::after {
+        display: none;
+    }
+    .petition-and-form-wrapper > .outer-padding {
+        padding: 0;
+    }
+    .petition {
+        font-size: 18px;
+        margin: 0 auto 120px;
+        max-width: 413px;
+        min-height: 0;
+        padding: 38px 28px 32px;
+    }
+    .petition .large {
+        font-size: 18px;
+    }
+    .petition .sign-the-petition {
+        display: block;
+    }
     .action h2 {
         font-size: 24px;
         padding: 0 0 16px;
@@ -268,6 +314,8 @@ header .headlines h3 {
     background-color: #101c30;
     margin: 0 auto;
     max-width: 413px;
+    position: relative;
+    z-index: 9;
 }
 .action-wrapper .counter .number-of-signatures {
     color: #f1f1f1;
