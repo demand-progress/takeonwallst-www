@@ -185,7 +185,8 @@ header .headlines h3 {
     line-height: 1.2;
 }
 .action .form-wrapper .input-grid {
-    padding: 0 57px;
+    margin: 0 57px;
+    position: relative;
 }
 @media screen and (max-width: 699px) {
     .petition,
@@ -220,7 +221,7 @@ header .headlines h3 {
         padding: 0;
     }
     .action .form-wrapper .input-grid {
-        padding: 0 37px;
+        margin: 0 37px;
     }
 }
 .action .form-wrapper {
