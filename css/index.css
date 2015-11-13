@@ -490,9 +490,8 @@ section button.add-your-name:hover {
 }
 .share {
     border-radius: 60px;
-    padding: 10px 10px 0;
-    background: #222;
     display: inline-block;
+    padding: 10px 10px 0;
 }
 section .share {
     margin: 0 0 22px;
@@ -539,12 +538,13 @@ section .share {
 .logos {
     background-color: #fff;
     margin: 0;
-    padding: 64px 0 0;
     overflow: hidden;
+    padding: 64px 0 0;
 }
 .logos .clamp {
     margin: 0 auto;
     max-width: 970px;
+    padding: 0 16px;
 }
 .logos h4 {
     color: #348899;
@@ -713,8 +713,8 @@ div.social-buttons a.email {
     background-image: url(../images/social/icon-email.gif);
 }
 section.midnight-share-train {
-    background-color: #22242D;
-    margin: 32px 0 0;
+    margin: 0 auto 32px;
+    padding: 0 16px;
 }
 section.midnight-share-train a:hover {
     color: #fff;
