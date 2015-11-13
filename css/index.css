@@ -549,6 +549,8 @@ section .share {
 .logos h4 {
     color: #348899;
     font-size: 24px;
+    line-height: 1.4;
+    padding: 0 0 16px;
 }
 .logos a {
     text-decoration: none;
