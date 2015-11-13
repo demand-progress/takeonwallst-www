@@ -36,7 +36,7 @@
                         <h2>SIGN THE PETITION</h2>
 
                         <div class="form-wrapper">
-                            <form method="POST" action="https://act.demandprogress.org/act/" accept-charset="utf-8">
+                            <form method="GET" action="https://act.demandprogress.org/act/" accept-charset="utf-8">
                                 <div class="input-grid">
                                     <input id="first_name" name="first_name" placeholder="First name" type="text" autocomplete="on" />
                                     <input id="last_name" name="last_name" placeholder="Last name" type="text" autocomplete="on" />
@@ -377,6 +377,13 @@
         <script src="js/vendor/placeholders.jquery.min.js"></script>
         <script type="text/javascript">
             console.log('IE9 detected!');
+        </script>
+    	<![endif]-->
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript">
+            alert('Sorry, you are using an outdated browser. Please visit the site with a modern browser like Chrome, Firefox, or Opera.');
+            location.href = 'https://www.google.com/intl/en/chrome/browser/desktop/index.html';
         </script>
     	<![endif]-->
 
