@@ -394,8 +394,8 @@ button {
 .more-info-header {
     height: 198px;
     margin: 0 auto;
-    max-width: 998px;
-    padding: 0 16px;
+    max-width: 100%;
+    padding: 0;
     position: relative;
     width: 100%;
 }
@@ -424,19 +424,19 @@ button {
     display: none;
     font-size: 20px;
     font-weight: bold;
-    left: 40px;
+    left: calc((100% - 244px) / 2);
     letter-spacing: 1px;
     position: absolute;
     top: -30px;
     transition: background-color 0.16s;
-    width: calc(100% - 80px);
+    width: 244px;
 }
 .more-info-header .sign-the-petition:hover {
     background-color: #A90F0E;
 }
 @media screen and (max-width: 769px) {
     .more-info-header {
-        max-width: 413px;
+        /*max-width: 413px;*/
         padding: 0;
     }
     .more-info-header h4 {
@@ -713,8 +713,10 @@ div.social-buttons a.email {
     background-image: url(../images/social/icon-email.gif);
 }
 section.midnight-share-train {
-    margin: 0 auto 32px;
-    padding: 0 16px;
+    background-color: #192c4b;
+    margin: 0 auto ;
+    padding: 18px 16px 0;
+    max-width: 100%;
 }
 section.midnight-share-train a:hover {
     color: #fff;
