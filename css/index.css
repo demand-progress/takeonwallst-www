@@ -420,6 +420,7 @@ button {
 }
 .more-info-header .sign-the-petition {
     background-color: #96100f;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
     display: none;
     font-size: 20px;
     font-weight: bold;
@@ -448,9 +449,10 @@ button {
 section {
     color: #f1f1f1;
     font-size: 18px;
-    padding: 42px 16px 25px;
+    margin: -36px auto 0;
     max-width: 998px;
-    margin: 0 auto;
+    padding: 0 16px 25px;
+    position: relative;
 }
 section a {
     color: #348899;
@@ -470,7 +472,12 @@ section p {
 }
 @media screen and (max-width: 769px) {
     section {
+        margin: -58px auto 0;
         max-width: 413px;
+    }
+
+    section p {
+        font-size: 17px;
     }
 }
 section button.add-your-name {

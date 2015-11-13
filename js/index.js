@@ -88,7 +88,7 @@ $(() => {
         const target = $(e.target).data('target');
         $('html, body').stop().animate({
             scrollTop: $(target).offset().top,
-        }, 480);
+        }, 640);
     });
 
     $('a.facebook').on('click', (e) => {
