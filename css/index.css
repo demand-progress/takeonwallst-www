@@ -175,20 +175,6 @@ header .headlines h3 {
 .petition strong {
     font-weight: bold;
 }
-.petition .sign-the-petition {
-    background-color: #96100f;
-    display: none;
-    font-size: 20px;
-    font-weight: bold;
-    left: 40px;
-    letter-spacing: 1px;
-    position: absolute;
-    transition: background-color 0.16s;
-    width: calc(100% - 80px);
-}
-.petition .sign-the-petition:hover {
-    background-color: #A90F0E;
-}
 .action-wrapper {
     float: right;
     margin: 0 auto;
@@ -234,16 +220,13 @@ header .headlines h3 {
     }
     .petition {
         font-size: 18px;
-        margin: 0 auto 120px;
+        margin: 0 auto;
         max-width: 413px;
         min-height: 0;
         padding: 38px 28px 32px;
     }
     .petition .large {
         font-size: 18px;
-    }
-    .petition .sign-the-petition {
-        display: block;
     }
     .action h2 {
         font-size: 24px;
@@ -408,33 +391,66 @@ button {
     font-weight: 500;
     font-family: "Open Sans";
 }
-.protest {
-    background-image: url(../images/bg-protest.png);
-    background-size: cover;
-    height: 460px;
+.more-info-header {
+    height: 198px;
+    margin: 0 auto;
+    max-width: 998px;
+    padding: 0 16px;
+    position: relative;
     width: 100%;
 }
-.protest h4 {
-    background-color: rgba(52, 136, 153, 0.91);
-    color: #962D3E;
+.more-info-header h4 {
+    background-image: url(../images/background-cash.jpg);
+    background-size: cover;
+    color: #f1f1f1;
     display: inline-block;
     font-size: 42px;
+    font-style: italic;
     font-weight: bold;
-    margin: 200px 0;
-    padding: 8px 16px;
-    text-transform: uppercase;
+    padding: 78px 16px 78px;
+    width: 100%;
 }
-.protest h4 .white {
-    color: #F6F4EA;
+.more-info-header .gradient-black {
+    background-image: url('../images/gradient-black.png');
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
 }
-@media screen and (max-width: 479px) {
-    .protest h4 {
+.more-info-header .sign-the-petition {
+    background-color: #96100f;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    left: 40px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: -30px;
+    transition: background-color 0.16s;
+    width: calc(100% - 80px);
+}
+.more-info-header .sign-the-petition:hover {
+    background-color: #A90F0E;
+}
+@media screen and (max-width: 769px) {
+    .more-info-header {
+        max-width: 413px;
+        padding: 0;
+    }
+    .more-info-header h4 {
         font-size: 32px;
+    }
+    .more-info-header .sign-the-petition {
+        display: block;
     }
 }
 section {
-    color: #222;
-    padding: 42px 0 25px;
+    color: #f1f1f1;
+    font-size: 18px;
+    padding: 42px 16px 25px;
+    max-width: 998px;
+    margin: 0 auto;
 }
 section a {
     color: #348899;
@@ -452,26 +468,9 @@ section p {
     line-height: 24px;
     padding: 0 32px;
 }
-section ul {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 36px auto 24px;
-    max-width: 800px;
-    padding: 0 32px;
-    text-align: left;
-}
-section ul li {
-    margin: 0 64px 16px 100px;
-}
-section ul li .fa {
-    font-size: 24px;
-    margin: 0 0 0 -36px;
-    position: absolute;
-}
-@media screen and (max-width: 479px) {
-    section ul li {
-        margin: 0 16px 16px 52px;
+@media screen and (max-width: 769px) {
+    section {
+        max-width: 413px;
     }
 }
 section button.add-your-name {
