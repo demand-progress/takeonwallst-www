@@ -872,3 +872,10 @@ section.midnight-share-train p {
     line-height: 1.4;
     padding: 16px 0 0;
 }
+.check-your-email-prompt .text a {
+    color: #5abdff;
+    transition: color .32s;
+}
+.check-your-email-prompt .text a:hover {
+    color: #75c8ff;
+}
