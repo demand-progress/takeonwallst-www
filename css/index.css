@@ -180,6 +180,9 @@ header .headlines h3 {
 .petition strong {
     font-weight: bold;
 }
+.petition em {
+    font-style: italic;
+}
 .action-wrapper {
     float: right;
     margin: 0 auto;
