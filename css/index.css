@@ -58,7 +58,7 @@ body {
 }
 @media screen and (max-width: 899px) {
     body {
-        background-image: none;
+        background-size: 110%;
     }
 }
 @media screen and (max-width: 769px) {
@@ -66,6 +66,11 @@ body {
         max-width: 100%;
         height: auto;
         width: auto;
+    }
+}
+@media screen and (max-width: 599px) {
+    body {
+        background-image: none;
     }
 }
 img.background {
