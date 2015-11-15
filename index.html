@@ -10,7 +10,7 @@
 
     <!-- Style -->
     <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Arvo:400,400italic,700">
     <link rel="stylesheet" href="css/index.css">
 
     <!-- Facebook -->
@@ -33,51 +33,47 @@
             <div class="outer-padding">
                 <div class="action-wrapper">
                     <div class="action">
-                        <img class="background" src="./images/background-gradient-blue.png" />
+                        <h2>SIGN THE PETITION</h2>
 
-                        <div class="above-background">
-                            <h2>SIGN THE PETITION</h2>
+                        <div class="form-wrapper">
+                            <form method="GET" action="https://act.demandprogress.org/act/" accept-charset="utf-8">
+                                <div class="input-grid">
+                                    <input id="first_name" name="first_name" placeholder="First name" type="text" autocomplete="on" />
+                                    <input id="last_name" name="last_name" placeholder="Last name" type="text" autocomplete="on" />
+                                    <input id="email" name="email" placeholder="Email" type="email" autocomplete="on" />
+                                    <input id="postcode" name="zip" placeholder="ZIP code" type="text" autocomplete="on" maxlength="10" />
+                                    <div id="thanks">Thanks!</div>
+                                    <button type="submit">Send now</button>
+                                </div>
 
-                            <div class="form-wrapper">
-                                <form method="GET" action="https://act.demandprogress.org/act/" accept-charset="utf-8">
-                                    <div class="input-grid">
-                                        <input id="first_name" name="first_name" placeholder="First name" type="text" autocomplete="on" />
-                                        <input id="last_name" name="last_name" placeholder="Last name" type="text" autocomplete="on" />
-                                        <input id="email" name="email" placeholder="Email" type="email" autocomplete="on" />
-                                        <input id="postcode" name="zip" placeholder="ZIP code" type="text" autocomplete="on" maxlength="10" />
-                                        <div id="thanks">Thanks!</div>
-                                        <button type="submit">Send now</button>
-                                    </div>
-
-                                    <div className="hidden">
-                                        <input type="hidden" name="action_user_agent" value="" />
-                                        <input type="hidden" name="country" value="United States" />
-                                        <input type="hidden" name="form_name" value="act-petition" />
-                                        <input type="hidden" name="js" value="1" />
-                                        <input type="hidden" name="opt_in" value="1" />
-                                        <input type="hidden" name="page" value="president-obamas-legacy-www" />
-                                        <input type="hidden" name="source" value="" />
-                                        <input type="hidden" name="url" value="" />
-                                        <input type="hidden" name="want_progress" value="1" />
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="squaredFour pooling">
-                                <input type="checkbox" value="consent" id="pooling-opt-in" name="action_swappable" checked="checked">
-                                <label class="checkbox" for="pooling-opt-in"></label>
-                                <label class="text" for="pooling-opt-in">
-                                    I consent to receiving emails from participating orgs.
-                                    <br>
-                                </label>
-                            </div>
-
-                            <hr>
-
-                            <span class="disclaimer">
-                                This app uses the We the People API, but is neither endorsed nor certified by the White House.
-                            </span>
+                                <div className="hidden">
+                                    <input type="hidden" name="action_user_agent" value="" />
+                                    <input type="hidden" name="country" value="United States" />
+                                    <input type="hidden" name="form_name" value="act-petition" />
+                                    <input type="hidden" name="js" value="1" />
+                                    <input type="hidden" name="opt_in" value="1" />
+                                    <input type="hidden" name="page" value="president-obamas-legacy-www" />
+                                    <input type="hidden" name="source" value="" />
+                                    <input type="hidden" name="url" value="" />
+                                    <input type="hidden" name="want_progress" value="1" />
+                                </div>
+                            </form>
                         </div>
+
+                        <div class="squaredFour pooling">
+                            <input type="checkbox" value="consent" id="pooling-opt-in" name="action_swappable" checked="checked">
+                            <label class="checkbox" for="pooling-opt-in"></label>
+                            <label class="text" for="pooling-opt-in">
+                                I consent to receiving emails from participating orgs.
+                                <br>
+                            </label>
+                        </div>
+
+                        <hr>
+
+                        <span class="disclaimer">
+                            This app uses the We the People API, but is neither endorsed nor certified by the White House.
+                        </span>
                     </div>
 
                     <div class="counter">
@@ -97,36 +93,33 @@
                 <!-- .action-wrapper -->
 
                 <div class="petition">
-                    <img class="background" src="./images/background-gradient-white.png" />
-                    <div class="above-background">
-                        <h2>PETITION TO THE PRESIDENT:</h2>
+                    <h2>PETITION TO THE PRESIDENT:</h2>
 
-                        <p>
-                            <strong>President Obama:</strong> In the nearly 6 years since
-                            <em>Citizens United</em>, super PACs and undisclosed money have come to dominate elections.
-                        </p>
+                    <p>
+                        <strong>President Obama:</strong> In the nearly 6 years since
+                        <em>Citizens United</em>, super PACs and undisclosed money have come to dominate elections.
+                    </p>
 
-                        <p>
-                            You have tools at your disposal to fight this influx of secret money into politics.
-                        </p>
+                    <p>
+                        You have tools at your disposal to fight this influx of secret money into politics.
+                    </p>
 
-                        <p>
-                            <strong>But you have done nothing.</strong>
-                        </p>
+                    <p>
+                        <strong>But you have done nothing.</strong>
+                    </p>
 
-                        <p>
-                            You must act now or be remembered as the president whose inaction aided the rise of secret money politics.
-                        </p>
+                    <p>
+                        You must act now or be remembered as the president whose inaction aided the rise of secret money politics.
+                    </p>
 
-                        <p>
-                            <strong>We demand</strong> that before your State of the Union address, you issue an executive order requiring federal contractors to disclose their political spending within 24 hours of it happening, taking effect before July 4, 2016.
-                        </p>
+                    <p>
+                        <strong>We demand</strong> that before your State of the Union address, you issue an executive order requiring federal contractors to disclose their political spending within 24 hours of it happening, taking effect before July 4, 2016.
+                    </p>
 
-                        <p>
-                            <strong>We also demand</strong> that you immediately call on the leaders you appointed to the SEC, IRS, and FCC to use their authority to unmask secret political donors, and fill all 5 FEC openings with nominees who will enforce the
-                            law.
-                        </p>
-                    </div>
+                    <p>
+                        <strong>We also demand</strong> that you immediately call on the leaders you appointed to the SEC, IRS, and FCC to use their authority to unmask secret political donors, and fill all 5 FEC openings with nominees who will enforce the
+                        law.
+                    </p>
                 </div>
                 <!-- .petition -->
             </div>

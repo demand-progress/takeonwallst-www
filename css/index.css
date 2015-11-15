@@ -148,8 +148,7 @@ header .headlines h3 {
 }
 .petition {
     background-color: #f1f1f1;
-    background-image: url(../images/background-gradient-white.png);
-    background-size: cover;
+    background-image: url(../images/pattern-gray.png);
     color: #000812;
     font-size: 20px;
     line-height: 1.4;
@@ -171,11 +170,9 @@ header .headlines h3 {
     text-align: center;
 }
 .petition p {
+    font-family: 'Arvo';
     font-size: 1em;
     padding: 0 0 24px;
-}
-.petition .large {
-    font-size: 1.5em;
 }
 .petition strong {
     font-weight: bold;
@@ -190,8 +187,7 @@ header .headlines h3 {
 }
 .action {
     background: #192c4b;
-    background-image: url('../images/background-gradient-blue.png');
-    background-size: cover;
+    background-image: url('../images/pattern-blue.png');
     margin: 0 auto;
     max-width: 413px;
     padding: 24px 0 32px;
@@ -204,11 +200,6 @@ header .headlines h3 {
     font-weight: bold;
     letter-spacing: 1px;
     padding: 0 0 16px;
-}
-.action h4 {
-    color: #F2EBC7;
-    font-size: 20px;
-    line-height: 1.2;
 }
 .action .form-wrapper .input-grid {
     margin: 0 57px;
@@ -233,15 +224,9 @@ header .headlines h3 {
         min-height: 0;
         padding: 38px 28px 32px;
     }
-    .petition .large {
-        font-size: 18px;
-    }
     .action h2 {
         font-size: 24px;
         padding: 0 0 16px;
-    }
-    .action h4 {
-        padding: 0;
     }
     .action .form-wrapper .input-grid {
         margin: 0 37px;
@@ -336,6 +321,7 @@ header .headlines h3 {
 }
 .action-wrapper .counter {
     background-color: #101c30;
+    background-image: url(../images/pattern-dark-blue.png);
     margin: 0 auto;
     max-width: 413px;
     position: relative;
@@ -382,6 +368,7 @@ header .headlines h3 {
 }
 .action-wrapper .counter::after {
     background-color: #101c30;
+    background-image: url(../images/pattern-dark-blue.png);
     content: '';
     height: 900px;
     left: 0;
@@ -581,12 +568,6 @@ section .share {
     max-width: 320px;
     width: 85%;
 }
-.logos .medium {
-    margin-bottom: 54px;
-}
-.logos .medium img {
-    max-width: 280px;
-}
 .overlay {
     position: fixed;
     left: 0;
@@ -730,16 +711,6 @@ section.midnight-share-train {
 }
 section.midnight-share-train a:hover {
     color: #fff;
-}
-section.midnight-share-train h3 {
-    font-size: 32px;
-    color: #F6F4EA;
-    font-weight: bold;
-    letter-spacing: normal;
-    text-transform: none;
-}
-section.midnight-share-train p {
-    color: #F6F4EA;
 }
 
 /* Checkbox */
