@@ -4,6 +4,7 @@ const StaticKit = require('./statickit');
 window.$ = window.jQuery = require('./vendor/jquery.min');
 
 // Constants
+const CALL_TOOL_COUNT = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact';
 const DOMAIN = 'presidentobamaslegacy.com';
 const EMAIL_SUBJECT = 'Sign this petition to fight big money in politics?';
 const EMAIL_BODY = 'Hi,\n\n\
@@ -35,8 +36,8 @@ $(() => {
     $('[name=url]').val(location.href);
 
     let petitionWasSentToWH = false;
-    const $form = $('.action form');
-    $form.on('submit', (e) => {
+    const $signatureForm = $('.home-page .action form');
+    $signatureForm.on('submit', (e) => {
         if (petitionWasSentToWH) {
             return true;
         }
@@ -77,11 +78,18 @@ $(() => {
         }, (res) => {
             if (res.success) {
                 petitionWasSentToWH = true;
-                $form.submit();
+                $signatureForm.submit();
             } else {
                 alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.')
             }
         });
+    });
+
+    const $callForm = $('.call-page .action form');
+    $callForm.on('submit', (e) => {
+        e.preventDefault();
+
+        alert('TODO: Set up call tool.');
     });
 
     $('.animated-scroll').on('click', (e) => {
@@ -147,6 +155,9 @@ $(() => {
         showCheckYourEmailPrompt();
         showThanks();
         location.hash = '';
+        setTimeout(() => {
+            location.href = './call';
+        }, 30 * 1000);
     }
 
     function showThanks() {
@@ -170,7 +181,22 @@ $(() => {
         });
     }
 
-    fetchPetitionCount();
+    function fetchCallCount() {
+        $.getJSON(CALL_TOOL_COUNT, (res) => {
+            if (res.count) {
+                $('.counter').addClass('loaded');
+                $('.counter .number-of-signatures').text(numberWithCommas(res.count));
+            }
+        });
+    }
+
+    if ($('body.home-page').length) {
+        fetchPetitionCount();
+    }
+
+    if ($('body.call-page').length) {
+        fetchCallCount();
+    }
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

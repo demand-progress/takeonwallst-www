@@ -1,0 +1,58 @@
+body {
+    background-color: #000;
+    background-image: url('../images/background-whitehouse.jpg');
+    background-size: cover;
+}
+
+header .intro {
+    color: #f1f1f1;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 32px 32px;
+}
+
+.action-wrapper {
+    float: none;
+}
+
+.action-wrapper .counter::after {
+    display: none;
+}
+
+.action .form-wrapper input {
+    border: none;
+    float: none;
+    margin: 0 0 8px;
+    width: 100%;
+}
+
+.disclaimer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.action-wrapper .counter {
+    overflow: hidden;
+    margin: 0 auto 8px;
+    padding: 0 0 32px;
+}
+
+.privacy {
+    background: none;
+}
+
+@media screen and (max-width: 759px) {
+    .call-page .action .form-wrapper button {
+        font-size: 18px;
+    }
+
+    .action-wrapper .counter .number-of-signatures {
+        font-size: 32px;
+    }
+
+    .action-wrapper .counter .number-of-signatures-label {
+        font-size: 24px;
+    }
+}
