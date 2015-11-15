@@ -101,7 +101,7 @@ header .headlines h1 {
     padding: 8px 16px 11px;
 }
 header .headlines h2 {
-    color: #96100f;
+    color: #b41615;
     font-size: 30px;
     letter-spacing: 1px;
     padding: 48px 16px 1px;
@@ -240,7 +240,7 @@ header .headlines h3 {
 }
 .action .form-wrapper #thanks {
     -webkit-transition: opacity 0.4s ease-out;
-    background: #96100f;
+    background: #b41615;
     color: #f0f4f5;
     display: none;
     font-size: 24px;
@@ -289,7 +289,7 @@ header .headlines h3 {
     }
 }
 .action .form-wrapper button {
-    background-color: #96100f;
+    background-color: #b41615;
     color: #f0f4f5;
     font-size: 24px;
     font-weight: bold;
@@ -298,7 +298,7 @@ header .headlines h3 {
     width: 100%;
 }
 .action .form-wrapper button:hover {
-    background-color: #A90F0E;
+    background-color: #a90a09;
 }
 .action hr {
     background-color: #101c30;
@@ -341,7 +341,7 @@ header .headlines h3 {
 }
 .action-wrapper .counter .number-of-signatures-label {
     clear: both;
-    color: #96100f;
+    color: #b41615;
     font-size: 28px;
     font-weight: bold;
 }
@@ -366,7 +366,7 @@ header .headlines h3 {
     padding: 28px 0 4px;
 }
 .action-wrapper .counter .signatures-needed-label {
-    color: #96100f;
+    color: #b41615;
     font-size: 28px;
     line-height: 1.2;
     padding: 0 0 32px;
@@ -419,7 +419,7 @@ button {
     width: 100%;
 }
 .more-info-header .sign-the-petition {
-    background-color: #96100f;
+    background-color: #b41615;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
     display: none;
     font-size: 20px;
@@ -432,7 +432,7 @@ button {
     width: 244px;
 }
 .more-info-header .sign-the-petition:hover {
-    background-color: #A90F0E;
+    background-color: #a90a09;
 }
 @media screen and (max-width: 769px) {
     .more-info-header {
