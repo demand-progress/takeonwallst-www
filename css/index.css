@@ -220,7 +220,6 @@ header .headlines h3 {
     vertical-align: top;
 }
 .action .form-wrapper #thanks {
-    -webkit-transition: opacity 0.4s ease-out;
     background: #b41615;
     color: #f0f4f5;
     display: none;
@@ -428,10 +427,10 @@ button {
         display: block;
     }
 }
-div.more-info-header, section.more-info {
+div.more-info-header, section.more-info, section.even-more-info {
     display: none;
 }
-.preview-more-info div.more-info-header, .preview-more-info section.more-info {
+.preview-more-info div.more-info-header, .preview-more-info section.more-info, .preview-more-info section.even-more-info {
     display: block;
 }
 section.more-info {
@@ -441,12 +440,15 @@ section.more-info {
     padding: 0 16px 25px;
     position: relative;
 }
-section.more-info h4 {
+section.more-info h4, section.even-more-info h4 {
     color: #0099ff;
     font-size: 34px;
     font-weight: bold;
     line-height: 1.2;
     margin: 0 auto;
+}
+section.more-info h4.gradient-dark-blue {
+    background-image: url('../images/gradient-dark-blue.png');
 }
 section.more-info h4.header-a {
     max-width: 550px;
@@ -457,6 +459,35 @@ section.more-info h4.header-b {
     font-style: italic;
     font-weight: bold;
     padding: 10px 0 0;
+}
+section.even-more-info {
+    background-image: url('../images/gradient-dark-blue.png');
+    background-repeat: repeat-x;
+    color: #f1f1f1;
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 54px 16px 25px;
+    position: relative;
+}
+section.even-more-info h4 {
+    padding: 0 32px 38px;
+}
+section.even-more-info h4.header-c {
+    max-width: 790px;
+}
+section.even-more-info h4.header-d {
+    max-width: 980px;
+}
+section.even-more-info h4.header-e {
+    max-width: 900px;
+}
+section.even-more-info p {}
+section.even-more-info p em {
+    font-style: italic;
+}
+section.even-more-info button.sign-the-petition {
+    font-size: 22px;
+    padding: 0 28px;
 }
 section .year {
     margin: 0 auto 26px;
@@ -493,8 +524,45 @@ section .year .description::before {
 section .year .description em {
     font-style: italic;
 }
+section .branch {
+    margin: 0 auto 26px;
+    max-width: 720px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+section .branch .name {
+    color: #b41615;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: right;
+    width: 120px;
+}
+section .branch .description {
+    color: #f1f1f1;
+    float: right;
+    line-height: 1.4;
+    margin: 0 0 0 18px;
+    padding: 0 0 0 28px;
+    position: relative;
+    width: calc(100% - 138px);
+}
+section .branch .description::before {
+    content: '';
+    background-color: #b41615;
+    top: 7px;
+    height: calc(100% - 15px);
+    width: 3px;
+    left: 0;
+    position: absolute;
+}
+section .branch .description em {
+    font-style: italic;
+}
 section .undisclosed-spending-infographic {
-    padding: 18px 0 0;
+    padding: 18px 0 15px;
 }
 section a {
     color: #0099ff;
@@ -504,13 +572,13 @@ section a:hover {
     color: #3b9cb0;
 }
 section p {
-    max-width: 810px;
-    margin: 0 auto 25px auto;
-    text-align: center;
     font-size: 18px;
     font-weight: 300;
     line-height: 24px;
+    margin: 0 auto 25px auto;
+    max-width: 830px;
     padding: 0 32px;
+    text-align: center;
 }
 section strong, section p.strong {
     font-weight: bold;
@@ -521,7 +589,7 @@ section button.sign-the-petition {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
-    margin: 8px 0 0;
+    margin: 18px 0 14px;
     padding: 0 32px;
     transition: background-color 0.16s;
 }
@@ -529,11 +597,11 @@ section button.sign-the-petition:hover {
     background-color: #a90a09;
 }
 @media screen and (max-width: 769px) {
-    section {
+    section.more-info {
         margin: -58px auto 0;
         max-width: 413px;
     }
-    section p {
+    section.more-info p, section.even-more-info p {
         font-size: 17px;
     }
 }
@@ -550,18 +618,18 @@ section .share {
     margin: 20px auto 10px auto;
 }
 .share a {
+    border-radius: 20px;
+    color: white;
     display: inline-block;
-    width: 120px;
+    font-size: 20px;
+    font-weight: 500;
     height: 40px;
     line-height: 40px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    padding-left: 30px;
-    font-size: 20px;
     margin: 0 10px 10px 10px;
-    border-radius: 20px;
-    font-weight: 500;
+    padding-left: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
 }
 .share a.facebook {
     background: #3B5999 url(../images/fb_white.png) 15px 8px no-repeat;
@@ -623,23 +691,20 @@ section .share {
     width: 85%;
 }
 .overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, .5);
-    display: table;
     display: none;
-    z-index: 9001;
-    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
     transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+    width: 100%;
+    z-index: 9001;
 }
 .overlay.invisible {
-    pointer-events: none;
-    opacity: 0;
     left: 99999px;
-    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
 }
 .overlay .gutter {
@@ -647,24 +712,23 @@ section .share {
     vertical-align: middle;
 }
 .overlay .gutter .modal {
-    max-width: 550px;
-    /*border-radius: 10px;*/
     background: white;
     color: black;
     margin: 0 auto;
+    max-width: 550px;
+    overflow: auto;
     padding-bottom: 10px;
     position: relative;
     text-align: center;
-    overflow: auto;
 }
 .overlay .modal a.close {
+    color: black;
+    font-size: 30px;
+    opacity: .4;
     position: absolute;
     right: 10px;
-    top: 0;
-    color: black;
-    opacity: .4;
     text-decoration: none;
-    font-size: 30px;
+    top: 0;
 }
 .overlay .modal a.close:hover {
     opacity: .6;
