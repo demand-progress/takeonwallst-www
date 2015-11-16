@@ -385,11 +385,12 @@ button {
     background-size: cover;
     color: #f1f1f1;
     display: inline-block;
-    font-size: 42px;
+    font-size: 36px;
     font-style: italic;
     font-weight: bold;
     padding: 78px 16px 78px;
     width: 100%;
+    word-spacing: 1px;
 }
 .more-info-header .gradient-black {
     background-image: url('../images/gradient-black.png');
@@ -427,21 +428,64 @@ button {
         display: block;
     }
 }
-section {
+div.more-info-header, section.more-info {
+    display: none;
+}
+.preview-more-info div.more-info-header, .preview-more-info section.more-info {
+    display: block;
+}
+section.more-info {
     color: #f1f1f1;
     font-size: 18px;
     margin: -36px auto 0;
-    max-width: 998px;
     padding: 0 16px 25px;
     position: relative;
 }
-div.more-info-header,
-section.more-info {
-    display: none;
+section.more-info h4 {
+    color: #0099ff;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 auto;
 }
-.preview-more-info div.more-info-header,
-.preview-more-info section.more-info {
-    display: block;
+section.more-info h4.header-a {
+    max-width: 550px;
+    padding: 20px 0 42px;
+}
+section .year {
+    margin: 0 auto 26px;
+    max-width: 550px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+section .year .number {
+    color: #b41615;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.3;
+    width: 66px;
+}
+section .year .description {
+    color: #f1f1f1;
+    float: right;
+    line-height: 1.4;
+    padding: 0 0 0 17px;
+    position: relative;
+    width: calc(100% - 66px);
+}
+section .year .description::before {
+    content: '';
+    background-color: #b41615;
+    top: 7px;
+    height: calc(100% - 15px);
+    width: 3px;
+    left: 0;
+    position: absolute;
+}
+section .year .description em {
+    font-style: italic;
 }
 section a {
     color: #0099ff;
@@ -451,7 +495,7 @@ section a:hover {
     color: #3b9cb0;
 }
 section p {
-    max-width: 800px;
+    max-width: 810px;
     margin: 0 auto 25px auto;
     text-align: center;
     font-size: 18px;
