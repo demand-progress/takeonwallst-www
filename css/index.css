@@ -439,6 +439,10 @@ div.more-info-header,
 section.more-info {
     display: none;
 }
+.preview-more-info div.more-info-header,
+.preview-more-info section.more-info {
+    display: block;
+}
 section a {
     color: #0099ff;
     font-weight: bold;
