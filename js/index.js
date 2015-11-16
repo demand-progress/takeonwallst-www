@@ -118,6 +118,10 @@ $(() => {
         showThanks();
     });
 
+    if ($callForm.length && StaticKit.query.after === 'signing-petition') {
+        $('body').addClass('coming-from-petition');
+    }
+
     $('.animated-scroll').on('click', (e) => {
         const target = $(e.target).data('target');
         $('html, body').stop().animate({
@@ -179,7 +183,7 @@ $(() => {
         showThanks();
         location.hash = '';
         setTimeout(() => {
-            location.href = './call';
+            location.href = './call?after=signing-petition';
         }, 30 * 1000);
     }
 

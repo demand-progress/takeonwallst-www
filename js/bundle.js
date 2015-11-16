@@ -106,6 +106,10 @@ $(function () {
         showThanks();
     });
 
+    if ($callForm.length && StaticKit.query.after === 'signing-petition') {
+        $('body').addClass('coming-from-petition');
+    }
+
     $('.animated-scroll').on('click', function (e) {
         var target = $(e.target).data('target');
         $('html, body').stop().animate({
@@ -161,7 +165,7 @@ $(function () {
         showThanks();
         location.hash = '';
         setTimeout(function () {
-            location.href = './call';
+            location.href = './call?after=signing-petition';
         }, 30 * 1000);
     }
 

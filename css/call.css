@@ -14,6 +14,13 @@ header .intro {
     max-width: 720px;
     padding: 0 32px 32px;
 }
+header .intro .mentioning-petition,
+body.coming-from-petition header .intro .not-mentioning-petition {
+    display: none;
+}
+body.coming-from-petition header .intro .mentioning-petition {
+    display: block;
+}
 header .intro strong {
     font-weight: bold;
 }
