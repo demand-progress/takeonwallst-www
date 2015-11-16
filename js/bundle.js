@@ -87,6 +87,8 @@ $(function () {
     $callForm.on('submit', function (e) {
         e.preventDefault();
 
+        Modal.show('.overlay.script');
+
         alert('TODO: Set up call tool.');
     });
 
