@@ -481,7 +481,9 @@ section.even-more-info h4.header-d {
 section.even-more-info h4.header-e {
     max-width: 900px;
 }
-section.even-more-info p {}
+section.even-more-info p {
+    max-width: 870px;
+}
 section.even-more-info p em {
     font-style: italic;
 }
@@ -563,6 +565,7 @@ section .branch .description em {
 }
 section .undisclosed-spending-infographic {
     padding: 18px 0 15px;
+    max-width: 100%;
 }
 section a {
     color: #0099ff;
@@ -792,7 +795,7 @@ div.social-buttons {
         width: 33px;
     }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 799px) {
     div.social-buttons {
         display: none;
     }
