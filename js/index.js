@@ -4,15 +4,23 @@ const StaticKit = require('./statickit');
 window.$ = window.jQuery = require('./vendor/jquery.min');
 
 // Constants
+const SOURCE = StaticKit.query.source;
+const SOURCE_CLEANED = StaticKit.query.cleanedSource;
 const CALL_TOOL_COUNT = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact';
-const DOMAIN = 'presidentobamaslegacy.com';
-const EMAIL_SUBJECT = 'Sign this petition to fight big money in politics?';
-const EMAIL_BODY = 'Hi,\n\n\
-I just signed the petition telling the presidential candidates to lay out a concrete, serious plan to fight big money in politics.\n\n\
-The only way we\'ll make progress is if candidates know the American people are demanding a change. Could you sign, too?\n\n\
-http://www.' + DOMAIN + '/?source=${source}\n\n\
-Thanks!';
-const TWEET_TEXT = 'I just called on the presidential candidates to lay out a concrete plan to #FightBigMoney in politics! Join here: http://' + DOMAIN + '/?source=${source}';
+const DOMAIN = 'presidentobamaslegacy.org';
+const EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
+const EMAIL_BODY = `Hi,
+
+I just signed a petition at PresidentObamasLegacy.org telling President Obama to immediately act to fight the secret money corroding our political system.
+
+Nearly 6 years after Citizens United, President Obama still hasn't used any of the tools he has to reduce secret money spent by billionaires and wealthy special interests in our elections
+
+The petition is integrated with the White House We The People petition platform – so if we get to 100,000 signatures, Obama will publicly respond. Could you help us get there?
+
+http://${DOMAIN}/?source=${SOURCE_CLEANED}-emailshare
+
+Thanks!`;
+const TWEET_TEXT = `Join me: Tell @POTUS that he must fight secret money in politics right away. PresidentObamasLegacy.org/?source=${SOURCE_CLEANED}-twittershare #ObamaMustAct`;
 const WTP_API_COUNT_KEY = '556180fe1250efc8e58f9b407c4d7180b784b77c233037ac28b1b9c0c028beec';
 const WTP_API_COUNT_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/count?callback=?';
 const WTP_API_SIGN_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
@@ -32,7 +40,7 @@ $(() => {
 
     // Populate special form fields
     $('[name=action_user_agent]').val(navigator.userAgent);
-    $('[name=source]').val(StaticKit.query.source);
+    $('[name=source]').val(SOURCE_CLEANED);
     $('[name=url]').val(location.href);
 
     let petitionWasSentToWH = false;
@@ -104,31 +112,28 @@ $(() => {
     $('a.facebook').on('click', (e) => {
         e.preventDefault();
 
-        window.open(
+        const url =
             'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(DOMAIN + '/?source=' + StaticKit.query.cleanedSource + '-fbshare')
-        );
+            encodeURIComponent(`${DOMAIN}/?source=${SOURCE_CLEANED}-fbshare`);
+        window.open(url);
     });
 
     $('a.twitter').on('click', (e) => {
         e.preventDefault();
 
-        window.open(
+        const url =
             'https://twitter.com/intent/tweet?text=' +
-            encodeURIComponent(
-                TWEET_TEXT.replace('${source}', StaticKit.query.cleanedSource + '-twittershare')
-            )
-        );
+            encodeURIComponent(TWEET_TEXT);
+        window.open(url);
     });
 
     $('a.email').on('click', (e) => {
         e.preventDefault();
 
-        window.location.href =
+        const url =
             'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
-            '&body=' + encodeURIComponent(
-                EMAIL_BODY.replace('${source}', StaticKit.query.cleanedSource + '-emailshare')
-            );
+            '&body=' + encodeURIComponent(EMAIL_BODY);
+        window.location.href = url;
     });
 
     $('a.the-letter').on('click', (e) => {
