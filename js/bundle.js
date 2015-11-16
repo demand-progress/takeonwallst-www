@@ -15,11 +15,11 @@ var DOMAIN = 'presidentobamaslegacy.org';
 var EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
 var EMAIL_BODY = 'Hi,\n\nI just signed a petition at PresidentObamasLegacy.org telling President Obama to immediately act to fight the secret money corroding our political system.\n\nNearly 6 years after Citizens United, President Obama still hasn\'t used any of the tools he has to reduce secret money spent by billionaires and wealthy special interests in our elections\n\nThe petition is integrated with the White House We The People petition platform – so if we get to 100,000 signatures, Obama will publicly respond. Could you help us get there?\n\nhttp://' + DOMAIN + '/?source=' + SOURCE_CLEANED + '-emailshare\n\nThanks!';
 var TWEET_TEXT = 'Join me: Tell @POTUS that he must fight secret money in politics right away. PresidentObamasLegacy.org/?source=' + SOURCE_CLEANED + '-twittershare #ObamaMustAct';
-var WTP_API_COUNT_KEY = '556180fe1250efc8e58f9b407c4d7180b784b77c233037ac28b1b9c0c028beec';
+var WTP_API_COUNT_KEY = '942780e090350c6e7fc8db478df66201ff195601650f56bde98bda19b7205e90';
 var WTP_API_COUNT_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/count?callback=?';
-var WTP_API_SIGN_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0fdce55b0f';
+var WTP_API_SIGN_KEY = '8b35b90fe50197fed0e480e109a9e77757a84a9e6815f3611b5da34fd37bb50a';
 var WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
-var WTP_PETITION_ID = '2128396';
+var WTP_PETITION_ID = '2158641';
 var REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'postcode'];
 
 // Globalize jQuery
