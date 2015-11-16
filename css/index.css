@@ -435,6 +435,10 @@ section {
     padding: 0 16px 25px;
     position: relative;
 }
+div.more-info-header,
+section.more-info {
+    display: none;
+}
 section a {
     color: #0099ff;
     font-weight: bold;
