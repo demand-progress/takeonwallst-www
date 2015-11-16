@@ -22,6 +22,7 @@ header .intro strong {
     margin: 0 0 16px;
 }
 .action-wrapper .counter {
+    display: none;
     margin: 0 auto 8px;
     overflow: hidden;
     padding: 0 0 32px;
@@ -29,7 +30,7 @@ header .intro strong {
 .action-wrapper .counter::after {
     display: none;
 }
-.action .form-wrapper input {
+.call-page .action .form-wrapper input {
     border: none;
     float: none;
     margin: 0 0 8px;

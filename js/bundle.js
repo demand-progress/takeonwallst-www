@@ -103,6 +103,7 @@ $(function () {
         });
 
         Modal.show('.overlay.script');
+        showThanks();
     });
 
     $('.animated-scroll').on('click', function (e) {
