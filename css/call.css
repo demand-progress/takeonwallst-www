@@ -22,7 +22,6 @@ header .intro strong {
     margin: 0 0 16px;
 }
 .action-wrapper .counter {
-    display: none;
     margin: 0 auto 8px;
     overflow: hidden;
     padding: 0 0 32px;

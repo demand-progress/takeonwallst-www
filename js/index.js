@@ -1,12 +1,13 @@
 // Modules
 const Modal = require('./modal');
 const StaticKit = require('./statickit');
-window.$ = window.jQuery = require('./vendor/jquery.min');
+const $ = require('./vendor/jquery.min');
 
 // Constants
 const SOURCE = StaticKit.query.source;
 const SOURCE_CLEANED = StaticKit.query.cleanedSource;
-const CALL_TOOL_COUNT = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact';
+const CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
+const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 const DOMAIN = 'presidentobamaslegacy.org';
 const EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
 const EMAIL_BODY = `Hi,
@@ -32,6 +33,9 @@ const REQUIRED_FIELDS = [
     'email',
     'postcode',
 ];
+
+// Globalize jQuery
+window.jQuery = window.$ = $;
 
 // After the page loads
 $(() => {
@@ -97,9 +101,20 @@ $(() => {
     $callForm.on('submit', (e) => {
         e.preventDefault();
 
-        Modal.show('.overlay.script');
+        const phone = $('#phone').val().replace(/[^\d]/g, '');
 
-        alert('TODO: Set up call tool.');
+        if (phone.length < 10) {
+            $('#phone').focus();
+            return alert('Please enter your 10 digit phone number.');
+        }
+
+        $.getJSON(CALL_TOOL_URL + phone, (res) => {
+            if (res.message !== 'queued') {
+                alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.')
+            }
+        });
+
+        Modal.show('.overlay.script');
     });
 
     $('.animated-scroll').on('click', (e) => {
@@ -189,7 +204,7 @@ $(() => {
     }
 
     function fetchCallCount() {
-        $.getJSON(CALL_TOOL_COUNT, (res) => {
+        $.getJSON(CALL_TOOL_COUNT_URL, (res) => {
             if (res.count) {
                 $('.counter').addClass('loaded');
                 $('.counter .number-of-signatures').text(numberWithCommas(res.count));

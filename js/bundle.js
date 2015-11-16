@@ -4,12 +4,13 @@
 // Modules
 var Modal = require('./modal');
 var StaticKit = require('./statickit');
-window.$ = window.jQuery = require('./vendor/jquery.min');
+var $ = require('./vendor/jquery.min');
 
 // Constants
 var SOURCE = StaticKit.query.source;
 var SOURCE_CLEANED = StaticKit.query.cleanedSource;
-var CALL_TOOL_COUNT = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact';
+var CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
+var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 var DOMAIN = 'presidentobamaslegacy.org';
 var EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
 var EMAIL_BODY = 'Hi,\n\nI just signed a petition at PresidentObamasLegacy.org telling President Obama to immediately act to fight the secret money corroding our political system.\n\nNearly 6 years after Citizens United, President Obama still hasn\'t used any of the tools he has to reduce secret money spent by billionaires and wealthy special interests in our elections\n\nThe petition is integrated with the White House We The People petition platform – so if we get to 100,000 signatures, Obama will publicly respond. Could you help us get there?\n\nhttp://' + DOMAIN + '/?source=' + SOURCE_CLEANED + '-emailshare\n\nThanks!';
@@ -20,6 +21,9 @@ var WTP_API_SIGN_KEY = '011879d43dfe95dd96283030ca383e252d59c3fd414f945695dcda0f
 var WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
 var WTP_PETITION_ID = '2128396';
 var REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'postcode'];
+
+// Globalize jQuery
+window.jQuery = window.$ = $;
 
 // After the page loads
 $(function () {
@@ -85,9 +89,20 @@ $(function () {
     $callForm.on('submit', function (e) {
         e.preventDefault();
 
-        Modal.show('.overlay.script');
+        var phone = $('#phone').val().replace(/[^\d]/g, '');
 
-        alert('TODO: Set up call tool.');
+        if (phone.length < 10) {
+            $('#phone').focus();
+            return alert('Please enter your 10 digit phone number.');
+        }
+
+        $.getJSON(CALL_TOOL_URL + phone, function (res) {
+            if (res.message !== 'queued') {
+                alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.');
+            }
+        });
+
+        Modal.show('.overlay.script');
     });
 
     $('.animated-scroll').on('click', function (e) {
@@ -171,7 +186,7 @@ $(function () {
     }
 
     function fetchCallCount() {
-        $.getJSON(CALL_TOOL_COUNT, function (res) {
+        $.getJSON(CALL_TOOL_COUNT_URL, function (res) {
             if (res.count) {
                 $('.counter').addClass('loaded');
                 $('.counter .number-of-signatures').text(numberWithCommas(res.count));
