@@ -498,18 +498,26 @@ section.even-more-info .quote-and-portrait .quote {
 }
 section.even-more-info .quote-and-portrait .quote .quote-open {
     background-image: url('../images/quote-open.png');
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 154px 97px;
     height: 97px;
     left: 0;
     position: absolute;
     top: 0;
+    transition: background-size .32s;
     width: 154px;
 }
 section.even-more-info .quote-and-portrait .quote .quote-close {
     background-image: url('../images/quote-close.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: 154px 97px;
     bottom: 12px;
     height: 97px;
     position: absolute;
     right: 0;
+    transition: background-size .32s;
     width: 154px;
 }
 section.even-more-info .quote-and-portrait .quote .text {
@@ -575,18 +583,14 @@ section.even-more-info .quote-and-portrait.biden .quote {
         font-size: 16px;
     }
     section.even-more-info .quote-and-portrait .quote .quote-open {
-        background-size: cover;
-        height: 49px;
+        background-size: 77px 49px;
         left: 0;
         top: 0;
-        width: 77px;
     }
     section.even-more-info .quote-and-portrait .quote .quote-close {
-        background-size: cover;
+        background-size: 77px 49px;
         bottom: 12px;
-        height: 49px;
         right: 0;
-        width: 77px;
     }
 }
 section.even-more-info button.sign-the-petition {
