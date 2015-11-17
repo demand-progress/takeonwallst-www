@@ -567,6 +567,28 @@ section.even-more-info .quote-and-portrait.biden .quote {
         padding: 32px 0;
     }
 }
+@media screen and (max-width: 549px) {
+    section.even-more-info .quote-and-portrait .quote {
+        padding: 32px;
+    }
+    section.even-more-info .quote-and-portrait .quote .text {
+        font-size: 16px;
+    }
+    section.even-more-info .quote-and-portrait .quote .quote-open {
+        background-size: cover;
+        height: 49px;
+        left: 0;
+        top: 0;
+        width: 77px;
+    }
+    section.even-more-info .quote-and-portrait .quote .quote-close {
+        background-size: cover;
+        bottom: 12px;
+        height: 49px;
+        right: 0;
+        width: 77px;
+    }
+}
 section.even-more-info button.sign-the-petition {
     font-size: 22px;
     padding: 0 28px;
