@@ -4,6 +4,7 @@ const StaticKit = require('./statickit');
 const $ = require('./vendor/jquery.min');
 
 // Constants
+const EMAIL_REGEX = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const SOURCE = StaticKit.query.source;
 const SOURCE_CLEANED = StaticKit.query.cleanedSource;
 const CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
@@ -77,15 +78,21 @@ $(() => {
             return;
         }
 
+        if (!EMAIL_REGEX.test($('#email').val().trim())) {
+            $('#email').focus();
+            alert('Please enter your valid email');
+            return;
+        }
+
         // Thanking user
         showThanks();
 
         // Sending request to WH API
         $.getJSON(WTP_API_SIGN_URL, {
-            email: $('#email').val(),
+            email: $('#email').val().trim(),
             key: WTP_API_SIGN_KEY,
-            first_name: $('#first_name').val(),
-            last_name: $('#last_name').val(),
+            first_name: $('#first_name').val().trim(),
+            last_name: $('#last_name').val().trim(),
             petition_id: WTP_PETITION_ID,
         }, (res) => {
             if (res.success) {
