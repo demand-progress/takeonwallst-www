@@ -55,6 +55,10 @@ $(() => {
             return true;
         }
 
+        if (window.optimizely) {
+            window.optimizely.push(["trackEvent", "formSubmissionAttempt"]);
+        }
+
         e.preventDefault();
 
         let valid = true;
@@ -82,6 +86,10 @@ $(() => {
             $('#email').focus();
             alert('Please enter your valid email');
             return;
+        }
+
+        if (window.optimizely) {
+            window.optimizely.push(['trackEvent', 'formSubmissionSuccess']);
         }
 
         // Thanking user

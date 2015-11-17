@@ -123,10 +123,10 @@ header .headlines h3 {
 .petition-and-form-wrapper {
     margin: 0 auto;
     max-width: 998px;
-    overflow: hidden;
 }
 .petition-and-form-wrapper > .outer-padding {
-    padding: 0 16px;
+    background-image: url(../images/pattern-dark-blue.png);
+    margin: 0 16px;
 }
 .petition {
     background-color: #f1f1f1;
@@ -136,7 +136,7 @@ header .headlines h3 {
     line-height: 1.4;
     margin: 0 413px 0 0;
     min-height: 705px;
-    padding: 22px 40px 16px;
+    padding: 22px 40px 24px;
     text-align: left;
     position: relative;
 }
@@ -196,6 +196,7 @@ header .headlines h3 {
         display: none;
     }
     .petition-and-form-wrapper > .outer-padding {
+        background-image: none;
         padding: 0;
     }
     .petition {
@@ -355,6 +356,7 @@ header .headlines h3 {
     background-color: #101c30;
     background-image: url(../images/pattern-dark-blue.png);
     content: '';
+    display: none;
     height: 900px;
     left: 0;
     position: absolute;
@@ -387,7 +389,7 @@ button {
     font-size: 36px;
     font-style: italic;
     font-weight: bold;
-    padding: 78px 16px 78px;
+    padding: 100px 16px 56px;
     width: 100%;
     word-spacing: 1px;
 }
@@ -399,7 +401,7 @@ button {
     position: absolute;
     width: 100%;
 }
-.more-info-header .sign-the-petition {
+.petition .sign-the-petition, .more-info-header .sign-the-petition {
     background-color: #b41615;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
     display: none;
@@ -412,10 +414,19 @@ button {
     transition: background-color 0.16s;
     width: 244px;
 }
-.more-info-header .sign-the-petition:hover {
+.petition .sign-the-petition:hover, .more-info-header .sign-the-petition:hover {
     background-color: #a90a09;
 }
+.preview-more-info .petition .sign-the-petition {
+    bottom: -28px;
+    display: block;
+    top: auto;
+    z-index: 999;
+}
 @media screen and (max-width: 769px) {
+    .petition .sign-the-petition {
+        display: none;
+    }
     .more-info-header {
         /*max-width: 413px;*/
         padding: 0;

@@ -43,6 +43,10 @@ $(function () {
             return true;
         }
 
+        if (window.optimizely) {
+            window.optimizely.push(["trackEvent", "formSubmissionAttempt"]);
+        }
+
         e.preventDefault();
 
         var valid = true;
@@ -70,6 +74,10 @@ $(function () {
             $('#email').focus();
             alert('Please enter your valid email');
             return;
+        }
+
+        if (window.optimizely) {
+            window.optimizely.push(['trackEvent', 'formSubmissionSuccess']);
         }
 
         // Thanking user
