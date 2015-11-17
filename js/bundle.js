@@ -1,13 +1,43 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
+var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+function validate(email) {
+    email = email.trim();
+
+    if (/ /.test(email)) {
+        return false;
+    }
+
+    var segments = email.split('.');
+    var TLD = segments[segments.length - 1];
+    var validTLD = /^[A-z]+$/.test(TLD);
+    if (!validTLD) {
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        return false;
+    }
+
+    return true;
+}
+
+module.exports = {
+    validate: validate
+};
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
 // Modules
+var Email = require('./email');
 var Modal = require('./modal');
 var StaticKit = require('./statickit');
 var $ = require('./vendor/jquery.min');
 
 // Constants
-var EMAIL_REGEX = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 var SOURCE = StaticKit.query.source;
 var SOURCE_CLEANED = StaticKit.query.cleanedSource;
 var CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
@@ -70,7 +100,9 @@ $(function () {
             return;
         }
 
-        if (!EMAIL_REGEX.test($('#email').val().trim())) {
+        var email = $('#email').val().trim();
+
+        if (!Email.validate(email)) {
             $('#email').focus();
             alert('Please enter your valid email');
             return;
@@ -85,7 +117,7 @@ $(function () {
 
         // Sending request to WH API
         $.getJSON(WTP_API_SIGN_URL, {
-            email: $('#email').val().trim(),
+            email: email,
             key: WTP_API_SIGN_KEY,
             first_name: $('#first_name').val().trim(),
             last_name: $('#last_name').val().trim(),
@@ -242,7 +274,7 @@ $(function () {
     }
 });
 
-},{"./modal":2,"./statickit":3,"./vendor/jquery.min":4}],2:[function(require,module,exports){
+},{"./email":1,"./modal":3,"./statickit":4,"./vendor/jquery.min":5}],3:[function(require,module,exports){
 'use strict';
 
 var $ = require('./vendor/jquery.min');
@@ -305,7 +337,7 @@ var Modal = {
 
 module.exports = Modal;
 
-},{"./vendor/jquery.min":4}],3:[function(require,module,exports){
+},{"./vendor/jquery.min":5}],4:[function(require,module,exports){
 'use strict';
 
 var $ = require('./vendor/jquery.min');
@@ -375,7 +407,7 @@ StaticKit.start = function () {
 
 module.exports = StaticKit;
 
-},{"./vendor/jquery.min":4}],4:[function(require,module,exports){
+},{"./vendor/jquery.min":5}],5:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
@@ -2278,4 +2310,4 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
   }, (typeof b === "undefined" ? "undefined" : _typeof(b)) === U && (a.jQuery = a.$ = n), n;
 });
 
-},{}]},{},[1]);
+},{}]},{},[2]);
