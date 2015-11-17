@@ -555,9 +555,12 @@ section.even-more-info .quote-and-portrait.biden .quote {
         display: none;
     }
     section.even-more-info .quote-and-portrait.obama .quote, section.even-more-info .quote-and-portrait.biden .quote {
-        position: static;
+        bottom: auto;
+        left: auto;
         max-width: 720px;
         position: relative;
+        right: auto;
+        top: auto;
         width: 100%;
     }
     section.even-more-info .quote-and-portrait.obama, section.even-more-info .quote-and-portrait.biden {
