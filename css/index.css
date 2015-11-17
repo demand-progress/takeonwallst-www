@@ -679,7 +679,9 @@ section .branch .description em {
     }
     section .branch .description {
         font-size: 15px;
-        width: calc(100% - 88px);
+        margin: 0;
+        padding: 0 0 0 18px;
+        width: calc(100% - 84px);
     }
 }
 section .undisclosed-spending-infographic {
