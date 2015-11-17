@@ -596,7 +596,7 @@ section.even-more-info .quote-and-portrait.biden .quote {
         width: 135px;
     }
 }
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 709px) {
     section.even-more-info .quote-and-portrait .portrait {
         display: none;
     }
