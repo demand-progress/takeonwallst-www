@@ -487,6 +487,83 @@ section.even-more-info p {
 section.even-more-info p em {
     font-style: italic;
 }
+section.even-more-info .quote-and-portrait {
+    overflow: hidden;
+}
+section.even-more-info .quote-and-portrait .quote {
+    display: inline-block;
+    font-style: italic;
+    position: relative;
+    padding: 36px 20px 0 55px;
+}
+section.even-more-info .quote-and-portrait .quote .quote-open {
+    background-image: url('../images/quote-open.png');
+    height: 97px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 154px;
+}
+section.even-more-info .quote-and-portrait .quote .quote-close {
+    background-image: url('../images/quote-close.png');
+    bottom: 12px;
+    height: 97px;
+    position: absolute;
+    right: 0;
+    width: 154px;
+}
+section.even-more-info .quote-and-portrait .quote .text {
+    font-size: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 9;
+}
+section.even-more-info .quote-and-portrait .portrait {
+    display: inline-block;
+}
+section.even-more-info .quote-and-portrait.obama {
+    padding: 0 0 117px;
+}
+section.even-more-info .quote-and-portrait.obama .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.obama .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
+section.even-more-info .quote-and-portrait.biden {
+    padding: 3px 0 91px;
+}
+section.even-more-info .quote-and-portrait.biden .portrait {
+    height: 318px;
+    margin: 0 0 0 40px;
+    width: 269px;
+}
+section.even-more-info .quote-and-portrait.biden .quote {
+    max-width: 100%;
+    position: relative;
+    top: -7px;
+    width: 710px;
+}
+@media screen and (max-width: 1099px) {
+    section.even-more-info .quote-and-portrait .portrait {
+        display: none;
+    }
+    section.even-more-info .quote-and-portrait.obama .quote, section.even-more-info .quote-and-portrait.biden .quote {
+        position: static;
+        max-width: 720px;
+        position: relative;
+        width: 100%;
+    }
+    section.even-more-info .quote-and-portrait.obama, section.even-more-info .quote-and-portrait.biden {
+        padding: 32px 0;
+    }
+}
 section.even-more-info button.sign-the-petition {
     font-size: 22px;
     padding: 0 28px;
