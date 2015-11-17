@@ -669,6 +669,19 @@ section .branch .description::before {
 section .branch .description em {
     font-style: italic;
 }
+@media screen and (max-width: 399px) {
+    section .branch .name {
+        font-size: 18px;
+        width: 70px;
+    }
+    section .branch .name.executive-order {
+        font-size: 13px;
+    }
+    section .branch .description {
+        font-size: 15px;
+        width: calc(100% - 88px);
+    }
+}
 section .undisclosed-spending-infographic {
     padding: 18px 0 15px;
     max-width: 100%;
