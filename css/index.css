@@ -561,6 +561,7 @@ section.even-more-info .quote-and-portrait.biden {
 section.even-more-info .quote-and-portrait.biden .portrait {
     height: 318px;
     margin: 0 0 0 40px;
+    position: relative;
     width: 269px;
 }
 section.even-more-info .quote-and-portrait.biden .quote {
@@ -570,6 +571,32 @@ section.even-more-info .quote-and-portrait.biden .quote {
     width: 710px;
 }
 @media screen and (max-width: 1099px) {
+    section.even-more-info .quote-and-portrait.obama {
+        padding: 54px 0 117px;
+    }
+    section.even-more-info .quote-and-portrait.obama .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.biden {
+        padding: 46px 0 91px;
+    }
+    section.even-more-info .quote-and-portrait.biden .quote {
+        width: 480px;
+    }
+}
+@media screen and (max-width: 849px) {
+    section.even-more-info .quote-and-portrait.obama .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.biden .portrait {
+        height: 159px;
+        top: -40px;
+        width: 135px;
+    }
+}
+@media screen and (max-width: 699px) {
     section.even-more-info .quote-and-portrait .portrait {
         display: none;
     }
