@@ -1,8 +1,3 @@
-body {
-    background-color: #000;
-    background-image: url('../images/background-whitehouse.jpg');
-    background-size: cover;
-}
 header .headlines h1, header .headlines h2, header .headlines h3 {
     text-shadow: none;
 }
