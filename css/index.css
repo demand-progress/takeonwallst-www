@@ -1140,11 +1140,13 @@ section.midnight-share-train a:hover {
 .check-your-email-prompt .text a:hover {
     color: #75c8ff;
 }
+@media screen and (max-height: 459px) {
+    .check-your-email-prompt h5 {
+        display: none;
+    }
+}
 @media screen and (max-height: 459px), (max-width: 459px) {
     .check-your-email-prompt {
         font-size: 12px;
-    }
-    .check-your-email-prompt h5 {
-        display: none;
     }
 }
