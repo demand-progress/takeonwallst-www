@@ -419,7 +419,7 @@ button {
 .petition .sign-the-petition:hover, .more-info-header .sign-the-petition:hover {
     background-color: #a90a09;
 }
-.preview-more-info .petition .sign-the-petition {
+.petition .sign-the-petition {
     bottom: -28px;
     display: block;
     top: auto;
@@ -439,12 +439,6 @@ button {
     .more-info-header .sign-the-petition {
         display: block;
     }
-}
-div.more-info-header, section.more-info, section.even-more-info {
-    display: none;
-}
-.preview-more-info div.more-info-header, .preview-more-info section.more-info, .preview-more-info section.even-more-info {
-    display: block;
 }
 section.more-info {
     color: #f1f1f1;
