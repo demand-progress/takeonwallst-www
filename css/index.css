@@ -1102,21 +1102,27 @@ section.midnight-share-train a:hover {
     width: 100%;
     z-index: 9999;
 }
+.check-your-email-prompt.visible {
+    display: table;
+}
+.check-your-email-prompt .alignment {
+    display: table-cell;
+    vertical-align: middle;
+}
 .check-your-email-prompt .text {
     margin: 0 auto;
-    max-width: 320px;
+    max-width: 580px;
     padding: 16px;
     position: relative;
-    top: calc((100% - 455px) / 2);
 }
 .check-your-email-prompt .text h4 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     line-height: 1.4;
     text-transform: uppercase;
 }
 .check-your-email-prompt .text p {
-    font-size: 1em;
+    font-size: 1.1em;
     line-height: 1.4;
     padding: 16px 0 0;
 }
@@ -1127,11 +1133,8 @@ section.midnight-share-train a:hover {
 .check-your-email-prompt .text a:hover {
     color: #75c8ff;
 }
-@media screen and (max-height: 459px) {
+@media screen and (max-height: 459px), (max-width: 459px) {
     .check-your-email-prompt {
         font-size: 14px;
-    }
-    .check-your-email-prompt .text {
-        top: calc((100% - 330px) / 2);
     }
 }

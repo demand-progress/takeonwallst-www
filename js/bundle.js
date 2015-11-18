@@ -100,7 +100,7 @@ $(function () {
             return;
         }
 
-        var email = $('#email').val().trim();
+        var email = $('#email').val().trim().toLowerCase();
 
         if (!Email.validate(email)) {
             $('#email').focus();
@@ -207,7 +207,7 @@ $(function () {
     }
 
     // Hashes
-    if (location.hash === '#sent') {
+    if (location.hash === '#sent' || StaticKit.query.sent) {
         showCheckYourEmailPrompt();
         showThanks();
         location.hash = '';
@@ -264,9 +264,7 @@ $(function () {
 
     function showCheckYourEmailPrompt() {
         var $prompt = $('.check-your-email-prompt');
-        $prompt.css({
-            display: 'block'
-        });
+        $prompt.addClass('visible');
         $prompt[0].offsetHeight; // Reflow
         $prompt.css({
             opacity: 1

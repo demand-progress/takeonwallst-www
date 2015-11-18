@@ -82,7 +82,7 @@ $(() => {
             return;
         }
 
-        const email = $('#email').val().trim();
+        const email = $('#email').val().trim().toLowerCase();
 
         if (!Email.validate(email)) {
             $('#email').focus();
@@ -195,7 +195,10 @@ $(() => {
     }
 
     // Hashes
-    if (location.hash === '#sent') {
+    if (
+        location.hash === '#sent' ||
+        StaticKit.query.sent
+    ) {
         showCheckYourEmailPrompt();
         showThanks();
         location.hash = '';
@@ -252,9 +255,7 @@ $(() => {
 
     function showCheckYourEmailPrompt() {
         const $prompt = $('.check-your-email-prompt');
-        $prompt.css({
-            display: 'block',
-        });
+        $prompt.addClass('visible');
         $prompt[0].offsetHeight; // Reflow
         $prompt.css({
             opacity: 1,
