@@ -3,7 +3,7 @@ const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]
 function validate(email) {
     email = email.trim();
 
-    if (/ /.test(email)) {
+    if (/[\ \,]/.test(email)) {
         return false;
     }
 
