@@ -41,6 +41,14 @@ table {
 
 /* Styles */
 
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
 body {
     background-color: #000812;
     background-image: url(../images/background.jpg);
@@ -155,12 +163,6 @@ header .headlines h3 {
     font-family: 'Arvo', sans-serif;
     font-size: 1em;
     padding: 0 0 24px;
-}
-.petition strong {
-    font-weight: bold;
-}
-.petition em {
-    font-style: italic;
 }
 .action-wrapper {
     float: right;
@@ -495,9 +497,6 @@ section.even-more-info h4.header-e {
 section.even-more-info p {
     max-width: 870px;
 }
-section.even-more-info p em {
-    font-style: italic;
-}
 section.even-more-info .quote-and-portrait {
     overflow: hidden;
 }
@@ -667,9 +666,6 @@ section .year .description::before {
     left: 0;
     position: absolute;
 }
-section .year .description em {
-    font-style: italic;
-}
 section .branch {
     margin: 0 auto 26px;
     max-width: 720px;
@@ -703,9 +699,6 @@ section .branch .description::before {
     width: 3px;
     left: 0;
     position: absolute;
-}
-section .branch .description em {
-    font-style: italic;
 }
 @media screen and (max-width: 399px) {
     section .branch .name {
@@ -741,9 +734,6 @@ section p {
     max-width: 830px;
     padding: 0 32px;
     text-align: center;
-}
-section strong, section p.strong {
-    font-weight: bold;
 }
 section button.sign-the-petition {
     background-color: #b41615;
@@ -906,9 +896,6 @@ section .share {
     margin-bottom: 25px;
     padding: 30px 16px;
     text-align: center;
-}
-.overlay .modal strong {
-    font-weight: bold;
 }
 .overlay .modal h2 {
     font-size: 16px;
@@ -1132,9 +1119,6 @@ section.midnight-share-train a:hover {
     font-size: 1.1em;
     line-height: 1.4;
     padding: 16px 0 0;
-}
-.check-your-email-prompt .text em {
-    font-style: italic;
 }
 .check-your-email-prompt .text a {
     color: #5abdff;
