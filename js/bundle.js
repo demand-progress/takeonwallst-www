@@ -10,6 +10,10 @@ function validate(email) {
         return false;
     }
 
+    if (email.split(/@/).length > 2) {
+        return false;
+    }
+
     var segments = email.split('.');
     var TLD = segments[segments.length - 1];
     var validTLD = /^[A-z]+$/.test(TLD);
