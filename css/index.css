@@ -1090,7 +1090,7 @@ section.midnight-share-train a:hover {
 /* Check your email prompt */
 
 .check-your-email-prompt {
-    background-color: rgba(5, 25, 50, 0.9);
+    background-color: rgba(5, 25, 50, 0.97);
     color: #fff;
     display: none;
     font-size: 18px;
@@ -1132,6 +1132,9 @@ section.midnight-share-train a:hover {
     font-size: 1.1em;
     line-height: 1.4;
     padding: 16px 0 0;
+}
+.check-your-email-prompt .text em {
+    font-style: italic;
 }
 .check-your-email-prompt .text a {
     color: #5abdff;
