@@ -1121,6 +1121,13 @@ section.midnight-share-train a:hover {
     line-height: 1.4;
     text-transform: uppercase;
 }
+.check-your-email-prompt .text h5 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 18px 0 0;
+    text-transform: uppercase;
+}
 .check-your-email-prompt .text p {
     font-size: 1.1em;
     line-height: 1.4;
@@ -1135,6 +1142,9 @@ section.midnight-share-train a:hover {
 }
 @media screen and (max-height: 459px), (max-width: 459px) {
     .check-your-email-prompt {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .check-your-email-prompt h5 {
+        display: none;
     }
 }
