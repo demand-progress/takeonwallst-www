@@ -245,10 +245,6 @@ $(() => {
         fetchCallCount();
     }
 
-    if (StaticKit.query.previewMoreInfo) {
-        $('body').addClass('preview-more-info');
-    }
-
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
