@@ -131,7 +131,12 @@ $(() => {
             }
         });
 
-        Modal.show('.overlay.script');
+        $('body').addClass('calling');
+        document.body.offsetHeight; // Reflow
+        $('html, body').stop().animate({
+            scrollTop: $('.calling-wrapper').offset().top,
+        }, 640);
+
         showThanks();
     });
 

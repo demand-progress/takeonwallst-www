@@ -16,12 +16,13 @@ body.coming-from-petition header .intro .not-mentioning-petition {
 body.coming-from-petition header .intro .mentioning-petition {
     display: block;
 }
-header .intro strong {
-    font-weight: bold;
-}
 .action-wrapper {
     float: none;
-    margin: 0 0 16px;
+    margin: 0 0 32px;
+}
+.calling .intro,
+.calling .action-wrapper {
+    display: none;
 }
 .action-wrapper .counter {
     display: none;
@@ -42,12 +43,61 @@ header .intro strong {
     color: inherit;
     text-decoration: none;
 }
+.calling-wrapper {
+    color: #f1f1f1;
+    display: none;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 0 32px 32px;
+}
+.calling .calling-wrapper {
+    display: block;
+}
+.calling-wrapper form {
+    background-color: #192c4b;
+    margin: 32px auto 0;
+    max-width: 300px;
+    padding: 16px 32px 32px;
+}
+.calling-wrapper form h4 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 16px 16px 8px;
+    margin: 0 auto;
+}
+.calling-wrapper form input {
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.16);
+    padding: 8px;
+    width: 100%;
+}
+.calling-wrapper form button {
+    background-color: #b41615;
+    color: #f0f4f5;
+    font-size: 20px;
+    font-weight: bold;
+    height: auto;
+    line-height: 2.4;
+    margin: 16px 0 0;
+    width: 100%;
+    padding: 0 16px;
+    transition: background-color 0.16s;
+}
+.calling-wrapper button:hover {
+    background-color: #a90a09;
+}
 .privacy {
     background: none;
 }
 @media screen and (max-width: 759px) {
     .call-page .action .form-wrapper button {
         font-size: 18px;
+    }
+    .calling-wrapper form button {
+        font-size: 16px;
     }
     .action-wrapper .counter .number-of-signatures {
         font-size: 32px;
