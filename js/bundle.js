@@ -153,17 +153,17 @@ $(function () {
             }
         });
 
-        $('body').addClass('calling');
-        document.body.offsetHeight; // Reflow
-        $('html, body').stop().animate({
-            scrollTop: $('.calling-wrapper').offset().top
-        }, 640);
+        showCallingScript();
 
         showThanks();
     });
 
     if ($callForm.length && StaticKit.query.after === 'signing-petition') {
         $('body').addClass('coming-from-petition');
+    }
+
+    if ($callForm.length && StaticKit.query.test === 'calling') {
+        showCallingScript();
     }
 
     $('.animated-scroll').on('click', function (e) {
@@ -274,6 +274,14 @@ $(function () {
         $prompt.css({
             opacity: 1
         });
+    }
+
+    function showCallingScript() {
+        $('body').addClass('calling');
+        document.body.offsetHeight; // Reflow
+        $('html, body').stop().animate({
+            scrollTop: $('.calling-wrapper').offset().top - 16
+        }, 640);
     }
 });
 
