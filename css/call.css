@@ -54,19 +54,24 @@ body.coming-from-petition header .intro .mentioning-petition {
 }
 .calling .calling-wrapper {
     display: block;
+    position: relative;
 }
 .calling-wrapper form {
     background-color: #192c4b;
     margin: 32px auto 0;
     max-width: 300px;
     padding: 16px 32px 32px;
+    position: relative;
+}
+.calling-wrapper form .wrapper {
+    position: relative;
 }
 .calling-wrapper form h4 {
     font-size: 16px;
     font-weight: bold;
     line-height: 1.4;
-    padding: 16px 16px 8px;
     margin: 0 auto;
+    padding: 16px 16px 8px;
 }
 .calling-wrapper form input {
     border: 1px solid #aaa;
@@ -82,12 +87,38 @@ body.coming-from-petition header .intro .mentioning-petition {
     height: auto;
     line-height: 2.4;
     margin: 16px 0 0;
-    width: 100%;
     padding: 0 16px;
     transition: background-color 0.16s;
+    width: 100%;
 }
 .calling-wrapper button:hover {
     background-color: #a90a09;
+}
+.calling-wrapper #thanks {
+    background: #b41615;
+    color: #f0f4f5;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    left: 0;
+    letter-spacing: 1px;
+    line-height: 2.4;
+    margin: 16px 0 0;
+    max-width: 430px;
+    padding: 0 16px;
+    position: absolute;
+    text-transform: uppercase;
+    transition: opacity 0.4s ease-out;
+    width: 100%;
+    z-index: 2;
+}
+.calling-wrapper .sent br,
+.calling-wrapper .sent h4,
+.calling-wrapper .sent input {
+    display: none;
+}
+.calling-wrapper .sent #thanks {
+    display: block;
 }
 .privacy {
     background: none;

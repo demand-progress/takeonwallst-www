@@ -7,6 +7,7 @@ const $ = require('./vendor/jquery.min');
 // Constants
 const SOURCE = StaticKit.query.source;
 const SOURCE_CLEANED = StaticKit.query.cleanedSource;
+const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/feedback?callback=?';
 const CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
 const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 const DOMAIN = 'presidentobamaslegacy.org';
@@ -132,8 +133,6 @@ $(() => {
         });
 
         showCallingScript();
-
-        showThanks();
     });
 
     if ($callForm.length && StaticKit.query.after === 'signing-petition') {
@@ -143,6 +142,15 @@ $(() => {
     if ($callForm.length && StaticKit.query.test === 'calling') {
         showCallingScript();
     }
+
+    const $feedbackForm = $('.calling-wrapper form');
+    $feedbackForm.on('submit', (e) => {
+        e.preventDefault();
+
+        $.getJSON(FEEDBACK_TOOL_URL, $feedbackForm.serialize());
+
+        $feedbackForm.addClass('sent');
+    });
 
     $('.animated-scroll').on('click', (e) => {
         const target = $(e.target).data('target');

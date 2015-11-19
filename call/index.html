@@ -96,12 +96,15 @@
             <br>
             <br> After your call, use the form to let us know how it went!
             <form action="index.html" method="post">
-                <h4>Who did you speak with?</h4>
-                <input type="text">
-                <h4>How did it go?</h4>
-                <input type="text">
-                <br>
-                <button type="submit" name="submit">Send Feedback</button>
+                <div class="wrapper">
+                    <h4>Who did you speak with?</h4>
+                    <input required="required" type="text" name="who-did-you-speak-with" id="who-did-you-speak-with">
+                    <h4>How did it go?</h4>
+                    <input required="required" type="text" name="how-did-it-go" id="how-did-it-go">
+                    <br>
+                    <div id="thanks">Thank you!</div>
+                    <button type="submit" name="submit">Send Feedback</button>
+                </div>
             </form>
         </div>
         <!-- .calling-wrapper -->
