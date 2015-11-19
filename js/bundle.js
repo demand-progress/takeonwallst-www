@@ -44,7 +44,7 @@ var $ = require('./vendor/jquery.min');
 // Constants
 var SOURCE = StaticKit.query.source;
 var SOURCE_CLEANED = StaticKit.query.cleanedSource;
-var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/feedback?callback=?';
+var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
 var CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
 var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 var DOMAIN = 'presidentobamaslegacy.org';
@@ -169,7 +169,16 @@ $(function () {
     $feedbackForm.on('submit', function (e) {
         e.preventDefault();
 
-        $.getJSON(FEEDBACK_TOOL_URL, $feedbackForm.serialize());
+        var message = '';
+        var fields = $feedbackForm.serializeArray();
+        fields.forEach(function (field) {
+            message += field.name + ':\n' + field.value + '\n\n';
+        });
+
+        $.getJSON(FEEDBACK_TOOL_URL, {
+            subject: 'Feedback from President Obama\'s Legacy',
+            text: message
+        });
 
         $feedbackForm.addClass('sent');
     });

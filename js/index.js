@@ -7,7 +7,7 @@ const $ = require('./vendor/jquery.min');
 // Constants
 const SOURCE = StaticKit.query.source;
 const SOURCE_CLEANED = StaticKit.query.cleanedSource;
-const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/feedback?callback=?';
+const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
 const CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?&campaignId=presidentobamaslegacy&userPhone=';
 const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 const DOMAIN = 'presidentobamaslegacy.org';
@@ -147,7 +147,16 @@ $(() => {
     $feedbackForm.on('submit', (e) => {
         e.preventDefault();
 
-        $.getJSON(FEEDBACK_TOOL_URL, $feedbackForm.serialize());
+        let message = '';
+        const fields = $feedbackForm.serializeArray();
+        fields.forEach((field) => {
+            message += `${field.name}:\n${field.value}\n\n`;
+        });
+
+        $.getJSON(FEEDBACK_TOOL_URL, {
+            subject: 'Feedback from President Obama\'s Legacy',
+            text: message,
+        });
 
         $feedbackForm.addClass('sent');
     });
