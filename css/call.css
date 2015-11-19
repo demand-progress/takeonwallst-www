@@ -56,6 +56,10 @@ body.coming-from-petition header .intro .mentioning-petition {
     display: block;
     position: relative;
 }
+.calling-wrapper h3 {
+    font-style: italic;
+    font-weight: bold;
+}
 .calling-wrapper form {
     background-color: #192c4b;
     margin: 32px auto 0;
