@@ -137,6 +137,14 @@ $(function () {
         });
     });
 
+    // Special URLs
+    if ($signatureForm.length) {
+        if (SOURCE === 'rsns') {
+            $('.action').addClass('specific');
+            $('.squaredFour').remove();
+        }
+    }
+
     var $callForm = $('.call-page .action form');
     $callForm.on('submit', function (e) {
         e.preventDefault();
@@ -161,12 +169,15 @@ $(function () {
         showCallingScript();
     });
 
-    if ($callForm.length && StaticKit.query.after === 'signing-petition') {
-        $('body').addClass('coming-from-petition');
-    }
+    // Special URLs
+    if ($callForm.length) {
+        if (StaticKit.query.after === 'signing-petition') {
+            $('body').addClass('coming-from-petition');
+        }
 
-    if ($callForm.length && StaticKit.query.test === 'calling') {
-        showCallingScript();
+        if (StaticKit.query.test === 'calling') {
+            showCallingScript();
+        }
     }
 
     var $feedbackForm = $('.calling-wrapper form');
