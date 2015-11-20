@@ -57,6 +57,12 @@ var WTP_API_SIGN_KEY = '8b35b90fe50197fed0e480e109a9e77757a84a9e6815f3611b5da34f
 var WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
 var WTP_PETITION_ID = '2158641';
 var REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'postcode'];
+var NON_SWAP_SOURCES = {
+    dkns: 'Daily Kos',
+    lans: 'Left Action',
+    mjns: 'Mother Jones',
+    rsns: 'Rootstrikers and Demand Progress'
+};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -139,8 +145,9 @@ $(function () {
 
     // Special URLs
     if ($signatureForm.length) {
-        if (SOURCE === 'rsns') {
+        if (NON_SWAP_SOURCES[SOURCE]) {
             $('.action').addClass('specific');
+            $('.disclaimer-specific .organization-name').text(NON_SWAP_SOURCES[SOURCE]);
             $('.squaredFour').remove();
         }
     }

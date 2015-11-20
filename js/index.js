@@ -35,6 +35,12 @@ const REQUIRED_FIELDS = [
     'email',
     'postcode',
 ];
+const NON_SWAP_SOURCES = {
+    dkns: 'Daily Kos',
+    lans: 'Left Action',
+    mjns: 'Mother Jones',
+    rsns: 'Rootstrikers and Demand Progress',
+};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -117,8 +123,9 @@ $(() => {
 
     // Special URLs
     if ($signatureForm.length) {
-        if (SOURCE === 'rsns') {
+        if (NON_SWAP_SOURCES[SOURCE]) {
             $('.action').addClass('specific');
+            $('.disclaimer-specific .organization-name').text(NON_SWAP_SOURCES[SOURCE]);
             $('.squaredFour').remove();
         }
     }
