@@ -52,7 +52,7 @@ $(() => {
 
     // Populate special form fields
     $('[name=action_user_agent]').val(navigator.userAgent);
-    $('[name=source]').val(SOURCE_CLEANED);
+    $('[name=source]').val(SOURCE);
     $('[name=url]').val(location.href);
 
     let petitionWasSentToWH = false;
