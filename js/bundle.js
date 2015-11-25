@@ -202,6 +202,7 @@ $(function () {
         });
 
         $.getJSON(FEEDBACK_TOOL_URL, {
+            campaign: 'president-obamas-legacy',
             subject: 'Feedback from President Obama\'s Legacy',
             text: message
         });
