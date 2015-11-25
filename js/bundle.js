@@ -165,6 +165,9 @@ $(function () {
 
         $.getJSON(CALL_TOOL_URL, {
             campaignId: 'president-obamas-legacy',
+            fftfCampaign: 'president-obamas-legacy',
+            fftfReferer: SOURCE,
+            fftfSession: '' + Date.now() + Math.floor(Math.random(9999)),
             source_id: SOURCE,
             userPhone: phone,
             zipcode: 90210
