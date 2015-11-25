@@ -45,7 +45,7 @@ var $ = require('./vendor/jquery.min');
 var SOURCE = StaticKit.query.source;
 var SOURCE_CLEANED = StaticKit.query.cleanedSource;
 var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
-var CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?';
+var CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
 var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 var DOMAIN = 'presidentobamaslegacy.org';
 var EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
@@ -164,9 +164,10 @@ $(function () {
         }
 
         $.getJSON(CALL_TOOL_URL, {
-            campaignId: 'presidentobamaslegacy',
+            campaignId: 'president-obamas-legacy',
             source_id: SOURCE,
-            userPhone: phone
+            userPhone: phone,
+            zipcode: 90210
         }, function (res) {
             if (res.message !== 'queued') {
                 alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.');
@@ -298,9 +299,9 @@ $(function () {
         fetchPetitionCount();
     }
 
-    if ($('body.call-page').length) {
-        fetchCallCount();
-    }
+    // if ($('body.call-page').length) {
+    //     fetchCallCount();
+    // }
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
