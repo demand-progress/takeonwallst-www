@@ -35,12 +35,16 @@ const REQUIRED_FIELDS = [
     'email',
     'postcode',
 ];
-const NON_SWAP_SOURCES = {
-    dkns: 'Daily Kos',
-    lans: 'Left Action',
-    mjns: 'Mother Jones',
-    rsns: 'Rootstrikers and Demand Progress',
-};
+const NON_SWAP_SOURCES = [
+    'dkns',
+    'lans',
+    'lans1',
+    'lans2',
+    'lans3',
+    'lans4',
+    'mjns',
+    'rsns',
+];
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -123,9 +127,8 @@ $(() => {
 
     // Special URLs
     if ($signatureForm.length) {
-        if (NON_SWAP_SOURCES[SOURCE]) {
+        if (NON_SWAP_SOURCES.indexOf(SOURCE) > -1) {
             $('.action').addClass('specific');
-            $('.disclaimer-specific .organization-name').text(NON_SWAP_SOURCES[SOURCE]);
             $('.squaredFour').remove();
         }
     }
