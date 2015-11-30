@@ -36,12 +36,19 @@ const REQUIRED_FIELDS = [
     'postcode',
 ];
 const NON_SWAP_SOURCES = [
+    'dk',
+    'dk1',
+    'dk2',
+    'dk3',
+    'dk4',
     'dkns',
+    'la',
     'lans',
     'lans1',
     'lans2',
     'lans3',
     'lans4',
+    'mj',
     'mjns',
     'rsns',
 ];
