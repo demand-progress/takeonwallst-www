@@ -52,6 +52,9 @@ const NON_SWAP_SOURCES = [
     'mjns',
     'rsns',
 ];
+const NON_SWAP_3RD_PARTY_SOURCES = {
+    maydayns: 'MAYDAY.US',
+};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -134,8 +137,12 @@ $(() => {
 
     // Special URLs
     if ($signatureForm.length) {
-        if (NON_SWAP_SOURCES.indexOf(SOURCE) > -1) {
+        if (NON_SWAP_SOURCES.indexOf(SOURCE_CLEANED) > -1) {
             $('.action').addClass('specific');
+            $('.squaredFour').remove();
+        } else if (NON_SWAP_3RD_PARTY_SOURCES[SOURCE_CLEANED]) {
+            $('.action').addClass('specific');
+            $('.action .organization').text(NON_SWAP_3RD_PARTY_SOURCES[SOURCE_CLEANED]);
             $('.squaredFour').remove();
         }
     }
