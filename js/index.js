@@ -135,18 +135,6 @@ $(() => {
         });
     });
 
-    // Special URLs
-    if ($signatureForm.length) {
-        if (NON_SWAP_SOURCES.indexOf(SOURCE) > -1) {
-            $('.action').addClass('specific');
-            $('.squaredFour').remove();
-        } else if (NON_SWAP_3RD_PARTY_SOURCES[SOURCE]) {
-            $('.action').addClass('specific');
-            $('.action .organization').text(NON_SWAP_3RD_PARTY_SOURCES[SOURCE]);
-            $('.squaredFour').remove();
-        }
-    }
-
     const $callForm = $('.call-page .action form');
     $callForm.on('submit', (e) => {
         e.preventDefault();
