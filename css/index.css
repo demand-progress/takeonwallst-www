@@ -308,7 +308,6 @@ header .headlines h3 {
     }
 }
 .action span.disclaimer.disclaimer-specific {
-    display: none;
     margin: 8px auto -13px;
 }
 .action-wrapper .counter {
