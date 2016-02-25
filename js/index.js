@@ -69,10 +69,10 @@ $(() => {
     $('[name=source]').val(SOURCE_CLEANED);
     $('[name=url]').val(location.href);
 
-    let petitionWasSentToWH = false;
+    let readyToSendToActionKit = false;
     const $signatureForm = $('.home-page .action form');
     $signatureForm.on('submit', (e) => {
-        if (petitionWasSentToWH) {
+        if (readyToSendToActionKit) {
             return true;
         }
 
@@ -118,21 +118,9 @@ $(() => {
         // Thanking user
         showThanks();
 
-        // Sending request to WH API
-        $.getJSON(WTP_API_SIGN_URL, {
-            email: email,
-            key: WTP_API_SIGN_KEY,
-            first_name: $('#first_name').val().trim(),
-            last_name: $('#last_name').val().trim(),
-            petition_id: WTP_PETITION_ID,
-        }, (res) => {
-            if (res.success) {
-                petitionWasSentToWH = true;
-                $signatureForm.submit();
-            } else {
-                alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.')
-            }
-        });
+        // Getting ready to send to AK
+        readyToSendToActionKit = true;
+        $signatureForm.submit();
     });
 
     const $callForm = $('.call-page .action form');
