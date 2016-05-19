@@ -463,7 +463,7 @@ section.more-info {
     color: #000812;
     font-size: 18px;
     margin: -36px auto 0;
-    padding: 0 16px 25px;
+    padding: 24px 16px 25px;
     position: relative;
 }
 section.more-info h4, section.even-more-info h4 {
