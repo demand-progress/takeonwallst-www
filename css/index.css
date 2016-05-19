@@ -343,7 +343,7 @@ header .headlines p {
 }
 .action-wrapper .counter .number-of-signatures-label {
     clear: both;
-    color: #2f4c8c;
+    color: #5c87d5;
     font-size: 28px;
     font-weight: bold;
 }
@@ -368,7 +368,7 @@ header .headlines p {
     padding: 28px 0 4px;
 }
 .action-wrapper .counter .signatures-needed-label {
-    color: #2f4c8c;
+    color: #5c87d5;
     font-size: 28px;
     line-height: 1.2;
     padding: 0 0 32px;
