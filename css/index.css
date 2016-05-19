@@ -92,7 +92,7 @@ header .headlines h1 {
     padding: 8px 16px 11px;
 }
 header .headlines h2 {
-    color: #1b356c;
+    color: #2f4c8c;
     font-size: 30px;
     letter-spacing: 1px;
     padding: 48px 16px 1px;
@@ -106,7 +106,7 @@ header .headlines h3 {
     max-width: 800px;
 }
 header .headlines p {
-    color: #1b356c;
+    color: #2f4c8c;
     font-size: 18px;
     /*font-weight: bold;*/
     /*letter-spacing: 1px;*/
@@ -414,7 +414,7 @@ button {
     width: 100%;
     word-spacing: 1px;
 }
-.more-info-header .gradient-black {
+.more-info-header .gradient-light {
     background-image: url('../images/gradient-light.png');
     bottom: 0;
     left: 0;
@@ -462,7 +462,7 @@ button {
 section.more-info {
     color: #000812;
     font-size: 18px;
-    margin: -36px auto 0;
+    margin: -26px auto 0;
     padding: 0 16px 25px;
     position: relative;
 }
@@ -492,7 +492,7 @@ section.even-more-info {
     color: #000812;
     font-size: 18px;
     margin: 0 auto;
-    padding: 54px 16px 25px;
+    padding: 0px 16px 25px;
     position: relative;
 }
 section.even-more-info h4 {
@@ -829,7 +829,7 @@ section .share {
     padding: 0 16px;
 }
 .logos h4 {
-    color: #0099ff;
+    color: #1c366d;
     font-size: 24px;
     line-height: 1.4;
     padding: 0 0 16px;
@@ -984,7 +984,7 @@ div.social-buttons a.email {
     background-image: url(../images/social/icon-email.gif);
 }
 section.midnight-share-train {
-    background-color: #192c4b;
+    background-color: #112347;
     margin: 0 auto;
     padding: 18px 16px 0;
     max-width: 100%;
