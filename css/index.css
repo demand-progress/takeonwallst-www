@@ -50,10 +50,11 @@ em {
 }
 
 body {
-    background-color: #000812;
-    background-image: url(../images/background.jpg);
+    background-color: #e1e1e1;
+    background-image: url(../images/header-collage-v03.jpg);
     background-position: top center;
     background-repeat: no-repeat;
+    background-size: contain;
     font-family: 'Open Sans', sans-serif;
     min-width: 320px;
     text-align: center;
@@ -81,28 +82,40 @@ header .headlines h1, header .headlines h2, header .headlines h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     line-height: 1;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 30px #f1f1f1;
     margin: 0 auto;
 }
 header .headlines h1 {
-    color: #f1f1f1;
-    font-size: 44px;
+    color: #ff0000;
+    font-size: 54px;
     letter-spacing: 1px;
     padding: 8px 16px 11px;
 }
 header .headlines h2 {
-    color: #b41615;
+    color: #1b356c;
     font-size: 30px;
     letter-spacing: 1px;
     padding: 48px 16px 1px;
 }
 header .headlines h3 {
-    color: #0099ff;
+    color: #1b356c;
     font-size: 25px;
     letter-spacing: 1px;
     line-height: 1.3;
     padding: 2px 16px 44px;
-    max-width: 500px;
+    max-width: 800px;
+}
+header .headlines p {
+    color: #1b356c;
+    font-size: 18px;
+    /*font-weight: bold;*/
+    /*letter-spacing: 1px;*/
+    line-height: 24px;
+    margin: 0 auto 25px auto;
+    max-width: 830px;
+    padding: 0 32px;
+    text-align: center;
+    text-shadow: 0 0 20px #f1f1f1;
 }
 @media screen and (max-width: 839px) {
     header .headlines h1 {
@@ -133,12 +146,13 @@ header .headlines h3 {
     max-width: 998px;
 }
 .petition-and-form-wrapper > .outer-padding {
-    background-image: url(../images/pattern-dark-blue.png);
+    /*background-image: url(../images/pattern-dark-blue.png);*/
     margin: 0 16px;
 }
 .petition {
     background-color: #f1f1f1;
-    background-image: url(../images/pattern-gray.png);
+    /*background-image: url(../images/pattern-gray.png);*/
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     color: #000812;
     font-size: 20px;
     line-height: 1.4;
@@ -156,12 +170,12 @@ header .headlines h3 {
 .petition h2 {
     font-size: 30px;
     font-weight: bold;
-    padding: 0 0 25px;
+    padding: 0 0 10px;
     text-align: center;
 }
 .petition p {
     font-family: 'Arvo', sans-serif;
-    font-size: 1em;
+    font-size: 18px;
     padding: 0 0 24px;
 }
 .action-wrapper {
@@ -170,8 +184,9 @@ header .headlines h3 {
     position: relative;
 }
 .action {
-    background: #192c4b;
-    background-image: url('../images/pattern-blue.png');
+    background: #1c366d;
+    /*background-image: url('../images/pattern-blue.png');*/
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     max-width: 413px;
     padding: 24px 0 32px;
@@ -272,7 +287,7 @@ header .headlines h3 {
     }
 }
 .action .form-wrapper button {
-    background-color: #b41615;
+    background-color: #ff0000;
     color: #f0f4f5;
     font-size: 24px;
     font-weight: bold;
@@ -281,7 +296,7 @@ header .headlines h3 {
     width: 100%;
 }
 .action .form-wrapper button:hover {
-    background-color: #a90a09;
+    background-color: #d01010;
 }
 .action hr {
     background-color: #101c30;
@@ -311,8 +326,9 @@ header .headlines h3 {
     margin: 8px auto -13px;
 }
 .action-wrapper .counter {
-    background-color: #101c30;
-    background-image: url(../images/pattern-dark-blue.png);
+    background-color: #112347;
+    /*background-image: url(../images/pattern-dark-blue.png);*/
+    /*box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);*/
     margin: 0 auto;
     max-width: 413px;
     position: relative;
@@ -327,12 +343,12 @@ header .headlines h3 {
 }
 .action-wrapper .counter .number-of-signatures-label {
     clear: both;
-    color: #b41615;
+    color: #2f4c8c;
     font-size: 28px;
     font-weight: bold;
 }
 .action-wrapper .counter hr {
-    background-color: #192c4b;
+    background-color: #1c366d;
     border: none;
     height: 1px;
     margin: 38px auto 0;
@@ -352,7 +368,7 @@ header .headlines h3 {
     padding: 28px 0 4px;
 }
 .action-wrapper .counter .signatures-needed-label {
-    color: #b41615;
+    color: #2f4c8c;
     font-size: 28px;
     line-height: 1.2;
     padding: 0 0 32px;
@@ -387,19 +403,19 @@ button {
     width: 100%;
 }
 .more-info-header h4 {
-    background-image: url(../images/background-cash.jpg);
+    background-image: url(../images/background-cash-light.jpg);
     background-size: cover;
-    color: #f1f1f1;
+    color: #002b88;
     display: inline-block;
     font-size: 36px;
-    font-style: italic;
+    /*font-style: italic;*/
     font-weight: bold;
     padding: 100px 16px 56px;
     width: 100%;
     word-spacing: 1px;
 }
 .more-info-header .gradient-black {
-    background-image: url('../images/gradient-black.png');
+    background-image: url('../images/gradient-light.png');
     bottom: 0;
     left: 0;
     height: 60px;
@@ -407,7 +423,7 @@ button {
     width: 100%;
 }
 .petition .sign-the-petition, .more-info-header .sign-the-petition {
-    background-color: #b41615;
+    background-color: #ff0000;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
     display: none;
     font-size: 20px;
@@ -420,7 +436,7 @@ button {
     width: 244px;
 }
 .petition .sign-the-petition:hover, .more-info-header .sign-the-petition:hover {
-    background-color: #a90a09;
+    background-color: #d01010;
 }
 .petition .sign-the-petition {
     bottom: -28px;
@@ -444,14 +460,14 @@ button {
     }
 }
 section.more-info {
-    color: #f1f1f1;
+    color: #000812;
     font-size: 18px;
     margin: -36px auto 0;
     padding: 0 16px 25px;
     position: relative;
 }
 section.more-info h4, section.even-more-info h4 {
-    color: #0099ff;
+    color: #002b88;
     font-size: 34px;
     font-weight: bold;
     line-height: 1.2;
@@ -471,9 +487,9 @@ section.more-info h4.header-b {
     padding: 20px 0 0;
 }
 section.even-more-info {
-    background-image: url('../images/gradient-dark-blue.png');
-    background-repeat: repeat-x;
-    color: #f1f1f1;
+    /*background-image: url('../images/gradient-dark-blue.png');
+    background-repeat: repeat-x;*/
+    color: #000812;
     font-size: 18px;
     margin: 0 auto;
     padding: 54px 16px 25px;
@@ -504,7 +520,7 @@ section.even-more-info .quote-and-portrait .quote {
     padding: 36px 20px 0 55px;
 }
 section.even-more-info .quote-and-portrait .quote .quote-open {
-    background-image: url('../images/quote-open.png');
+    background-image: url('../images/quote-open-copy.png');
     background-position: 0;
     background-repeat: no-repeat;
     background-size: 154px 97px;
@@ -516,7 +532,7 @@ section.even-more-info .quote-and-portrait .quote .quote-open {
     width: 154px;
 }
 section.even-more-info .quote-and-portrait .quote .quote-close {
-    background-image: url('../images/quote-close.png');
+    background-image: url('../images/quote-close-copy.png');
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: 154px 97px;
@@ -725,7 +741,7 @@ section a:hover {
 }
 section p {
     font-size: 18px;
-    font-weight: 300;
+    /*font-weight: 300;*/
     line-height: 24px;
     margin: 0 auto 25px auto;
     max-width: 830px;
@@ -733,7 +749,7 @@ section p {
     text-align: center;
 }
 section button.sign-the-petition {
-    background-color: #b41615;
+    background-color: #ff0000;
     color: #f0f4f5;
     font-size: 24px;
     font-weight: bold;
@@ -743,7 +759,7 @@ section button.sign-the-petition {
     transition: background-color 0.16s;
 }
 section button.sign-the-petition:hover {
-    background-color: #a90a09;
+    background-color: #d01010;
 }
 @media screen and (max-width: 769px) {
     section.more-info {
