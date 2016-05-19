@@ -73,7 +73,7 @@ body {
 }
 @media screen and (max-width: 599px) {
     body {
-        background-image: none;
+        background-size: 599px;
     }
 }
 header {}
