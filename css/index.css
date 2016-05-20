@@ -50,6 +50,10 @@ em {
     font-style: italic;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     background-color: #e1e1e1;
     background-image: url(../images/header-collage-v03.jpg);
@@ -1226,6 +1230,7 @@ section.midnight-share-train a:hover {
 }
 .photo-credits {
     color: #4a4a4a;
+    display: none;
     font-size: 14px;
     padding: 20px;
 }
