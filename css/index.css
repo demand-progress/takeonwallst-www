@@ -42,6 +42,7 @@ table {
 /* Styles */
 
 strong {
+    color: #002b88;
     font-weight: bold;
 }
 
@@ -106,7 +107,7 @@ header .headlines h3 {
     max-width: 800px;
 }
 header .headlines p {
-    color: #2f4c8c;
+    color: #000812;
     font-size: 18px;
     /*font-weight: bold;*/
     /*letter-spacing: 1px;*/
@@ -468,15 +469,15 @@ section.more-info {
 }
 section.more-info h4, section.even-more-info h4 {
     color: #002b88;
-    font-size: 34px;
+    font-size: 36px;
     font-weight: bold;
     line-height: 1.2;
     margin: 0 auto;
 }
-section.more-info h4.gradient-dark-blue {
+/*section.more-info h4.gradient-dark-blue {
     background-image: url('../images/gradient-dark-blue.png');
-}
-section.more-info h4.header-a {
+}*/
+/*section.more-info h4.header-a {
     max-width: 550px;
     padding: 20px 0 42px;
 }
@@ -485,20 +486,41 @@ section.more-info h4.header-b {
     font-style: italic;
     font-weight: bold;
     padding: 20px 0 0;
-}
+}*/
 section.even-more-info {
     /*background-image: url('../images/gradient-dark-blue.png');
     background-repeat: repeat-x;*/
     color: #000812;
     font-size: 18px;
-    margin: 0 auto;
+    margin: -26px 0 auto;
     padding: 0px 16px 25px;
     position: relative;
 }
-section.even-more-info h4 {
-    padding: 0 32px 38px;
+section.even-more-info .gradient-light {
+    background-image: url('../images/gradient-light.png');
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
 }
-section.even-more-info h4.header-c {
+section.even-more-info h4 {
+    /*background-image: url(../images/background-cash-light.jpg);
+    background-size: cover;
+    height: 198px;
+    padding: 0 32px 38px;*/
+    background-image: url(../images/background-cash-light.jpg);
+    background-size: cover;
+    color: #002b88;
+    display: inline-block;
+    font-size: 36px;
+    /*font-style: italic;*/
+    font-weight: bold;
+    padding: 100px 16px 56px;
+    width: 100%;
+    word-spacing: 1px;
+}
+/*section.even-more-info h4.header-c {
     max-width: 790px;
 }
 section.even-more-info h4.header-d {
@@ -506,7 +528,7 @@ section.even-more-info h4.header-d {
 }
 section.even-more-info h4.header-e {
     max-width: 900px;
-}
+}*/
 section.even-more-info p {
     max-width: 870px;
 }
@@ -552,67 +574,148 @@ section.even-more-info .quote-and-portrait .quote .text {
 section.even-more-info .quote-and-portrait .portrait {
     display: inline-block;
 }
-section.even-more-info .quote-and-portrait.obama {
+section.even-more-info .quote-and-portrait.pope-francis {
     padding: 0 0 117px;
+    margin-top: -45px;
 }
-section.even-more-info .quote-and-portrait.obama .portrait {
+section.even-more-info .quote-and-portrait.pope-francis .portrait {
     height: 327px;
     position: relative;
     top: 40px;
     width: 325px;
 }
-section.even-more-info .quote-and-portrait.obama .quote {
+section.even-more-info .quote-and-portrait.pope-francis .quote {
     left: -25px;
     max-width: 100%;
     position: relative;
     width: 635px;
 }
-section.even-more-info .quote-and-portrait.biden {
+section.even-more-info .quote-and-portrait.warren {
     padding: 3px 0 91px;
 }
-section.even-more-info .quote-and-portrait.biden .portrait {
-    height: 318px;
+section.even-more-info .quote-and-portrait.warren .portrait {
+    height: 251px;
     margin: 0 0 0 40px;
     position: relative;
-    width: 269px;
+    width: 352px;
 }
-section.even-more-info .quote-and-portrait.biden .quote {
+section.even-more-info .quote-and-portrait.warren .quote {
     max-width: 100%;
     position: relative;
     top: -7px;
     width: 710px;
 }
+section.even-more-info .quote-and-portrait.trumka {
+    padding: 0 0 117px;
+}
+section.even-more-info .quote-and-portrait.trumka .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.trumka .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
+section.even-more-info .quote-and-portrait.weingarten {
+    padding: 3px 0 91px;
+}
+section.even-more-info .quote-and-portrait.weingarten .portrait {
+    height: 318px;
+    margin: 0 0 0 40px;
+    position: relative;
+    width: 269px;
+}
+section.even-more-info .quote-and-portrait.weingarten .quote {
+    max-width: 100%;
+    position: relative;
+    top: -7px;
+    width: 710px;
+}
+section.even-more-info .quote-and-portrait.ellison {
+    padding: 0 0 117px;
+}
+section.even-more-info .quote-and-portrait.ellison .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.ellison .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
 @media screen and (max-width: 1099px) {
-    section.even-more-info .quote-and-portrait.obama {
+    section.even-more-info .quote-and-portrait.pope-francis {
         padding: 54px 0 117px;
     }
-    section.even-more-info .quote-and-portrait.obama .quote {
+    section.even-more-info .quote-and-portrait.pope-francis .quote {
         width: 480px;
     }
-    section.even-more-info .quote-and-portrait.biden {
+    section.even-more-info .quote-and-portrait.warren {
         padding: 46px 0 91px;
     }
-    section.even-more-info .quote-and-portrait.biden .quote {
+    section.even-more-info .quote-and-portrait.warren .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.trumka {
+        padding: 54px 0 117px;
+    }
+    section.even-more-info .quote-and-portrait.trumka .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.weingarten {
+        padding: 46px 0 91px;
+    }
+    section.even-more-info .quote-and-portrait.weingarten .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 54px 0 117px;
+    }
+    section.even-more-info .quote-and-portrait.ellison .quote {
         width: 480px;
     }
 }
 @media screen and (max-width: 859px) {
-    section.even-more-info .quote-and-portrait.obama .portrait {
+    section.even-more-info .quote-and-portrait.pope-francis .portrait {
         height: 163px;
         top: -60px;
         width: 162px;
     }
-    section.even-more-info .quote-and-portrait.biden .portrait {
+    section.even-more-info .quote-and-portrait.warren .portrait {
+        height: 125px;
+        top: -40px;
+        width: 176px;
+    }
+    section.even-more-info .quote-and-portrait.trumka .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.weingarten .portrait {
         height: 159px;
         top: -40px;
         width: 135px;
+    }
+    section.even-more-info .quote-and-portrait.ellison .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
     }
 }
 @media screen and (max-width: 709px) {
     section.even-more-info .quote-and-portrait .portrait {
         display: none;
     }
-    section.even-more-info .quote-and-portrait.obama .quote, section.even-more-info .quote-and-portrait.biden .quote {
+    section.even-more-info .quote-and-portrait.pope-francis .quote, section.even-more-info .quote-and-portrait.warren .quote,
+    section.even-more-info .quote-and-portrait.trumka .quote, section.even-more-info .quote-and-portrait.weingarten .quote,
+    section.even-more-info .quote-and-portrait.ellison .quote {
         bottom: auto;
         left: auto;
         max-width: 720px;
@@ -621,7 +724,9 @@ section.even-more-info .quote-and-portrait.biden .quote {
         top: auto;
         width: 100%;
     }
-    section.even-more-info .quote-and-portrait.obama, section.even-more-info .quote-and-portrait.biden {
+    section.even-more-info .quote-and-portrait.pope-francis, section.even-more-info .quote-and-portrait.warren,
+    section.even-more-info .quote-and-portrait.trumka, section.even-more-info .quote-and-portrait.weingarten,
+    section.even-more-info .quote-and-portrait.ellison {
         padding: 32px 0;
     }
 }
@@ -647,7 +752,7 @@ section.even-more-info button.sign-the-petition {
     font-size: 22px;
     padding: 0 28px;
 }
-section .year {
+/*section .year {
     margin: 0 auto 26px;
     max-width: 550px;
     overflow: hidden;
@@ -731,22 +836,23 @@ section .branch .description::before {
 section .undisclosed-spending-infographic {
     padding: 18px 0 15px;
     max-width: 100%;
-}
+}*/
 section a {
-    color: #0099ff;
-    font-weight: bold;
+    color: #2f4c8c;
+    /*font-weight: bold;*/
+    font-style: italic;
 }
 section a:hover {
-    color: #3b9cb0;
+    color: #0099ff;
 }
 section p {
     font-size: 18px;
     /*font-weight: 300;*/
-    line-height: 24px;
+    line-height: 26px;
     margin: 0 auto 25px auto;
     max-width: 830px;
     padding: 0 32px;
-    text-align: center;
+    text-align: left;
 }
 section button.sign-the-petition {
     background-color: #ff0000;
@@ -762,9 +868,9 @@ section button.sign-the-petition:hover {
     background-color: #d01010;
 }
 @media screen and (max-width: 769px) {
-    section.more-info {
+    section.more-info, section.even-more-info {
         margin: -58px auto 0;
-        max-width: 413px;
+        /*max-width: 413px;*/
     }
     section.more-info p, section.even-more-info p {
         font-size: 17px;
