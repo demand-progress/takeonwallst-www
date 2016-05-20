@@ -10,57 +10,32 @@ const SOURCE_CLEANED = StaticKit.query.cleanedSource;
 const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
 const CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
 const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
-const DOMAIN = 'presidentobamaslegacy.org';
-const EMAIL_SUBJECT = 'Sign this petition: Tell Obama to fight secret money in politics right away';
+const DOMAIN = 'takeonwallst.com';
+const EMAIL_SUBJECT = 'Sign this petition: Tell Congress to Take On Wall Street';
 const EMAIL_BODY = `Hi,
 
-I just signed a petition at PresidentObamasLegacy.org telling President Obama to immediately act to fight the secret money corroding our political system.
+I just signed a petition telling Congress to take on Wall Street.
 
-Nearly 6 years after Citizens United, President Obama still hasn't used any of the tools he has to reduce secret money spent by billionaires and wealthy special interests in our elections
+Wall Street billionaires have rigged our economy and our democracy. Let's fix our financial system and make it work for ordinary Americans.
 
-The petition is integrated with the White House We The People petition platform – so if we get to 100,000 signatures, Obama will publicly respond. Could you help us get there?
+Would you like to sign too?
 
-http://${DOMAIN}/?source=${SOURCE_CLEANED}-emailshare
+https://takeonwallst.com
 
 Thanks!`;
-const TWEET_TEXT = `Join me: Tell @POTUS that he must fight secret money in politics right away. PresidentObamasLegacy.org/?source=${SOURCE_CLEANED}-twittershare #ObamaMustAct`;
-const WTP_API_COUNT_KEY = '942780e090350c6e7fc8db478df66201ff195601650f56bde98bda19b7205e90';
-const WTP_API_COUNT_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/count?callback=?';
-const WTP_API_SIGN_KEY = '8b35b90fe50197fed0e480e109a9e77757a84a9e6815f3611b5da34fd37bb50a';
-const WTP_API_SIGN_URL = 'https://dp-wethepeople.herokuapp.com/api/v1/sign?callback=?';
-const WTP_PETITION_ID = '2158641';
+const TWEET_TEXT = `Wall Street billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallStreet takeonwallst.com`;
 const REQUIRED_FIELDS = [
     'first_name',
     'last_name',
     'email',
     'postcode',
 ];
-const NON_SWAP_SOURCES = [
-    'dk',
-    'dk1',
-    'dk2',
-    'dk3',
-    'dk4',
-    'dkns',
-    'la',
-    'lans',
-    'lans1',
-    'lans2',
-    'lans3',
-    'lans4',
-    'mj',
-    'mjns',
-    'rsns',
-];
-const NON_SWAP_3RD_PARTY_SOURCES = {
-    maydayns: 'MAYDAY.US',
-};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
 
 // After the page loads
-$(() => {
+$(f => {
     // Wire up modals
     Modal.wireAll();
 
@@ -173,7 +148,7 @@ $(() => {
         });
 
         $.getJSON(FEEDBACK_TOOL_URL, {
-            campaign: 'president-obamas-legacy',
+            campaign: 'take-on-wall-street',
             subject: 'Feedback from President Obama\'s Legacy',
             text: message,
         });
@@ -193,7 +168,7 @@ $(() => {
 
         const url =
             'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(`${DOMAIN}/?source=${SOURCE_CLEANED}-fbshare`);
+            encodeURIComponent(DOMAIN);
         window.open(url);
     });
 
