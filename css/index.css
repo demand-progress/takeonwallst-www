@@ -671,6 +671,7 @@ section.even-more-info .quote-and-portrait.ellison .quote {
     left: -25px;
     max-width: 100%;
     position: relative;
+    top: -30px;
     width: 635px;
 }
 @media screen and (max-width: 1099px) {
