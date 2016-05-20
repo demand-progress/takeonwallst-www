@@ -400,7 +400,6 @@ button {
     font-family: 'Open Sans', sans-serif;
 }
 .more-info-header {
-    height: 198px;
     margin: 0 auto;
     max-width: 100%;
     padding: 0;
@@ -408,16 +407,37 @@ button {
     width: 100%;
 }
 .more-info-header h4 {
-    background-image: url(../images/background-cash-light.jpg);
-    background-size: cover;
     color: #002b88;
     display: inline-block;
     font-size: 36px;
+    line-height: 1.4;
     /*font-style: italic;*/
     font-weight: bold;
     padding: 100px 16px 56px;
     width: 100%;
     word-spacing: 1px;
+}
+.background-cash {
+    background-color: #e2f5d2;
+    background-image: url(../images/bg-moola.jpg);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background-team {
+    background-attachment: fixed;
+    background-color: #e7f7ff;
+    background-image: url(../images/bg-team.jpg);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 769px) {
+    .background-cash {}
+    .background-team {
+        background-size: 120%;
+        background-position: 50% 0;
+    }
 }
 .more-info-header .gradient-light {
     background-image: url('../images/gradient-light.png');
@@ -429,7 +449,7 @@ button {
 }
 .petition .sign-the-petition, .more-info-header .sign-the-petition {
     background-color: #ff0000;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
     display: none;
     font-size: 20px;
     font-weight: bold;
@@ -437,11 +457,12 @@ button {
     letter-spacing: 1px;
     position: absolute;
     top: -30px;
-    transition: background-color 0.16s;
+    transition: background-color 0.16s, box-shadow 0.16s;
     width: 244px;
 }
 .petition .sign-the-petition:hover, .more-info-header .sign-the-petition:hover {
     background-color: #d01010;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
 }
 .petition .sign-the-petition {
     bottom: -28px;
@@ -598,10 +619,9 @@ section.even-more-info .quote-and-portrait.warren {
     padding: 0 0 70px;
 }
 section.even-more-info .quote-and-portrait.warren .portrait {
-    height: 251px;
     margin: 0 0 0 40px;
     position: relative;
-    width: 352px;
+    width: 310px;
 }
 section.even-more-info .quote-and-portrait.warren .quote {
     max-width: 100%;
@@ -628,10 +648,9 @@ section.even-more-info .quote-and-portrait.weingarten {
     padding: 0 0 70px;
 }
 section.even-more-info .quote-and-portrait.weingarten .portrait {
-    height: 325px;
     margin: 0 0 0 40px;
     position: relative;
-    width: 325px;
+    width: 310px;
 }
 section.even-more-info .quote-and-portrait.weingarten .quote {
     max-width: 100%;
@@ -665,7 +684,7 @@ section.even-more-info .quote-and-portrait.ellison .quote {
         padding: 46px 0 91px;
     }
     section.even-more-info .quote-and-portrait.warren .quote {
-        width: 480px;
+        width: 440px;
     }
     section.even-more-info .quote-and-portrait.trumka {
         padding: 54px 0 117px;
@@ -677,7 +696,7 @@ section.even-more-info .quote-and-portrait.ellison .quote {
         padding: 46px 0 91px;
     }
     section.even-more-info .quote-and-portrait.weingarten .quote {
-        width: 480px;
+        width: 440px;
     }
     section.even-more-info .quote-and-portrait.ellison {
         padding: 54px 0 117px;
@@ -860,16 +879,18 @@ section p {
 }
 section button.sign-the-petition {
     background-color: #ff0000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
     color: #f0f4f5;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 18px 0 14px;
     padding: 0 32px;
-    transition: background-color 0.16s;
+    transition: background-color 0.16s, box-shadow 0.16s;
 }
 section button.sign-the-petition:hover {
     background-color: #d01010;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
 }
 @media screen and (max-width: 769px) {
     section.more-info, section.even-more-info {
@@ -1283,5 +1304,16 @@ section.midnight-share-train a:hover {
 @media screen and (max-height: 459px), (max-width: 459px) {
     .check-your-email-prompt {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 769px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+@media (min-width: 770px) {
+    .hide-on-desktop {
+        display: none;
     }
 }
