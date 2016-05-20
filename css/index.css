@@ -107,7 +107,7 @@ header .headlines h3 {
     max-width: 800px;
 }
 header .headlines p {
-    color: #000812;
+    color: #4a4a4a;
     font-size: 18px;
     /*font-weight: bold;*/
     /*letter-spacing: 1px;*/
@@ -461,15 +461,10 @@ button {
     }
 }
 section.more-info {
-    color: #000812;
+    color: #4a4a4a;
     font-size: 18px;
-<<<<<<< HEAD
-    margin: -26px auto 0;
-    padding: 0 16px 25px;
-=======
     margin: -36px auto 0;
     padding: 24px 16px 25px;
->>>>>>> origin/gh-pages
     position: relative;
 }
 section.more-info h4, section.even-more-info h4 {
@@ -495,7 +490,7 @@ section.more-info h4.header-b {
 section.even-more-info {
     /*background-image: url('../images/gradient-dark-blue.png');
     background-repeat: repeat-x;*/
-    color: #000812;
+    color: #4a4a4a;
     font-size: 18px;
     margin: -26px 0 auto;
     padding: 0px 16px 25px;
@@ -629,10 +624,10 @@ section.even-more-info .quote-and-portrait.weingarten {
     padding: 3px 0 91px;
 }
 section.even-more-info .quote-and-portrait.weingarten .portrait {
-    height: 318px;
+    height: 325px;
     margin: 0 0 0 40px;
     position: relative;
-    width: 269px;
+    width: 325px;
 }
 section.even-more-info .quote-and-portrait.weingarten .quote {
     max-width: 100%;
@@ -1195,13 +1190,32 @@ section.midnight-share-train a:hover {
     padding: 32px 32px 64px;
 }
 .privacy a {
-    color: #0099ff;
+    color: #1c366d;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
 }
 .privacy a:hover {
-    color: #3b9cb0;
+    color: #0099ff;
+}
+.photo-credits {
+    color: #4a4a4a;
+    font-size: 14px;
+    padding: 20px;
+}
+.photo-credits h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.photo-credits p {
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+.photo-credits a {
+    color: #000812;
+}
+.photo-credits a:hover {
+    color: #4a4a4a;
 }
 
 /* Check your email prompt */
