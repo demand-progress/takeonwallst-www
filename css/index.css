@@ -603,22 +603,6 @@ section.even-more-info .quote-and-portrait .quote .text {
 section.even-more-info .quote-and-portrait .portrait {
     display: inline-block;
 }
-section.even-more-info .quote-and-portrait.pope-francis {
-    padding: 0 0 100px;
-    margin-top: -45px;
-}
-section.even-more-info .quote-and-portrait.pope-francis .portrait {
-    height: 327px;
-    position: relative;
-    top: 40px;
-    width: 325px;
-}
-section.even-more-info .quote-and-portrait.pope-francis .quote {
-    left: -25px;
-    max-width: 100%;
-    position: relative;
-    width: 635px;
-}
 section.even-more-info .quote-and-portrait.warren {
     padding: 0 0 70px;
 }
@@ -678,13 +662,23 @@ section.even-more-info .quote-and-portrait.ellison .quote {
     top: -30px;
     width: 635px;
 }
+section.even-more-info .quote-and-portrait.pope-francis {
+    padding: 0 0 100px;
+    margin-top: -45px;
+}
+section.even-more-info .quote-and-portrait.pope-francis .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.pope-francis .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
 @media screen and (max-width: 1099px) {
-    section.even-more-info .quote-and-portrait.pope-francis {
-        padding: 54px 0 117px;
-    }
-    section.even-more-info .quote-and-portrait.pope-francis .quote {
-        width: 480px;
-    }
     section.even-more-info .quote-and-portrait.warren {
         padding: 46px 0 91px;
     }
@@ -709,13 +703,14 @@ section.even-more-info .quote-and-portrait.ellison .quote {
     section.even-more-info .quote-and-portrait.ellison .quote {
         width: 480px;
     }
+    section.even-more-info .quote-and-portrait.pope-francis {
+        padding: 54px 0 117px;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis .quote {
+        width: 480px;
+    }
 }
 @media screen and (max-width: 859px) {
-    section.even-more-info .quote-and-portrait.pope-francis .portrait {
-        height: 163px;
-        top: -60px;
-        width: 162px;
-    }
     section.even-more-info .quote-and-portrait.warren .portrait {
         height: 125px;
         top: -40px;
@@ -732,6 +727,11 @@ section.even-more-info .quote-and-portrait.ellison .quote {
         width: 162px;
     }
     section.even-more-info .quote-and-portrait.ellison .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis .portrait {
         height: 163px;
         top: -60px;
         width: 162px;
