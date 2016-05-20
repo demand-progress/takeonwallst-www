@@ -982,6 +982,7 @@ section .share {
     vertical-align: middle;
 }
 .logos .smaller img {
+    max-height: 180px;
     max-width: 210px;
 }
 .logos .larger {
