@@ -5,6 +5,7 @@ const StaticKit = require('./statickit');
 const $ = require('./vendor/jquery.min');
 
 // Constants
+const ACTIONKIT_CAMPAIGN = 'take-on-wall-street-www';
 const SOURCE = StaticKit.query.source;
 const SOURCE_CLEANED = StaticKit.query.cleanedSource;
 const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
@@ -234,14 +235,15 @@ $(f => {
     }
 
     function fetchPetitionCount() {
-        $.getJSON(WTP_API_COUNT_URL, {
-            key: WTP_API_COUNT_KEY,
-            petition_id: WTP_PETITION_ID,
-        }, (res) => {
-            if (res.count) {
+        // Get signature count
+        $.ajax({
+            url: `https://act.demandprogress.org/progress/${ACTIONKIT_CAMPAIGN}?callback=?`,
+            dataType: 'jsonp',
+            success: (data) => {
+                console.log(data);
                 $('.counter').addClass('loaded');
-                $('.counter .number-of-signatures').text(numberWithCommas(res.count));
-            }
+                $('.counter .number-of-signatures').text(numberWithCommas(data.total.actions));
+            },
         });
     }
 
