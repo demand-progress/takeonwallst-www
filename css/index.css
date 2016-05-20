@@ -344,7 +344,7 @@ header .headlines p {
 }
 .action-wrapper .counter .number-of-signatures-label {
     clear: both;
-    color: #2f4c8c;
+    color: #5c87d5;
     font-size: 28px;
     font-weight: bold;
 }
@@ -369,7 +369,7 @@ header .headlines p {
     padding: 28px 0 4px;
 }
 .action-wrapper .counter .signatures-needed-label {
-    color: #2f4c8c;
+    color: #5c87d5;
     font-size: 28px;
     line-height: 1.2;
     padding: 0 0 32px;
@@ -463,8 +463,13 @@ button {
 section.more-info {
     color: #000812;
     font-size: 18px;
+<<<<<<< HEAD
     margin: -26px auto 0;
     padding: 0 16px 25px;
+=======
+    margin: -36px auto 0;
+    padding: 24px 16px 25px;
+>>>>>>> origin/gh-pages
     position: relative;
 }
 section.more-info h4, section.even-more-info h4 {
@@ -847,8 +852,12 @@ section a:hover {
 }
 section p {
     font-size: 18px;
+<<<<<<< HEAD
     /*font-weight: 300;*/
     line-height: 26px;
+=======
+    line-height: 24px;
+>>>>>>> origin/gh-pages
     margin: 0 auto 25px auto;
     max-width: 830px;
     padding: 0 32px;
