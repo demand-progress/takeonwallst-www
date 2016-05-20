@@ -119,9 +119,9 @@ var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?
 var CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
 var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 var DOMAIN = 'takeonwallst.com';
-var EMAIL_SUBJECT = 'Sign this petition: Tell Congress to Take On Wall Street';
-var EMAIL_BODY = 'Hi,\n\nI just signed a petition telling Congress to take on Wall Street.\n\nWall Street billionaires have rigged our economy and our democracy. Let\'s fix our financial system and make it work for ordinary Americans.\n\nWould you like to sign too?\n\nhttps://takeonwallst.com\n\nThanks!';
-var TWEET_TEXT = 'Wall Street billionaires have rigged our economy and our democracy. Let\'s tell Congress to #TakeOnWallStreet takeonwallst.com';
+var EMAIL_SUBJECT = 'I just signed this';
+var EMAIL_BODY = 'Hi,\n\nI just signed a petition telling Congress to take on Wall Street.\n\nWall Street billionaires have rigged our economy and our democracy. Let\'s fix our financial system and make it work for ordinary Americans.\n\nCan you sign too?\n\nhttps://takeonwallst.com\n\nThanks!';
+var TWEET_TEXT = '#WallStreet billionaires have rigged our economy and our democracy. Let\'s tell Congress to #TakeOnWallStreet! takeonwallst.com';
 var REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'postcode'];
 
 // Globalize jQuery

@@ -12,19 +12,19 @@ const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedbac
 const CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
 const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
 const DOMAIN = 'takeonwallst.com';
-const EMAIL_SUBJECT = 'Sign this petition: Tell Congress to Take On Wall Street';
+const EMAIL_SUBJECT = 'I just signed this';
 const EMAIL_BODY = `Hi,
 
 I just signed a petition telling Congress to take on Wall Street.
 
 Wall Street billionaires have rigged our economy and our democracy. Let's fix our financial system and make it work for ordinary Americans.
 
-Would you like to sign too?
+Can you sign too?
 
 https://takeonwallst.com
 
 Thanks!`;
-const TWEET_TEXT = `Wall Street billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallStreet takeonwallst.com`;
+const TWEET_TEXT = `#WallStreet billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallStreet! takeonwallst.com`;
 const REQUIRED_FIELDS = [
     'first_name',
     'last_name',
