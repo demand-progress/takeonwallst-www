@@ -184,9 +184,21 @@ header .headlines p {
 }
 .petition p {
     font-family: 'Arvo', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 0 24px;
 }
+.petition ul {
+    font-family: 'Arvo', sans-serif;
+    font-size: 14px;
+    list-style-position: inside;
+    list-style-type: disc;
+    padding: 0 0 8px;
+    text-indent: -13px;
+}
+.petition li {
+    padding: 0 30px 14px;
+}
+
 .action-wrapper {
     float: right;
     margin: 0 auto;
@@ -319,7 +331,7 @@ header .headlines p {
     clear: both;
     color: #96a2ba;
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     margin: 0 auto;
     max-width: 370px;
