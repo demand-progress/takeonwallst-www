@@ -1,4 +1,5 @@
 // Modules
+const Analytics = require('./analytics');
 const Email = require('./email');
 const Modal = require('./modal');
 const StaticKit = require('./statickit');

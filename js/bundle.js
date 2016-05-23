@@ -68,7 +68,19 @@ StaticKit.start = function () {
 
 module.exports = StaticKit;
 
-},{"./vendor/jquery.min":5}],2:[function(require,module,exports){
+},{"./vendor/jquery.min":6}],2:[function(require,module,exports){
+'use strict';
+
+(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments);
+  }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-74199344-4', 'auto');
+ga('send', 'pageview');
+
+},{}],3:[function(require,module,exports){
 'use strict';
 
 var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -102,10 +114,11 @@ module.exports = {
     validate: validate
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 // Modules
+var Analytics = require('./analytics');
 var Email = require('./email');
 var Modal = require('./modal');
 var StaticKit = require('./statickit');
@@ -369,7 +382,7 @@ $(function (f) {
     }
 });
 
-},{"./email":2,"./modal":4,"./statickit":1,"./vendor/jquery.min":5}],4:[function(require,module,exports){
+},{"./analytics":2,"./email":3,"./modal":5,"./statickit":1,"./vendor/jquery.min":6}],5:[function(require,module,exports){
 'use strict';
 
 var $ = require('./vendor/jquery.min');
@@ -432,7 +445,7 @@ var Modal = {
 
 module.exports = Modal;
 
-},{"./vendor/jquery.min":5}],5:[function(require,module,exports){
+},{"./vendor/jquery.min":6}],6:[function(require,module,exports){
 "use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -2656,4 +2669,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   }, b || (a.jQuery = a.$ = n), n;
 });
 
-},{}]},{},[3]);
+},{}]},{},[4]);
