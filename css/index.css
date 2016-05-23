@@ -1232,7 +1232,7 @@ section.midnight-share-train a:hover {
 }
 .photo-credits {
     color: #4a4a4a;
-    display: none;
+    /*display: none;*/
     font-size: 14px;
     padding: 20px;
 }
@@ -1245,7 +1245,7 @@ section.midnight-share-train a:hover {
     margin-bottom: 12px;
 }
 .photo-credits a {
-    color: #000812;
+    color: #999;
 }
 .photo-credits a:hover {
     color: #4a4a4a;
