@@ -456,14 +456,14 @@ button {
         background-position: 50% 0;
     }
 }
-.more-info-header .gradient-light {
+/*.more-info-header .gradient-light {
     background-image: url('../images/gradient-light.png');
     bottom: 0;
     left: 0;
     height: 60px;
     position: absolute;
     width: 100%;
-}
+}*/
 .petition .sign-the-petition, .more-info-header .sign-the-petition {
     background-color: #ff0000;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
@@ -538,14 +538,14 @@ section.even-more-info {
     padding: 24px 16px 25px;
     position: relative;
 }
-section.even-more-info .gradient-light {
+/*section.even-more-info .gradient-light {
     background-image: url('../images/gradient-light.png');
     bottom: 0;
     left: 0;
     height: 60px;
     position: absolute;
     width: 100%;
-}
+}*/
 section.even-more-info h4 {
     /*background-image: url(../images/background-cash-light.jpg);
     background-size: cover;
