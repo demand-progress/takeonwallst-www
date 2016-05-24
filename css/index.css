@@ -120,7 +120,7 @@ header .headlines p {
     max-width: 750px;
     padding: 0 32px;
     text-align: center;
-    text-shadow: 0 0 20px #f1f1f1;
+    text-shadow: 0 0 8px #f1f1f1;
 }
 /*@media screen and (max-width: 839px) {
     header .headlines h1 {
@@ -166,7 +166,7 @@ header .headlines p {
     font-size: 20px;
     line-height: 1.4;
     margin: 0 413px 0 0;
-    min-height: 705px;
+    min-height: 690px;
     padding: 22px 40px 34px;
     text-align: left;
     position: relative;
@@ -184,7 +184,7 @@ header .headlines p {
 }
 .petition p {
     font-family: 'Arvo', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0 0 24px;
 }
 .petition ul {
@@ -558,7 +558,7 @@ section.even-more-info h4.agenda-header {
     background-size: cover;
 }
 section.even-more-info h4.quotes-header {
-    background-image: url(../images/background-people.jpg);
+    background-image: url(../images/background-people2.jpg);
     background-size: cover;
 }
 section.even-more-info .quote-and-portrait {
