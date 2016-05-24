@@ -701,10 +701,12 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
         top: auto;
         width: 100%;
     }
-    section.even-more-info .quote-and-portrait.pope-francis, section.even-more-info .quote-and-portrait.warren,
-    section.even-more-info .quote-and-portrait.trumka, section.even-more-info .quote-and-portrait.weingarten,
+    section.even-more-info .quote-and-portrait.pope-francis,
+    section.even-more-info .quote-and-portrait.warren,
+    section.even-more-info .quote-and-portrait.trumka,
+    section.even-more-info .quote-and-portrait.weingarten,
     section.even-more-info .quote-and-portrait.ellison {
-        padding: 8px 0;
+        padding: 32px 0;
     }
 }
 @media screen and (max-width: 549px) {
@@ -723,6 +725,13 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
         background-size: 77px 49px;
         bottom: 12px;
         right: 0;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis,
+    section.even-more-info .quote-and-portrait.warren,
+    section.even-more-info .quote-and-portrait.trumka,
+    section.even-more-info .quote-and-portrait.weingarten,
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 8px 0;
     }
 }
 section.even-more-info button.sign-the-petition {
