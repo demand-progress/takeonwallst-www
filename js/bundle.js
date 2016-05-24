@@ -135,7 +135,10 @@ var DOMAIN = 'takeonwallst.com';
 var EMAIL_SUBJECT = 'I just signed this';
 var EMAIL_BODY = 'Hi,\n\nI just signed a petition telling Congress to take on Wall Street.\n\nWall Street billionaires have rigged our economy and our democracy. Let\'s fix our financial system and make it work for ordinary Americans.\n\nCan you sign too?\n\nhttps://takeonwallst.com\n\nThanks!';
 var TWEET_TEXT = '#WallStreet billionaires have rigged our economy and our democracy. Let\'s tell Congress to #TakeOnWallStreet! takeonwallst.com';
-var REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'postcode'];
+var REQUIRED_FIELDS = [
+// 'first_name',
+// 'last_name',
+'email', 'postcode'];
 
 // Globalize jQuery
 window.jQuery = window.$ = $;

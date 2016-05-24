@@ -306,6 +306,10 @@ header .headlines p {
         width: 100%;
         font-size: 18px;
     }
+    .action .form-wrapper .input-grid #first_name,
+    .action .form-wrapper .input-grid #last_name {
+        display: none;
+    }
 }
 .action .form-wrapper button {
     background-color: #ff0000;
