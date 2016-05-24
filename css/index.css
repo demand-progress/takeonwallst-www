@@ -167,7 +167,7 @@ header .headlines p {
     line-height: 1.4;
     margin: 0 413px 0 0;
     min-height: 705px;
-    padding: 22px 40px 24px;
+    padding: 22px 40px 34px;
     text-align: left;
     position: relative;
 }
@@ -428,17 +428,20 @@ button {
     width: 100%;
 }
 .more-info-header h4 {
+    background-image: url(../images/background-cash-light.jpg);
+    background-size: cover;
     color: #002b88;
     display: inline-block;
-    font-size: 36px;
-    line-height: 1.4;
-    /*font-style: italic;*/
+    font-size: 40px;
     font-weight: bold;
-    padding: 100px 16px 56px;
+    line-height: 1.4;
+    margin: 0 0 40px;
+    padding: 85px 16px 70px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     width: 100%;
     word-spacing: 1px;
 }
-.background-cash {
+/*.background-cash {
     background-color: #e2f5d2;
     background-image: url(../images/bg-moola.jpg);
     background-position: 0 50%;
@@ -453,7 +456,7 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: inset 0 0 17px rgba(0, 0, 0, 0.2);
-}
+}*/
 @media (max-width: 769px) {
     .background-cash {}
     .background-team {
@@ -521,64 +524,43 @@ section.more-info h4, section.even-more-info h4 {
     line-height: 1.2;
     margin: 0 auto;
 }
-/*section.more-info h4.gradient-dark-blue {
-    background-image: url('../images/gradient-dark-blue.png');
-}*/
-/*section.more-info h4.header-a {
-    max-width: 550px;
-    padding: 20px 0 42px;
-}
-section.more-info h4.header-b {
-    font-size: 24px;
-    font-style: italic;
-    font-weight: bold;
-    padding: 20px 0 0;
-}*/
 section.even-more-info {
-    /*background-image: url('../images/gradient-dark-blue.png');
-    background-repeat: repeat-x;*/
     color: #4a4a4a;
     font-size: 18px;
     margin: -36px auto 0;
-    padding: 24px 16px 25px;
+    padding: 24px 0 25px;
     position: relative;
 }
-section.even-more-info .gradient-light {
+/*section.even-more-info .gradient-light {
     background-image: url('../images/gradient-light.png');
     bottom: 0;
     left: 0;
     height: 60px;
     position: absolute;
     width: 100%;
-}
+}*/
 section.even-more-info h4 {
-    /*background-image: url(../images/background-cash-light.jpg);
-    background-size: cover;
-    height: 198px;
-    padding: 0 32px 38px;*/
     background-image: url(../images/background-cash-light.jpg);
     background-size: cover;
     color: #002b88;
     display: inline-block;
-    font-size: 36px;
-    /*font-style: italic;*/
+    font-size: 40px;
     font-weight: bold;
-    padding: 100px 16px 56px;
+    line-height: 1.4;
+    margin: 0 0 40px;
+    padding: 80px 0 70px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     width: 100%;
     word-spacing: 1px;
 }
-/*section.even-more-info h4.header-c {
-    max-width: 790px;
+section.even-more-info h4.agenda-header {
+    background-image: url(../images/background-tools.jpg);
+    background-size: cover;
 }
-section.even-more-info h4.header-d {
-    max-width: 980px;
+section.even-more-info h4.quotes-header {
+    background-image: url(../images/background-people.jpg);
+    background-size: cover;
 }
-section.even-more-info h4.header-e {
-    max-width: 900px;
-}*/
-/*section.even-more-info p {
-    max-width: 870px;
-}*/
 section.even-more-info .quote-and-portrait {
     overflow: hidden;
 }
@@ -916,8 +898,7 @@ section button.sign-the-petition:hover {
 }
 @media screen and (max-width: 769px) {
     section.more-info, section.even-more-info {
-        margin: -58px auto 0;
-        /*max-width: 413px;*/
+        /*margin: -20px auto 0;*/
     }
     section.more-info p, section.even-more-info p {
         font-size: 17px;
