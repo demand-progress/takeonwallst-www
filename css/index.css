@@ -56,7 +56,7 @@ em {
 
 body {
     background-color: #e1e1e1;
-    background-image: url(../images/header-collage-v03.jpg);
+    background-image: url(../images/header-collage-v05.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -92,13 +92,13 @@ header .headlines h1, header .headlines h2, header .headlines h3 {
 }
 header .headlines h1 {
     color: #ff0000;
-    font-size: 54px;
+    font-size: 57px;
     letter-spacing: 1px;
     padding: 8px 16px 11px;
 }
 header .headlines h2 {
     color: #2f4c8c;
-    font-size: 30px;
+    font-size: 34px;
     letter-spacing: 1px;
     padding: 48px 16px 1px;
 }
@@ -111,13 +111,13 @@ header .headlines h3 {
     max-width: 800px;
 }
 header .headlines p {
-    color: #4a4a4a;
+    color: #000812;
     font-size: 18px;
-    /*font-weight: bold;*/
+    font-weight: 600;
     letter-spacing: 1px;
-    line-height: 24px;
-    margin: 0 auto 25px auto;
-    max-width: 740px;
+    line-height: 26px;
+    margin: 10px auto 36px auto;
+    max-width: 750px;
     padding: 0 32px;
     text-align: center;
     text-shadow: 0 0 20px #f1f1f1;
@@ -184,9 +184,21 @@ header .headlines p {
 }
 .petition p {
     font-family: 'Arvo', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 0 24px;
 }
+.petition ul {
+    font-family: 'Arvo', sans-serif;
+    font-size: 14px;
+    list-style-position: inside;
+    list-style-type: disc;
+    padding: 0 0 8px;
+    text-indent: -13px;
+}
+.petition li {
+    padding: 0 30px 14px;
+}
+
 .action-wrapper {
     float: right;
     margin: 0 auto;
@@ -319,7 +331,7 @@ header .headlines p {
     clear: both;
     color: #96a2ba;
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     margin: 0 auto;
     max-width: 370px;
@@ -611,7 +623,7 @@ section.even-more-info .quote-and-portrait.warren {
 section.even-more-info .quote-and-portrait.warren .portrait {
     margin: 0 0 0 40px;
     position: relative;
-    width: 290px;
+    width: 300px;
 }
 section.even-more-info .quote-and-portrait.warren .quote {
     max-width: 100%;
@@ -714,9 +726,8 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
 }
 @media screen and (max-width: 859px) {
     section.even-more-info .quote-and-portrait.warren .portrait {
-        height: 125px;
         top: -40px;
-        width: 176px;
+        width: 150px;
     }
     section.even-more-info .quote-and-portrait.trumka .portrait {
         height: 163px;
