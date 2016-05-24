@@ -25,7 +25,7 @@ Can you sign too?
 https://takeonwallst.com
 
 Thanks!`;
-const TWEET_TEXT = `#WallStreet billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallStreet! takeonwallst.com`;
+const TWEET_TEXT = `#WallStreet billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallSt! takeonwallst.com`;
 const REQUIRED_FIELDS = [
     // 'first_name',
     // 'last_name',

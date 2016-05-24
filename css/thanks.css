@@ -3,8 +3,14 @@ header .intro {
     font-size: 20px;
     line-height: 1.4;
     margin: 0 auto;
-    max-width: 365px;
+    max-width: 920px;
     padding: 0 32px 32px;
+}
+header .intro h3 {
+    margin: 56px 0 8px;
+    color: #2f4c8c;
+    font-size: 32px;
+    font-weight: bold;
 }
 section.midnight-share-train {
     background-color: #ccc;
