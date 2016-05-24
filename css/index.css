@@ -122,16 +122,9 @@ header .headlines p {
     text-align: center;
     text-shadow: 0 0 8px #f1f1f1;
 }
-/*@media screen and (max-width: 839px) {
-    header .headlines h1 {
-        font-size: 37px;
-    }
-}*/
 @media screen and (max-width: 769px) {
     header .headlines h1 {
         font-size: 40px;
-        /*line-height: 1.2;
-        max-width: 320px;*/
     }
     header .headlines h2 {
         font-size: 24px;
@@ -155,12 +148,10 @@ header .headlines p {
     max-width: 998px;
 }
 .petition-and-form-wrapper > .outer-padding {
-    /*background-image: url(../images/pattern-dark-blue.png);*/
     margin: 0 16px;
 }
 .petition {
     background-color: #f1f1f1;
-    /*background-image: url(../images/pattern-gray.png);*/
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     color: #000812;
     font-size: 20px;
@@ -206,7 +197,6 @@ header .headlines p {
 }
 .action {
     background: #1c366d;
-    /*background-image: url('../images/pattern-blue.png');*/
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     max-width: 413px;
@@ -353,8 +343,6 @@ header .headlines p {
 .action-wrapper .counter {
     display: none;
     background-color: #112347;
-    /*background-image: url(../images/pattern-dark-blue.png);*/
-    /*box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);*/
     margin: 0 auto;
     max-width: 413px;
     position: relative;
@@ -428,6 +416,7 @@ button {
     width: 100%;
 }
 .more-info-header h4 {
+    background-color: #c3dea8;
     background-image: url(../images/background-cash-light.jpg);
     background-size: cover;
     color: #002b88;
@@ -436,41 +425,10 @@ button {
     font-weight: bold;
     line-height: 1.4;
     margin: 0 0 40px;
-    padding: 85px 16px 70px;
+    padding: 85px 16px 80px;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     width: 100%;
     word-spacing: 1px;
-}
-/*.background-cash {
-    background-color: #e2f5d2;
-    background-image: url(../images/bg-moola.jpg);
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.background-team {
-    background-attachment: fixed;
-    background-color: #e4e2e3;
-    background-image: url(../images/bg-tools-BW.jpg);
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0 0 17px rgba(0, 0, 0, 0.2);
-}*/
-@media (max-width: 769px) {
-    .background-cash {}
-    .background-team {
-        background-size: 120%;
-        background-position: 50% 0;
-    }
-}
-.more-info-header .gradient-light {
-    background-image: url('../images/gradient-light.png');
-    bottom: 0;
-    left: 0;
-    height: 60px;
-    position: absolute;
-    width: 100%;
 }
 .petition .sign-the-petition, .more-info-header .sign-the-petition {
     background-color: #ff0000;
@@ -500,12 +458,8 @@ button {
         display: none;
     }
     .more-info-header {
-        /*max-width: 413px;*/
         padding: 0;
     }
-    /*.more-info-header h4 {
-        font-size: 24px;
-    }*/
     .more-info-header .sign-the-petition {
         display: block;
     }
@@ -531,35 +485,29 @@ section.even-more-info {
     padding: 24px 0 25px;
     position: relative;
 }
-/*section.even-more-info .gradient-light {
-    background-image: url('../images/gradient-light.png');
-    bottom: 0;
-    left: 0;
-    height: 60px;
-    position: absolute;
-    width: 100%;
-}*/
 section.even-more-info h4 {
-    background-image: url(../images/background-cash-light.jpg);
-    background-size: cover;
     color: #002b88;
     display: inline-block;
     font-size: 40px;
     font-weight: bold;
     line-height: 1.4;
     margin: 0 0 40px;
-    padding: 80px 0 70px;
+    padding: 85px 0 85px;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     width: 100%;
     word-spacing: 1px;
 }
 section.even-more-info h4.agenda-header {
+    background-color: #baaf9d;
     background-image: url(../images/background-tools.jpg);
     background-size: cover;
 }
 section.even-more-info h4.quotes-header {
+    background-color: #f7f5d8;
     background-image: url(../images/background-people2.jpg);
     background-size: cover;
+    font-size: 60px;
+    padding: 145px 0 25px;
 }
 section.even-more-info .quote-and-portrait {
     overflow: hidden;
@@ -779,94 +727,8 @@ section.even-more-info button.sign-the-petition {
     font-size: 22px;
     padding: 0 28px;
 }
-/*section .year {
-    margin: 0 auto 26px;
-    max-width: 550px;
-    overflow: hidden;
-    position: relative;
-    text-align: left;
-}
-section .year .number {
-    color: #b41615;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.3;
-    width: 66px;
-}
-section .year .description {
-    color: #f1f1f1;
-    float: right;
-    line-height: 1.4;
-    padding: 0 0 0 17px;
-    position: relative;
-    width: calc(100% - 66px);
-}
-section .year .description::before {
-    content: '';
-    background-color: #b41615;
-    top: 7px;
-    height: calc(100% - 15px);
-    width: 3px;
-    left: 0;
-    position: absolute;
-}
-section .branch {
-    margin: 0 auto 26px;
-    max-width: 720px;
-    overflow: hidden;
-    position: relative;
-    text-align: left;
-}
-section .branch .name {
-    color: #b41615;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.3;
-    text-align: right;
-    width: 120px;
-}
-section .branch .description {
-    color: #f1f1f1;
-    float: right;
-    line-height: 1.4;
-    margin: 0 0 0 18px;
-    padding: 0 0 0 28px;
-    position: relative;
-    width: calc(100% - 138px);
-}
-section .branch .description::before {
-    content: '';
-    background-color: #b41615;
-    top: 7px;
-    height: calc(100% - 15px);
-    width: 3px;
-    left: 0;
-    position: absolute;
-}
-@media screen and (max-width: 399px) {
-    section .branch .name {
-        font-size: 18px;
-        width: 70px;
-    }
-    section .branch .name.executive-order {
-        font-size: 13px;
-    }
-    section .branch .description {
-        font-size: 15px;
-        margin: 0;
-        padding: 0 0 0 18px;
-        width: calc(100% - 84px);
-    }
-}
-section .undisclosed-spending-infographic {
-    padding: 18px 0 15px;
-    max-width: 100%;
-}*/
 section a {
     color: #2f4c8c;
-    /*font-weight: bold;*/
     font-style: italic;
 }
 section a:hover {
@@ -874,7 +736,6 @@ section a:hover {
 }
 section p {
     font-size: 18px;
-    /*font-weight: 300;*/
     line-height: 26px;
     margin: 0 auto 25px auto;
     max-width: 830px;
