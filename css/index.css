@@ -418,6 +418,7 @@ button {
 .more-info-header h4 {
     background-color: #c3dea8;
     background-image: url(../images/background-cash-light.jpg);
+    background-position: 50% 0;
     background-size: cover;
     color: #002b88;
     display: inline-block;
@@ -500,11 +501,13 @@ section.even-more-info h4 {
 section.even-more-info h4.agenda-header {
     background-color: #baaf9d;
     background-image: url(../images/background-tools.jpg);
+    background-position: 50% 0;
     background-size: cover;
 }
 section.even-more-info h4.quotes-header {
     background-color: #f7f5d8;
     background-image: url(../images/background-people2.jpg);
+    background-position: 50% 0;
     background-size: cover;
     font-size: 60px;
     padding: 145px 0 25px;
@@ -552,7 +555,7 @@ section.even-more-info .quote-and-portrait .portrait {
     display: inline-block;
 }
 section.even-more-info .quote-and-portrait.warren {
-    padding: 0 0 70px;
+    padding: 0 0 0;
 }
 section.even-more-info .quote-and-portrait.warren .portrait {
     margin: 0 0 0 40px;
@@ -566,7 +569,7 @@ section.even-more-info .quote-and-portrait.warren .quote {
     width: 710px;
 }
 section.even-more-info .quote-and-portrait.trumka {
-    padding: 0 0 100px;
+    padding: 0 0 90px;
 }
 section.even-more-info .quote-and-portrait.trumka .portrait {
     height: 327px;
@@ -581,7 +584,7 @@ section.even-more-info .quote-and-portrait.trumka .quote {
     width: 635px;
 }
 section.even-more-info .quote-and-portrait.weingarten {
-    padding: 0 0 70px;
+    padding: 0 0 0;
 }
 section.even-more-info .quote-and-portrait.weingarten .portrait {
     margin: 0 0 0 40px;
@@ -595,7 +598,7 @@ section.even-more-info .quote-and-portrait.weingarten .quote {
     width: 710px;
 }
 section.even-more-info .quote-and-portrait.ellison {
-    padding: 0 0 117px;
+    padding: 0 0 50px;
 }
 section.even-more-info .quote-and-portrait.ellison .portrait {
     height: 327px;
@@ -611,8 +614,7 @@ section.even-more-info .quote-and-portrait.ellison .quote {
     width: 635px;
 }
 section.even-more-info .quote-and-portrait.pope-francis {
-    padding: 0 0 100px;
-    margin-top: -45px;
+    padding: 0 0 70px;
 }
 section.even-more-info .quote-and-portrait.pope-francis .portrait {
     height: 327px;
@@ -627,38 +629,38 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
     width: 635px;
 }
 @media screen and (max-width: 1099px) {
-    section.even-more-info .quote-and-portrait.warren {
-        padding: 46px 0 91px;
-    }
     section.even-more-info .quote-and-portrait.warren .quote {
         width: 440px;
-    }
-    section.even-more-info .quote-and-portrait.trumka {
-        padding: 54px 0 117px;
     }
     section.even-more-info .quote-and-portrait.trumka .quote {
         width: 480px;
     }
-    section.even-more-info .quote-and-portrait.weingarten {
-        padding: 46px 0 91px;
-    }
     section.even-more-info .quote-and-portrait.weingarten .quote {
         width: 440px;
     }
-    section.even-more-info .quote-and-portrait.ellison {
-        padding: 54px 0 117px;
-    }
     section.even-more-info .quote-and-portrait.ellison .quote {
         width: 480px;
-    }
-    section.even-more-info .quote-and-portrait.pope-francis {
-        padding: 54px 0 117px;
     }
     section.even-more-info .quote-and-portrait.pope-francis .quote {
         width: 480px;
     }
 }
 @media screen and (max-width: 859px) {
+    section.even-more-info .quote-and-portrait.warren {
+        padding: 0 0 0;
+    }
+    section.even-more-info .quote-and-portrait.trumka {
+        padding: 0 0 0;
+    }
+    section.even-more-info .quote-and-portrait.weingarten {
+        padding: 60px 0 0;
+    }
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 40px 0 0;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis {
+        padding: 20px 0 0;
+    }
     section.even-more-info .quote-and-portrait.warren .portrait {
         top: -40px;
         width: 150px;
@@ -670,12 +672,12 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
     }
     section.even-more-info .quote-and-portrait.weingarten .portrait {
         height: 162px;
-        top: -40px;
+        top: -65px;
         width: 162px;
     }
     section.even-more-info .quote-and-portrait.ellison .portrait {
         height: 163px;
-        top: -60px;
+        top: -20px;
         width: 162px;
     }
     section.even-more-info .quote-and-portrait.pope-francis .portrait {
@@ -702,7 +704,7 @@ section.even-more-info .quote-and-portrait.pope-francis .quote {
     section.even-more-info .quote-and-portrait.pope-francis, section.even-more-info .quote-and-portrait.warren,
     section.even-more-info .quote-and-portrait.trumka, section.even-more-info .quote-and-portrait.weingarten,
     section.even-more-info .quote-and-portrait.ellison {
-        padding: 32px 0;
+        padding: 8px 0;
     }
 }
 @media screen and (max-width: 549px) {
