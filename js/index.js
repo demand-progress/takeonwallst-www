@@ -32,6 +32,10 @@ const REQUIRED_FIELDS = [
     'email',
     'postcode',
 ];
+var NON_SWAP_DISCLAIMERS = {
+    'mediavoicesforchildren_ns': 'Media Voices for Children may contact you about future campaigns.',
+    'nea_ns': 'National Education Association may contact you about future campaigns.',
+};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -45,6 +49,11 @@ $(f => {
     $('[name=action_user_agent]').val(navigator.userAgent);
     $('[name=source]').val(SOURCE_CLEANED);
     $('[name=url]').val(location.href);
+
+    var nonSwapDisclaimer = NON_SWAP_DISCLAIMERS[SOURCE_CLEANED];
+    if (nonSwapDisclaimer) {
+        $('.action span.disclaimer').text(nonSwapDisclaimer);
+    }
 
     let readyToSendToActionKit = false;
     const $signatureForm = $('.home-page .action form');
@@ -241,7 +250,6 @@ $(f => {
             url: `https://act.demandprogress.org/progress/${ACTIONKIT_CAMPAIGN}?callback=?`,
             dataType: 'jsonp',
             success: (data) => {
-                console.log(data);
                 $('.counter').addClass('loaded');
                 $('.counter .number-of-signatures').text(numberWithCommas(data.total.actions));
             },
