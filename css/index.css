@@ -335,6 +335,7 @@ header .headlines p {
     margin: 8px auto -13px;
 }
 .action-wrapper .counter {
+    display: none;
     background-color: #112347;
     /*background-image: url(../images/pattern-dark-blue.png);*/
     /*box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);*/
