@@ -152,6 +152,9 @@ $(function (f) {
     // Wire up modals
     Modal.wireAll();
 
+    // Redirects
+    redirectBasedOnSource();
+
     // Populate special form fields
     $('[name=action_user_agent]').val(navigator.userAgent);
     $('[name=source]').val(SOURCE_CLEANED);
@@ -328,7 +331,7 @@ $(function (f) {
         showCheckYourEmailPrompt();
         showThanks();
         location.hash = '';
-        setTimeout(function () {
+        setTimeout(function (f) {
             location.href = './call?after=signing-petition';
         }, 30 * 1000);
     }
@@ -390,6 +393,14 @@ $(function (f) {
         $('html, body').stop().animate({
             scrollTop: $('.calling-wrapper').offset().top - 16
         }, 640);
+    }
+
+    function redirectBasedOnSource() {
+        if (window.location.pathname === '/thanks/') {
+            if (SOURCE_CLEANED === 'dfa') {
+                location.href = 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516';
+            }
+        }
     }
 });
 

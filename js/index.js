@@ -45,6 +45,9 @@ $(f => {
     // Wire up modals
     Modal.wireAll();
 
+    // Redirects
+    redirectBasedOnSource();
+
     // Populate special form fields
     $('[name=action_user_agent]').val(navigator.userAgent);
     $('[name=source]').val(SOURCE_CLEANED);
@@ -57,7 +60,7 @@ $(f => {
 
     let readyToSendToActionKit = false;
     const $signatureForm = $('.home-page .action form');
-    $signatureForm.on('submit', (e) => {
+    $signatureForm.on('submit', e => {
         if (readyToSendToActionKit) {
             return true;
         }
@@ -70,7 +73,7 @@ $(f => {
 
         let valid = true;
 
-        REQUIRED_FIELDS.forEach((field) => {
+        REQUIRED_FIELDS.forEach(field => {
             if (!valid) {
                 return;
             }
@@ -110,7 +113,7 @@ $(f => {
     });
 
     const $callForm = $('.call-page .action form');
-    $callForm.on('submit', (e) => {
+    $callForm.on('submit', e => {
         e.preventDefault();
 
         const phone = $('#phone').val().replace(/[^\d]/g, '');
@@ -128,7 +131,7 @@ $(f => {
             source_id: SOURCE,
             userPhone: phone,
             zipcode: 90210,
-        }, (res) => {
+        }, res => {
             if (res.message !== 'queued') {
                 alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.')
             }
@@ -149,12 +152,12 @@ $(f => {
     }
 
     const $feedbackForm = $('.calling-wrapper form');
-    $feedbackForm.on('submit', (e) => {
+    $feedbackForm.on('submit', e => {
         e.preventDefault();
 
         let message = '';
         const fields = $feedbackForm.serializeArray();
-        fields.forEach((field) => {
+        fields.forEach(field => {
             message += `${field.name}:\n${field.value}\n\n`;
         });
 
@@ -167,14 +170,14 @@ $(f => {
         $feedbackForm.addClass('sent');
     });
 
-    $('.animated-scroll').on('click', (e) => {
+    $('.animated-scroll').on('click', e => {
         const target = $(e.target).data('target');
         $('html, body').stop().animate({
             scrollTop: $(target).offset().top,
         }, 640);
     });
 
-    $('a.facebook').on('click', (e) => {
+    $('a.facebook').on('click', e => {
         e.preventDefault();
 
         const url =
@@ -183,7 +186,7 @@ $(f => {
         window.open(url);
     });
 
-    $('a.twitter').on('click', (e) => {
+    $('a.twitter').on('click', e => {
         e.preventDefault();
 
         const url =
@@ -192,7 +195,7 @@ $(f => {
         window.open(url);
     });
 
-    $('a.email').on('click', (e) => {
+    $('a.email').on('click', e => {
         e.preventDefault();
 
         const url =
@@ -201,18 +204,18 @@ $(f => {
         window.location.href = url;
     });
 
-    $('a.the-letter').on('click', (e) => {
+    $('a.the-letter').on('click', e => {
         e.preventDefault();
         Modal.show('#letter');
     });
 
-    $('button.add-your-name').on('click', (e) => {
+    $('button.add-your-name').on('click', e => {
         e.preventDefault();
         location.hash = 'add-your-name';
     });
 
     var resizeTimeout = false;
-    $(window).on('resize', (e) => {
+    $(window).on('resize', e => {
         resizeTimeout = setTimeout(onResize, 300);
     }, false);
 
@@ -230,7 +233,7 @@ $(f => {
         showCheckYourEmailPrompt();
         showThanks();
         location.hash = '';
-        setTimeout(() => {
+        setTimeout(f => {
             location.href = './call?after=signing-petition';
         }, 30 * 1000);
     }
@@ -249,7 +252,7 @@ $(f => {
         $.ajax({
             url: `https://act.demandprogress.org/progress/${ACTIONKIT_CAMPAIGN}?callback=?`,
             dataType: 'jsonp',
-            success: (data) => {
+            success: data => {
                 $('.counter').addClass('loaded');
                 $('.counter .number-of-signatures').text(numberWithCommas(data.total.actions));
             },
@@ -257,7 +260,7 @@ $(f => {
     }
 
     function fetchCallCount() {
-        $.getJSON(CALL_TOOL_COUNT_URL, (res) => {
+        $.getJSON(CALL_TOOL_COUNT_URL, res => {
             if (res.count) {
                 $('.counter').addClass('loaded');
                 $('.counter .number-of-signatures').text(numberWithCommas(res.count));
@@ -292,6 +295,14 @@ $(f => {
         $('html, body').stop().animate({
             scrollTop: $('.calling-wrapper').offset().top - 16,
         }, 640);
+    }
+
+    function redirectBasedOnSource() {
+        if (window.location.pathname === '/thanks/') {
+            if (SOURCE_CLEANED === 'dfa') {
+                location.href = 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516';
+            }
+        }
     }
 
 });
