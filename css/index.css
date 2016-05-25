@@ -342,7 +342,6 @@ header .headlines p {
     margin: 8px auto -13px;
 }
 .action-wrapper .counter {
-    display: none;
     background-color: #112347;
     margin: 0 auto;
     max-width: 413px;
