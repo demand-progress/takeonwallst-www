@@ -1,20 +1,22 @@
 // Modules
-const Analytics = require('./analytics');
-const Email = require('./email');
-const Modal = require('./modal');
-const StaticKit = require('./statickit');
-const $ = require('./vendor/jquery.min');
+var $ = require('./vendor/jquery.min');
+var Analytics = require('./analytics');
+var each = require('lodash/each');
+var Email = require('./email');
+var Modal = require('./modal');
+var reduce = require('lodash/reduce');
+var StaticKit = require('./statickit');
 
 // Constants
-const ACTIONKIT_CAMPAIGN = 'take-on-wall-street-www';
-const SOURCE = StaticKit.query.source;
-const SOURCE_CLEANED = StaticKit.query.cleanedSource;
-const FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
-const CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
-const CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
-const DOMAIN = 'takeonwallst.com';
-const EMAIL_SUBJECT = 'I just signed this';
-const EMAIL_BODY = `Hi,
+var ACTIONKIT_CAMPAIGN = 'take-on-wall-street-www';
+var SOURCE = StaticKit.query.source;
+var SOURCE_CLEANED = StaticKit.query.cleanedSource;
+var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
+var CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
+var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
+var DOMAIN = 'takeonwallst.com';
+var EMAIL_SUBJECT = 'I just signed this';
+var EMAIL_BODY = `Hi,
 
 I just signed a petition telling Congress to take on Wall Street.
 
@@ -25,8 +27,8 @@ Can you sign too?
 https://takeonwallst.com
 
 Thanks!`;
-const TWEET_TEXT = `#WallStreet billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallSt! takeonwallst.com`;
-const REQUIRED_FIELDS = [
+var TWEET_TEXT = `#WallStreet billionaires have rigged our economy and our democracy. Let's tell Congress to #TakeOnWallSt! takeonwallst.com`;
+var REQUIRED_FIELDS = [
     // 'first_name',
     // 'last_name',
     'email',
@@ -36,6 +38,11 @@ var NON_SWAP_DISCLAIMERS = {
     'mediavoicesforchildren_ns': 'Media Voices for Children may contact you about future campaigns.',
     'nea_ns': 'National Education Association may contact you about future campaigns.',
 };
+var AFTER_ACTION_URLS = {
+    dfa: 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516',
+    pfaw: 'https://secure.pfaw.org/site/SPageNavigator/ms_donation_15347.html?autologin=true',
+    rootstrikers: 'https://secure.actblue.com/contribute/page/takeonwallstreet?refcode=tows&recurring=12&amount=25',
+};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -44,6 +51,9 @@ window.jQuery = window.$ = $;
 $(f => {
     // Wire up modals
     Modal.wireAll();
+
+    // Check for form errors
+    StaticKit.start();
 
     // Redirects
     redirectBasedOnSource();
@@ -58,8 +68,8 @@ $(f => {
         $('.action span.disclaimer').text(nonSwapDisclaimer);
     }
 
-    let readyToSendToActionKit = false;
-    const $signatureForm = $('.home-page .action form');
+    var readyToSendToActionKit = false;
+    var $signatureForm = $('.home-page .action form');
     $signatureForm.on('submit', e => {
         if (readyToSendToActionKit) {
             return true;
@@ -71,33 +81,29 @@ $(f => {
 
         e.preventDefault();
 
-        let valid = true;
+        var valid = true;
 
-        REQUIRED_FIELDS.forEach(field => {
-            if (!valid) {
-                return;
-            }
-
-            const $field = $('#' + field);
-            const value = $field.val() && $field.val().trim();
+        each(REQUIRED_FIELDS, field => {
+            var $field = $('#' + field);
+            var value = $field.val() && $field.val().trim();
             if (!value) {
                 alert('Please enter your ' + $field.attr('placeholder'));
                 $field.focus();
-
                 valid = false;
+                return false;
             }
         });
 
         if (!valid) {
-            return;
+            return false;
         }
 
-        const email = $('#email').val().trim().toLowerCase();
+        var email = $('#email').val().trim().toLowerCase();
 
         if (!Email.validate(email)) {
             $('#email').focus();
             alert('Please enter your valid email');
-            return;
+            return false;
         }
 
         if (window.optimizely) {
@@ -112,11 +118,11 @@ $(f => {
         $signatureForm.submit();
     });
 
-    const $callForm = $('.call-page .action form');
+    var $callForm = $('.call-page .action form');
     $callForm.on('submit', e => {
         e.preventDefault();
 
-        const phone = $('#phone').val().replace(/[^\d]/g, '');
+        var phone = $('#phone').val().replace(/[^\d]/g, '');
 
         if (phone.length < 10) {
             $('#phone').focus();
@@ -151,15 +157,15 @@ $(f => {
         }
     }
 
-    const $feedbackForm = $('.calling-wrapper form');
+    var $feedbackForm = $('.calling-wrapper form');
     $feedbackForm.on('submit', e => {
         e.preventDefault();
 
-        let message = '';
-        const fields = $feedbackForm.serializeArray();
-        fields.forEach(field => {
-            message += `${field.name}:\n${field.value}\n\n`;
-        });
+        var message = reduce(
+            $feedbackForm.serializeArray(),
+            field => message += `${field.name}:\n${field.value}\n\n`,
+            ''
+        );
 
         $.getJSON(FEEDBACK_TOOL_URL, {
             campaign: 'take-on-wall-street',
@@ -171,7 +177,7 @@ $(f => {
     });
 
     $('.animated-scroll').on('click', e => {
-        const target = $(e.target).data('target');
+        var target = $(e.target).data('target');
         $('html, body').stop().animate({
             scrollTop: $(target).offset().top,
         }, 640);
@@ -180,7 +186,7 @@ $(f => {
     $('a.facebook').on('click', e => {
         e.preventDefault();
 
-        const url =
+        var url =
             'https://www.facebook.com/sharer/sharer.php?u=' +
             encodeURIComponent(DOMAIN);
         window.open(url);
@@ -189,7 +195,7 @@ $(f => {
     $('a.twitter').on('click', e => {
         e.preventDefault();
 
-        const url =
+        var url =
             'https://twitter.com/intent/tweet?text=' +
             encodeURIComponent(TWEET_TEXT);
         window.open(url);
@@ -198,7 +204,7 @@ $(f => {
     $('a.email').on('click', e => {
         e.preventDefault();
 
-        const url =
+        var url =
             'mailto:?subject=' + encodeURIComponent(EMAIL_SUBJECT) +
             '&body=' + encodeURIComponent(EMAIL_BODY);
         window.location.href = url;
@@ -281,7 +287,7 @@ $(f => {
     }
 
     function showCheckYourEmailPrompt() {
-        const $prompt = $('.check-your-email-prompt');
+        var $prompt = $('.check-your-email-prompt');
         $prompt.addClass('visible');
         $prompt[0].offsetHeight; // Reflow
         $prompt.css({
@@ -299,8 +305,9 @@ $(f => {
 
     function redirectBasedOnSource() {
         if (window.location.pathname === '/thanks/') {
-            if (SOURCE_CLEANED === 'dfa') {
-                location.href = 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516';
+            var afterActionURL = AFTER_ACTION_URLS[SOURCE_CLEANED];
+            if (afterActionURL) {
+                location.href = afterActionURL;
             }
         }
     }
