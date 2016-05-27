@@ -36,8 +36,8 @@ if (!StaticKit.query.source) {
     StaticKit.query.source = 'website';
 }
 
-StaticKit.query.source = StaticKit.query.source.split(/[^\w-]/)[0] || '';
-StaticKit.query.cleanedSource = StaticKit.query.source.split(/[^\w]/)[0];
+StaticKit.query.source = (StaticKit.query.source.split(/[^\w-]/)[0] || '').toLowerCase();
+StaticKit.query.cleanedSource = (StaticKit.query.source.split(/[^\w]/)[0]).toLowerCase();
 
 // Saving source
 try {
