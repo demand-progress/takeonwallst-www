@@ -1,19 +1,25 @@
-const $ = require('./vendor/jquery.min');
+// Modules
+var $ = require('./vendor/jquery.min');
+var each = require('lodash/each');
+var reduce = require('lodash/reduce');
 
-const StaticKit = {};
+
+var StaticKit = {};
 
 StaticKit.copy = {
     zipErrorAlert: 'Please enter a valid ZIP code.',
 };
 
-StaticKit.query = (() => {
-    var pairs = location.search.slice(1).split('&');
-
-    var result = {};
-    pairs.forEach((pair) => {
-        pair = pair.split('=');
-        result[pair[0]] = decodeURIComponent(pair[1] || '');
-    });
+StaticKit.query = (f => {
+    var result = reduce(
+        location.search.slice(1).split('&'),
+        (result, pair) => {
+            pair = pair.split('=');
+            result[pair[0]] = decodeURIComponent(pair[1] || '');
+            return result;
+        },
+        {}
+    );
 
     return JSON.parse(JSON.stringify(result));
 })();
@@ -38,28 +44,30 @@ try {
     sessionStorage.savedSource = StaticKit.query.source;
 } catch (e) {}
 
-StaticKit.fillForm = (params) => {
-    for (var key in params) {
+StaticKit.fillForm = params => {
+    each(params, (value, key) => {
         var $el = $('[name="' + key + '"]');
         if ($el.length > 0) {
-            $el.val(params[key]);
+            $el.val(value);
         }
-    }
+    });
 }
 
-StaticKit.start = () => {
+StaticKit.start = f => {
     if (StaticKit.query.error_zip) {
         StaticKit.fillForm(StaticKit.query);
 
-        var $el = $('[name="zip"]');
-        if ($el.length > 0) {
-            $el.val('');
-            $el.focus();
+        var $zip = $('[name="zip"]');
+        if ($zip.length > 0) {
+            $zip
+                .val('')
+                .focus();
         }
 
-        setTimeout(() => {
-            alert(StaticKit.copy.zipErrorAlert);
-        }, 250);
+        setTimeout(
+            f => alert(StaticKit.copy.zipErrorAlert),
+            250
+        );
     }
 }
 
