@@ -38,11 +38,6 @@ var NON_SWAP_DISCLAIMERS = {
     'mediavoicesforchildren_ns': 'Media Voices for Children may contact you about future campaigns.',
     'nea_ns': 'National Education Association may contact you about future campaigns.',
 };
-var AFTER_ACTION_URLS = {
-    dfa: 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516',
-    pfaw: 'https://secure.pfaw.org/site/SPageNavigator/ms_donation_15347.html?autologin=true',
-    rootstrikers: 'https://secure.actblue.com/contribute/page/takeonwallstreet?refcode=tows&recurring=12&amount=25',
-};
 
 // Globalize jQuery
 window.jQuery = window.$ = $;
@@ -54,9 +49,6 @@ $(f => {
 
     // Check for form errors
     StaticKit.start();
-
-    // Redirects
-    redirectBasedOnSource();
 
     // Populate special form fields
     $('[name=action_user_agent]').val(navigator.userAgent);
@@ -301,15 +293,6 @@ $(f => {
         $('html, body').stop().animate({
             scrollTop: $('.calling-wrapper').offset().top - 16,
         }, 640);
-    }
-
-    function redirectBasedOnSource() {
-        if (window.location.pathname === '/thanks/') {
-            var afterActionURL = AFTER_ACTION_URLS[SOURCE_CLEANED];
-            if (afterActionURL) {
-                location.href = afterActionURL;
-            }
-        }
     }
 
 });

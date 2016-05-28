@@ -19,6 +19,30 @@
     
     <!-- Twitter -->
     <meta name="twitter:url" content="https://takeonwallst.com/">
+
+    <script type="text/javascript">
+    // Redirect to custom after-action pages, ASAP
+    (function() {
+        // Map
+        var redirects = {
+            dfa: 'https://secure.actblue.com/contribute/page/wallst?refcode=AWS052516',
+            pfaw: 'https://secure.pfaw.org/site/SPageNavigator/ms_donation_15347.html?autologin=true',
+            rootstrikers: 'https://secure.actblue.com/contribute/page/takeonwallstreet?refcode=tows&recurring=12&amount=25',
+        };
+
+        // Source
+        var source = 'website';
+        try {
+            source = sessionStorage.savedSource;
+        } catch (e) {}
+        source = (source.split(/[^\w]/)[0]).toLowerCase();
+
+        // Redirect
+        if (redirects[source]) {
+            location.href = redirects[source];
+        }
+    })();
+    </script>
 </head>
 
 <body class="call-page">
