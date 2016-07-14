@@ -1103,7 +1103,7 @@ section.midnight-share-train a:hover {
     color: #4a4a4a;
     /*display: none;*/
     font-size: 14px;
-    padding: 20px;
+    padding: 20px 20px 64px;
 }
 .photo-credits h4 {
     font-size: 17px;
@@ -1192,6 +1192,41 @@ section.midnight-share-train a:hover {
 }
 @media (min-width: 770px) {
     .hide-on-desktop {
+        display: none;
+    }
+}
+
+/*
+
+Facebook Ask
+
+*/
+
+.facebook-ask {
+    background-color: rgba(59, 89, 153, 0.9);
+    bottom: 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 18px 16px 16px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 0.16s;
+    width: 100%;
+    z-index: 999;
+}
+
+.facebook-ask:hover {
+    background-color: rgba(45, 75, 135, 0.9);
+}
+
+@media (max-height: 769px) {
+    .facebook-ask {
         display: none;
     }
 }

@@ -295,4 +295,9 @@ $(f => {
         }, 640);
     }
 
+    // Show Facebook Ask
+    if (StaticKit.query.showFacebookAsk) {
+        $('.facebook-ask').removeAttr('style');
+    }
+
 });
