@@ -1225,7 +1225,7 @@ Facebook Ask
     background-color: rgba(45, 75, 135, 0.9);
 }
 
-@media (max-height: 769px) {
+@media (max-height: 599px) {
     .facebook-ask {
         display: none;
     }
