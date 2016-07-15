@@ -294,10 +294,4 @@ $(f => {
             scrollTop: $('.calling-wrapper').offset().top - 16,
         }, 640);
     }
-
-    // Show Facebook Ask
-    if (StaticKit.query.showFacebookAsk) {
-        $('.facebook-ask').removeAttr('style');
-    }
-
 });

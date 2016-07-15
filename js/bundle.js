@@ -390,11 +390,6 @@ $(function (f) {
             scrollTop: $('.calling-wrapper').offset().top - 16
         }, 640);
     }
-
-    // Show Facebook Ask
-    if (StaticKit.query.showFacebookAsk) {
-        $('.facebook-ask').removeAttr('style');
-    }
 });
 
 },{"./analytics":2,"./email":3,"./modal":5,"./statickit":1,"./vendor/jquery.min":6,"lodash/each":96,"lodash/reduce":116}],5:[function(require,module,exports){
