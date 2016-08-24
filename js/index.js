@@ -1,10 +1,12 @@
 // Modules
 var $ = require('./vendor/jquery.min');
+window.$ = $;
 var Analytics = require('./analytics');
 var each = require('lodash/each');
 var Email = require('./email');
 var Modal = require('./modal');
 var reduce = require('lodash/reduce');
+window.reduce = reduce;
 var StaticKit = require('./statickit');
 
 // Constants
@@ -12,8 +14,8 @@ var ACTIONKIT_CAMPAIGN = 'take-on-wall-street-www';
 var SOURCE = StaticKit.query.source;
 var SOURCE_CLEANED = StaticKit.query.cleanedSource;
 var FEEDBACK_TOOL_URL = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?callback=?';
-var CALL_TOOL_URL = 'https://call-congress.fightforthefuture.org/create?callback=?';
-var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/sunsetthepatriotact?callback=?';
+var CALL_TOOL_URL = 'https://dp-call-congress.herokuapp.com/create?callback=?';
+var CALL_TOOL_COUNT_URL = 'https://dp-call-tool-meta.herokuapp.com/api/count/take-on-wall-street?callback=?';
 var DOMAIN = 'takeonwallst.com';
 var EMAIL_SUBJECT = 'I just signed this';
 var EMAIL_BODY = `Hi,
@@ -122,17 +124,15 @@ $(f => {
         }
 
         $.getJSON(CALL_TOOL_URL, {
-            campaignId: 'president-obamas-legacy',
-            fftfCampaign: 'president-obamas-legacy',
-            fftfReferer: SOURCE,
-            fftfSession: '' + Date.now() + Math.floor(Math.random(9999)),
+            campaignId: 'take-on-wall-street',
             source_id: SOURCE,
             userPhone: phone,
-            zipcode: 90210,
         }, res => {
             if (res.message !== 'queued') {
                 alert('Sorry, something went wrong with your submission. The servers might be overloaded. Please try again later.')
             }
+        }, err => {
+            alert(err);
         });
 
         showCallingScript();
@@ -155,13 +155,13 @@ $(f => {
 
         var message = reduce(
             $feedbackForm.serializeArray(),
-            field => message += `${field.name}:\n${field.value}\n\n`,
+            (message, field) => message + `${field.name}:\n${field.value}\n\n`,
             ''
         );
 
         $.getJSON(FEEDBACK_TOOL_URL, {
             campaign: 'take-on-wall-street',
-            subject: 'Feedback from President Obama\'s Legacy',
+            subject: 'Feedback from Take On Wall Street',
             text: message,
         });
 
@@ -289,9 +289,10 @@ $(f => {
 
     function showCallingScript() {
         $('body').addClass('calling');
+        $('.thanks').show();
+        Modal.show('.calling');
+        $('.action button').hide();
         document.body.offsetHeight; // Reflow
-        $('html, body').stop().animate({
-            scrollTop: $('.calling-wrapper').offset().top - 16,
-        }, 640);
+        $('.thanks').css('opacity', 1);
     }
 });

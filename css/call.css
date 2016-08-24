@@ -1,0 +1,1337 @@
+/* Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* end Reset */
+
+
+/* Styles */
+
+strong {
+    color: #002b88;
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: #e1e1e1;
+    background-image: url(../images/header-collage-v05.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 320px;
+    width: 100%;
+    text-align: center;
+}
+@media screen and (max-width: 899px) {
+    body {
+        background-size: 110%;
+    }
+}
+@media screen and (max-width: 769px) {
+    img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+}
+@media screen and (max-width: 599px) {
+    body {
+        background-size: 599px;
+    }
+}
+header {}
+header .headlines {}
+header .headlines h1, header .headlines h2, header .headlines h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 0 30px #f1f1f1;
+    margin: 0 auto;
+}
+header .headlines h1 {
+    color: #ff0000;
+    font-size: 57px;
+    letter-spacing: 1px;
+    padding: 8px 16px 11px;
+}
+header .headlines h2 {
+    color: #2f4c8c;
+    font-size: 34px;
+    letter-spacing: 1px;
+    padding: 48px 16px 1px;
+}
+header .headlines h3 {
+    color: #2f4c8c;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    padding: 2px 16px 44px;
+    max-width: 800px;
+}
+header .headlines p {
+    color: #000812;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 26px;
+    margin: 10px auto 36px auto;
+    max-width: 750px;
+    padding: 0 32px;
+    text-align: center;
+    text-shadow: 0 0 8px #f1f1f1;
+}
+@media screen and (max-width: 769px) {
+    header .headlines h1 {
+        font-size: 40px;
+    }
+    header .headlines h2 {
+        font-size: 24px;
+        max-width: 320px;
+        padding-top: 37px;
+    }
+    header .headlines h3 {
+        font-size: 20px;
+        line-height: 1.2;
+        max-width: 270px;
+        padding-bottom: 27px;
+        padding-top: 0;
+    }
+    header .headlines p {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+.petition-and-form-wrapper {
+    margin: 0 auto;
+    max-width: 998px;
+}
+.petition-and-form-wrapper > .outer-padding {
+    margin: 0 16px;
+}
+.petition {
+    background-color: #f1f1f1;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+    color: #000812;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 413px 0 0;
+    min-height: 690px;
+    padding: 22px 40px 34px;
+    text-align: left;
+    position: relative;
+}
+@media screen and (max-width: 839px) {
+    .petition {
+        font-size: 16px;
+    }
+}
+.petition h2 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.1;
+    padding: 0 0 10px;
+    text-align: center;
+}
+.petition p {
+    font-family: 'Arvo', sans-serif;
+    font-size: 14px;
+    padding: 0 0 24px;
+}
+.petition ul {
+    font-family: 'Arvo', sans-serif;
+    font-size: 14px;
+    list-style-position: inside;
+    list-style-type: disc;
+    padding: 0 0 8px;
+    text-indent: -13px;
+}
+.petition li {
+    padding: 0 30px 14px;
+}
+
+.action-wrapper {
+    margin: 0 auto 32px;
+    position: relative;
+}
+.action {
+    background: #1c366d;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    max-width: 413px;
+    padding: 24px 0 32px;
+    position: relative;
+    z-index: 99;
+}
+.action h2 {
+    color: #f1f1f1;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0 0 16px;
+}
+.action .form-wrapper .input-grid {
+    margin: 0 57px;
+    position: relative;
+}
+@media screen and (max-width: 769px) {
+    .petition, .action-wrapper {
+        clear: both;
+        float: none;
+    }
+    .action-wrapper .counter::after {
+        display: none;
+    }
+    .petition-and-form-wrapper > .outer-padding {
+        background-image: none;
+        padding: 0;
+    }
+    .petition {
+        font-size: 18px;
+        margin: 0 auto;
+        max-width: 413px;
+        min-height: 0;
+        padding: 38px 28px 32px;
+    }
+    .action h2 {
+        font-size: 24px;
+        padding: 0 0 16px;
+    }
+    .action .form-wrapper .input-grid {
+        margin: 0 37px;
+    }
+}
+.action .form-wrapper {
+    margin: 0 auto;
+    max-width: 430px;
+    position: relative;
+    vertical-align: top;
+}
+.action .form-wrapper .thanks {
+    background: #b41615;
+    color: #f0f4f5;
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    left: 0;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    max-width: 430px;
+    opacity: 0;
+    padding: 11px;
+    position: absolute;
+    transition: opacity 0.4s ease-out;
+    width: 100%;
+    z-index: 2;
+}
+.action .form-wrapper input {
+    border: 0;
+    border-right: 1px solid #898989;
+    border-top: 1px solid #898989;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    vertical-align: top;
+    width: 100%;
+}
+.action .form-wrapper input:nth-of-type(1), .action .form-wrapper input:nth-of-type(2) {
+    border-top: none;
+}
+.action .form-wrapper input:nth-of-type(1), .action .form-wrapper input:nth-of-type(3) {
+    float: left;
+}
+@media screen and (max-width: 479px) {
+    .action .form-wrapper input {
+        float: none;
+    }
+    .action .form-wrapper input:nth-of-type(2) {
+        border-top: 1px solid #898989;
+    }
+    .action .form-wrapper input, .action .form-wrapper select {
+        width: 100%;
+        font-size: 18px;
+    }
+    .action .form-wrapper .input-grid #first_name,
+    .action .form-wrapper .input-grid #last_name {
+        display: none;
+    }
+}
+.action .form-wrapper button {
+    background-color: #ff0000;
+    color: #f0f4f5;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.16s;
+    width: 100%;
+}
+.action .form-wrapper button:hover {
+    background-color: #d01010;
+}
+.action hr {
+    background-color: #101c30;
+    border: none;
+    height: 1px;
+    margin: 32px auto 0;
+    max-width: 200px;
+    width: 100%;
+}
+.action span.disclaimer {
+    clear: both;
+    color: #96a2ba;
+    display: block;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 370px;
+    padding: 16px 16px 0;
+    text-align: center;
+}
+.action span.disclaimer a {
+    color: #96a2ba;
+    text-decoration: none;
+}
+@media screen and (max-width: 769px) {
+    .action span.disclaimer {
+        max-width: 280px;
+    }
+}
+.action span.disclaimer.disclaimer-specific {
+    margin: 8px auto -13px;
+}
+.action-wrapper .counter {
+    background-color: #112347;
+    margin: 0 auto;
+    max-width: 413px;
+    position: relative;
+    z-index: 9;
+}
+.action-wrapper .counter .number-of-signatures {
+    color: #f1f1f1;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 24px 0 4px;
+    opacity: 0;
+}
+.action-wrapper .counter .number-of-signatures-label {
+    clear: both;
+    color: #5c87d5;
+    font-size: 28px;
+    font-weight: bold;
+}
+.action-wrapper .counter hr {
+    background-color: #1c366d;
+    border: none;
+    height: 1px;
+    margin: 38px auto 0;
+    max-width: 200px;
+    width: 100%;
+}
+.action-wrapper .counter .label, .action-wrapper .counter .number-of-signatures {
+    opacity: 0;
+    transition: opacity .32s;
+}
+.action-wrapper .counter.loaded .label, .action-wrapper .counter.loaded .number-of-signatures {
+    opacity: 1;
+}
+.action-wrapper .counter .signatures-needed {
+    color: #f1f1f1;
+    font-size: 34px;
+    padding: 28px 0 4px;
+}
+.action-wrapper .counter .signatures-needed-label {
+    color: #5c87d5;
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 0 0 32px;
+}
+.action-wrapper .counter::after {
+    background-color: #101c30;
+    background-image: url(../images/pattern-dark-blue.png);
+    content: '';
+    display: none;
+    height: 900px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+button {
+    height: 60px;
+    border: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+.more-info-header {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.more-info-header h4 {
+    background-color: #c3dea8;
+    background-image: url(../images/background-cash-light.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    color: #002b88;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 40px;
+    padding: 85px 16px 80px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    width: 100%;
+    word-spacing: 1px;
+}
+.petition .sign-the-petition, .more-info-header .sign-the-petition {
+    background-color: #ff0000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    left: calc((100% - 244px) / 2);
+    letter-spacing: 1px;
+    position: absolute;
+    top: -30px;
+    transition: background-color 0.16s, box-shadow 0.16s;
+    width: 244px;
+}
+.petition .sign-the-petition:hover, .more-info-header .sign-the-petition:hover {
+    background-color: #d01010;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
+}
+.petition .sign-the-petition {
+    bottom: -28px;
+    display: block;
+    top: auto;
+    z-index: 999;
+}
+@media screen and (max-width: 769px) {
+    .petition .sign-the-petition {
+        display: none;
+    }
+    .more-info-header {
+        padding: 0;
+    }
+    .more-info-header .sign-the-petition {
+        display: block;
+    }
+}
+section.more-info {
+    color: #4a4a4a;
+    font-size: 18px;
+    margin: -36px auto 0;
+    padding: 24px 16px 25px;
+    position: relative;
+}
+section.more-info h4, section.even-more-info h4 {
+    color: #002b88;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 auto;
+}
+section.even-more-info {
+    color: #4a4a4a;
+    font-size: 18px;
+    margin: -36px auto 0;
+    padding: 24px 0 25px;
+    position: relative;
+}
+section.even-more-info h4 {
+    color: #002b88;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 40px;
+    padding: 85px 0 85px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    width: 100%;
+    word-spacing: 1px;
+}
+section.even-more-info h4.agenda-header {
+    background-color: #baaf9d;
+    background-image: url(../images/background-tools.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+}
+section.even-more-info h4.quotes-header {
+    background-color: #f7f5d8;
+    background-image: url(../images/background-people2.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    font-size: 60px;
+    padding: 145px 0 25px;
+}
+section.even-more-info .quote-and-portrait {
+    overflow: hidden;
+}
+section.even-more-info .quote-and-portrait .quote {
+    display: inline-block;
+    font-style: italic;
+    position: relative;
+    padding: 36px 20px 0 55px;
+}
+section.even-more-info .quote-and-portrait .quote .quote-open {
+    background-image: url('../images/quote-open-copy.png');
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 154px 97px;
+    height: 97px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-size .32s;
+    width: 154px;
+}
+section.even-more-info .quote-and-portrait .quote .quote-close {
+    background-image: url('../images/quote-close-copy.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: 154px 97px;
+    bottom: 12px;
+    height: 97px;
+    position: absolute;
+    right: 0;
+    transition: background-size .32s;
+    width: 154px;
+}
+section.even-more-info .quote-and-portrait .quote .text {
+    font-size: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 9;
+}
+section.even-more-info .quote-and-portrait .portrait {
+    display: inline-block;
+}
+section.even-more-info .quote-and-portrait.warren {
+    padding: 0 0 0;
+}
+section.even-more-info .quote-and-portrait.warren .portrait {
+    margin: 0 0 0 40px;
+    position: relative;
+    width: 290px;
+}
+section.even-more-info .quote-and-portrait.warren .quote {
+    max-width: 100%;
+    position: relative;
+    top: -37px;
+    width: 710px;
+}
+section.even-more-info .quote-and-portrait.trumka {
+    padding: 0 0 90px;
+}
+section.even-more-info .quote-and-portrait.trumka .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.trumka .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
+section.even-more-info .quote-and-portrait.weingarten {
+    padding: 0 0 0;
+}
+section.even-more-info .quote-and-portrait.weingarten .portrait {
+    margin: 0 0 0 40px;
+    position: relative;
+    width: 290px;
+}
+section.even-more-info .quote-and-portrait.weingarten .quote {
+    max-width: 100%;
+    position: relative;
+    top: -37px;
+    width: 710px;
+}
+section.even-more-info .quote-and-portrait.ellison {
+    padding: 0 0 50px;
+}
+section.even-more-info .quote-and-portrait.ellison .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.ellison .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    top: -30px;
+    width: 635px;
+}
+section.even-more-info .quote-and-portrait.pope-francis {
+    padding: 0 0 70px;
+}
+section.even-more-info .quote-and-portrait.pope-francis .portrait {
+    height: 327px;
+    position: relative;
+    top: 40px;
+    width: 325px;
+}
+section.even-more-info .quote-and-portrait.pope-francis .quote {
+    left: -25px;
+    max-width: 100%;
+    position: relative;
+    width: 635px;
+}
+@media screen and (max-width: 1099px) {
+    section.even-more-info .quote-and-portrait.warren .quote {
+        width: 440px;
+    }
+    section.even-more-info .quote-and-portrait.trumka .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.weingarten .quote {
+        width: 440px;
+    }
+    section.even-more-info .quote-and-portrait.ellison .quote {
+        width: 480px;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis .quote {
+        width: 480px;
+    }
+}
+@media screen and (max-width: 859px) {
+    section.even-more-info .quote-and-portrait.warren {
+        padding: 0 0 0;
+    }
+    section.even-more-info .quote-and-portrait.trumka {
+        padding: 0 0 0;
+    }
+    section.even-more-info .quote-and-portrait.weingarten {
+        padding: 60px 0 0;
+    }
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 40px 0 0;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis {
+        padding: 20px 0 0;
+    }
+    section.even-more-info .quote-and-portrait.warren .portrait {
+        top: -40px;
+        width: 150px;
+    }
+    section.even-more-info .quote-and-portrait.trumka .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.weingarten .portrait {
+        height: 162px;
+        top: -65px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.ellison .portrait {
+        height: 163px;
+        top: -20px;
+        width: 162px;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis .portrait {
+        height: 163px;
+        top: -60px;
+        width: 162px;
+    }
+}
+@media screen and (max-width: 709px) {
+    section.even-more-info .quote-and-portrait .portrait {
+        display: none;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis .quote, section.even-more-info .quote-and-portrait.warren .quote,
+    section.even-more-info .quote-and-portrait.trumka .quote, section.even-more-info .quote-and-portrait.weingarten .quote,
+    section.even-more-info .quote-and-portrait.ellison .quote {
+        bottom: auto;
+        left: auto;
+        max-width: 720px;
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis,
+    section.even-more-info .quote-and-portrait.warren,
+    section.even-more-info .quote-and-portrait.trumka,
+    section.even-more-info .quote-and-portrait.weingarten,
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 32px 0;
+    }
+}
+@media screen and (max-width: 549px) {
+    section.even-more-info .quote-and-portrait .quote {
+        padding: 32px;
+    }
+    section.even-more-info .quote-and-portrait .quote .text {
+        font-size: 16px;
+    }
+    section.even-more-info .quote-and-portrait .quote .quote-open {
+        background-size: 77px 49px;
+        left: 0;
+        top: 0;
+    }
+    section.even-more-info .quote-and-portrait .quote .quote-close {
+        background-size: 77px 49px;
+        bottom: 12px;
+        right: 0;
+    }
+    section.even-more-info .quote-and-portrait.pope-francis,
+    section.even-more-info .quote-and-portrait.warren,
+    section.even-more-info .quote-and-portrait.trumka,
+    section.even-more-info .quote-and-portrait.weingarten,
+    section.even-more-info .quote-and-portrait.ellison {
+        padding: 8px 0;
+    }
+}
+section.even-more-info button.sign-the-petition {
+    font-size: 22px;
+    padding: 0 28px;
+}
+section a {
+    color: #2f4c8c;
+    font-style: italic;
+}
+section a:hover {
+    color: #0099ff;
+}
+section p {
+    font-size: 18px;
+    line-height: 26px;
+    margin: 0 auto 25px auto;
+    max-width: 830px;
+    padding: 0 32px;
+    text-align: left;
+}
+section button.sign-the-petition {
+    background-color: #ff0000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+    color: #f0f4f5;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 18px 0 14px;
+    padding: 0 32px;
+    transition: background-color 0.16s, box-shadow 0.16s;
+}
+section button.sign-the-petition:hover {
+    background-color: #d01010;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
+}
+@media screen and (max-width: 769px) {
+    section.more-info, section.even-more-info {
+        /*margin: -20px auto 0;*/
+    }
+    section.more-info p, section.even-more-info p {
+        font-size: 17px;
+    }
+}
+.share {
+    border-radius: 60px;
+    display: inline-block;
+    padding: 10px 10px 0;
+}
+section .share {
+    margin: 0 0 22px;
+}
+.overlay .gutter .modal .share {
+    background: #eee;
+    margin: 20px auto 10px auto;
+}
+.share a {
+    border-radius: 20px;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px 10px 10px;
+    padding-left: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+.share a.facebook {
+    background: #3B5999 url(../images/fb_white.png) 15px 8px no-repeat;
+    background-size: 25px 25px;
+}
+.share a.facebook:hover {
+    background-color: #2B4989;
+}
+.share a.twitter {
+    background: #4099FF url(../images/tw_white.png) 15px 8px no-repeat;
+    background-size: 25px 25px;
+}
+.share a.twitter:hover {
+    background-color: #3089ef;
+}
+.share a.email {
+    background: #14ac2b url(../images/email_white.png) 15px 8px no-repeat;
+    background-size: 25px 25px;
+}
+.share a.email:hover {
+    background-color: #10A526;
+}
+.logos {
+    background-color: #fff;
+    margin: 0;
+    overflow: hidden;
+    padding: 64px 0 0;
+}
+.logos .clamp {
+    margin: 0 auto;
+    max-width: 970px;
+    padding: 0 16px;
+}
+.logos h4 {
+    color: #1c366d;
+    font-size: 24px;
+    line-height: 1.4;
+    padding: 0 0 16px;
+}
+.logos a {
+    text-decoration: none;
+}
+.logos a:hover {}
+.logos img {
+    background-color: #fff;
+    height: auto;
+    margin: 0 20px 32px;
+    max-width: 280px;
+    vertical-align: middle;
+}
+.logos .smaller img {
+    max-height: 180px;
+    max-width: 210px;
+}
+.logos .larger {
+    margin-bottom: 54px;
+}
+.logos .larger img {
+    max-width: 320px;
+    width: 85%;
+}
+.overlay {
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+    width: 100%;
+    z-index: 9001;
+}
+.overlay.invisible {
+    left: 99999px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+}
+.overlay .gutter {
+    display: table-cell;
+    vertical-align: middle;
+}
+.overlay .gutter .modal {
+    background: white;
+    border-radius: 6px;
+    color: black;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 550px;
+    overflow: auto;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+.overlay .modal a.close {
+    color: black;
+    font-size: 30px;
+    opacity: .4;
+    position: absolute;
+    right: 16px;
+    text-decoration: none;
+    top: 4px;
+}
+.overlay .modal a.close:hover {
+    opacity: .6;
+}
+.overlay .modal h1 {
+    background-color: #1c366d;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 31px;
+    margin-bottom: 25px;
+    padding: 20px 16px;
+    text-align: center;
+}
+.overlay .modal h1 .smaller {
+    font-size: 0.8em;
+    padding-top: 8px;
+}
+.overlay .modal h2 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+.overlay .modal p {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #333;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 23px;
+}
+@media screen and (max-width: 767px) {
+    .overlay .modal h1 {
+        font-size: 18px;
+    }
+    .overlay .modal h1 .smaller {
+        line-height: 1.4;
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    .overlay .modal h2 {
+        font-size: 16px;
+        line-height: 21px;
+        padding: 0 15px;
+    }
+    .overlay .modal p {
+        padding: 0 12px;
+        font-size: 15px;
+        line-height: 21px;
+    }
+}
+div.social-buttons {
+    height: 115px;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc((100% - 115px) / 2);
+    width: 100px;
+    z-index: 999;
+}
+@media screen and (max-width: 1159px) {
+    div.social-buttons {
+        text-indent: 999px;
+        width: 33px;
+    }
+}
+@media screen and (max-width: 799px) {
+    div.social-buttons {
+        display: none;
+    }
+}
+div.social-buttons a {
+    background-repeat: no-repeat;
+    display: block;
+    height: 33px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    line-height: 33px;
+    margin: 0 0 8px;
+    padding: 0 0 0 29px;
+    text-decoration: none;
+    width: 100%;
+}
+div.social-buttons a.facebook {
+    background-color: #39579a;
+    background-image: url(../images/social/icon-fb.gif);
+}
+div.social-buttons a.twitter {
+    background-color: #02aced;
+    background-image: url(../images/social/icon-twitter.gif);
+}
+div.social-buttons a.email {
+    background-color: #14ac2b;
+    background-image: url(../images/social/icon-email.gif);
+}
+section.midnight-share-train {
+    background-color: #112347;
+    margin: 0 auto;
+    padding: 18px 16px 0;
+    max-width: 100%;
+}
+section.midnight-share-train a:hover {
+    color: #fff;
+}
+
+/* Checkbox */
+
+.squaredFour {
+    color: #96a2ba;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 20px auto 61px;
+    max-width: 260px;
+    position: relative;
+    text-align: left;
+    width: calc(100% - 74px);
+}
+.squaredFour input[type=checkbox] {
+    visibility: hidden;
+    height: auto;
+    width: 1px;
+    padding: 0;
+    margin: 0;
+}
+.squaredFour label.text {
+    cursor: pointer;
+    font-size: 13px;
+    float: left;
+    margin: -23px 0 0;
+    padding: 0 0 0 38px;
+    position: relative;
+}
+.squaredFour label.checkbox {
+    border-radius: 0;
+    cursor: pointer;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    background: #fcfff4;
+    background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    box-shadow: inset 0 1px 1px white, 0 1px 3px rgba(0, 0, 0, 0.5);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead', GradientType=0);
+}
+.squaredFour label.checkbox:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 4px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.squaredFour input[type=checkbox]:checked + label.checkbox:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+@media screen and (max-width: 329px) {
+    .squaredFour label.text {
+        font-size: 13px;
+    }
+}
+.action.specific .squaredFour {
+    display: none;
+}
+.action.specific span.disclaimer.disclaimer-specific {
+    display: block;
+}
+.privacy {
+    background-color: #fff;
+    clear: both;
+    line-height: 1.4;
+    margin: 0;
+    overflow: hidden;
+    padding: 32px 32px 64px;
+}
+.privacy a {
+    color: #1c366d;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.privacy a:hover {
+    color: #0099ff;
+}
+.photo-credits {
+    color: #4a4a4a;
+    /*display: none;*/
+    font-size: 14px;
+    padding: 20px 20px 64px;
+}
+.photo-credits h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.photo-credits p {
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+.photo-credits a {
+    color: #999;
+}
+.photo-credits a:hover {
+    color: #4a4a4a;
+}
+
+/* Check your email prompt */
+
+.check-your-email-prompt {
+    background-color: rgba(5, 25, 50, 0.97);
+    color: #fff;
+    display: none;
+    font-size: 18px;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity .32s;
+    width: 100%;
+    z-index: 9999;
+}
+.check-your-email-prompt.visible {
+    display: table;
+}
+.check-your-email-prompt .alignment {
+    display: table-cell;
+    vertical-align: middle;
+}
+.check-your-email-prompt .text {
+    margin: 0 auto;
+    max-width: 580px;
+    padding: 16px;
+    position: relative;
+}
+.check-your-email-prompt .text h4 {
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+.check-your-email-prompt .text h5 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 18px 0 0;
+    text-transform: uppercase;
+}
+.check-your-email-prompt .text p {
+    font-size: 1.1em;
+    line-height: 1.4;
+    padding: 16px 0 0;
+}
+.check-your-email-prompt .text a {
+    color: #5abdff;
+    transition: color .32s;
+}
+.check-your-email-prompt .text a:hover {
+    color: #75c8ff;
+}
+@media screen and (max-height: 459px) {
+    .check-your-email-prompt h5 {
+        display: none;
+    }
+}
+@media screen and (max-height: 459px), (max-width: 459px) {
+    .check-your-email-prompt {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 769px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+@media (min-width: 770px) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
+/*
+
+Facebook Ask
+
+*/
+
+.facebook-ask {
+    background-color: rgba(59, 89, 153, 0.9);
+    bottom: 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 18px 16px 16px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 0.16s;
+    width: 100%;
+    z-index: 999;
+}
+
+.facebook-ask:hover {
+    background-color: rgba(45, 75, 135, 0.9);
+}
+
+@media (max-height: 599px) {
+    .facebook-ask {
+        display: none;
+    }
+}
+
+/* Calling Modal */
+.overlay .calling-wrapper {
+    color: #1c366d;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 16px auto 0;
+    max-width: 720px;
+    padding: 24px 32px 32px;
+    position: relative;
+    border-top: 1px solid #ccc;
+}
+.overlay .calling-wrapper h3 {
+    font-weight: bold;
+    margin: 0 auto;
+    max-width: 360px;
+}
+.overlay .calling-wrapper form {
+    background-color: #1c366d;
+    background-position: 50% 36px;
+    color: white;
+    border-radius: 3px;
+    color: #eee;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
+    margin: 32px auto 0;
+    max-width: 300px;
+    padding: 16px 32px 32px;
+    position: relative;
+}
+.overlay .calling-wrapper form .wrapper {
+    position: relative;
+}
+.overlay .calling-wrapper form h4 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 auto;
+    padding: 16px 16px 8px;
+}
+.overlay .calling-wrapper form input {
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.16);
+    padding: 8px;
+    width: 100%;
+}
+.overlay .calling-wrapper form button {
+    background: none;
+    background-color: #ff0000;
+    border-radius: 3px;
+    border: none;
+    color: #f0f4f5;
+    font-size: 20px;
+    font-weight: bold;
+    height: auto;
+    line-height: 2.4;
+    margin: 16px 0 0;
+    padding: 0 16px;
+    text-shadow: none;
+    transition: background-color 0.16s;
+    width: 100%;
+}
+.overlay .calling-wrapper button:hover {
+    background-color: #d01010;
+}
+.overlay .calling-wrapper #thanks {
+    background: #ff0000;
+    color: #f0f4f5;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    left: 0;
+    letter-spacing: 1px;
+    line-height: 2.4;
+    margin: 16px 0 0;
+    max-width: 430px;
+    padding: 0 16px;
+    position: absolute;
+    text-transform: uppercase;
+    transition: opacity 0.4s ease-out;
+    width: 100%;
+    z-index: 2;
+}
+.overlay .calling-wrapper .sent br,
+.overlay .calling-wrapper .sent h4,
+.overlay .calling-wrapper .sent input {
+    display: none;
+}
+.overlay .calling-wrapper .sent #thanks {
+    display: block;
+}
