@@ -210,7 +210,13 @@ header .headlines p {
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 1px;
-    padding: 0 0 16px;
+    padding: 0 0 8px;
+}
+.action .instructions {
+    color: #e1e1e1;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0 50px 16px;
 }
 .action .form-wrapper .input-grid {
     margin: 0 57px;
@@ -897,7 +903,7 @@ section .share {
     overflow: auto;
     padding-bottom: 10px;
     position: relative;
-    text-align: center;
+    text-align: left;
 }
 .overlay .modal a.close {
     color: black;
