@@ -95,6 +95,8 @@ header .headlines h1 {
     color: #ff0000;
     font-size: 57px;
     letter-spacing: 1px;
+    margin: auto;
+    max-width: 780px;
     padding: 8px 16px 11px;
 }
 header .headlines h2 {
@@ -118,7 +120,7 @@ header .headlines p {
     letter-spacing: 1px;
     line-height: 26px;
     margin: 10px auto 36px auto;
-    max-width: 750px;
+    max-width: 810px;
     padding: 0 32px;
     text-align: center;
     text-shadow: 0 0 8px #f1f1f1;
