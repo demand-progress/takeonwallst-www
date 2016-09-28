@@ -899,6 +899,7 @@ section .share {
     background: white;
     border-radius: 6px;
     color: black;
+    height: 100%;
     margin: 0 auto;
     max-height: 100%;
     max-width: 550px;
