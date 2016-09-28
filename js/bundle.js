@@ -83,8 +83,8 @@ window.jQuery = window.$ = $;
 
 // After the page loads
 $(function (f) {
-    // Wire up modals
-    Modal.wireAll();
+    // Set up modals
+    Modal.setup();
 
     // Check for form errors
     StaticKit.start();
@@ -377,9 +377,19 @@ var Modal = {
         });
     },
 
-    wireAll: function wireAll() {
+    setup: function setup() {
         $('.overlay').each(function (i, el) {
             Modal.wire(el);
+        });
+
+        // Update max-height on resize
+        $(window).off('resize', Modal.onResize).on('resize', Modal.onResize);
+        Modal.updateMaxHeight();
+    },
+
+    updateMaxHeight: function updateMaxHeight() {
+        $('.modal').css({
+            'max-height': innerHeight + 'px'
         });
     }
 };

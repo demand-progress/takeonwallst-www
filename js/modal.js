@@ -49,9 +49,19 @@ const Modal = {
         });
     },
 
-    wireAll: function() {
+    setup: function() {
         $('.overlay').each(function(i, el) {
             Modal.wire(el);
+        });
+
+        // Update max-height on resize
+        $(window).off('resize', Modal.onResize).on('resize', Modal.onResize);
+        Modal.updateMaxHeight();
+    },
+
+    updateMaxHeight: function() {
+        $('.modal').css({
+            'max-height': innerHeight + 'px',
         });
     },
 };

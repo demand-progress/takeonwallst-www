@@ -46,8 +46,8 @@ window.jQuery = window.$ = $;
 
 // After the page loads
 $(f => {
-    // Wire up modals
-    Modal.wireAll();
+    // Set up modals
+    Modal.setup();
 
     // Check for form errors
     StaticKit.start();
