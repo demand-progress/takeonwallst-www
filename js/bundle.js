@@ -383,7 +383,7 @@ var Modal = {
         });
 
         // Update max-height on resize
-        $(window).off('resize', Modal.onResize).on('resize', Modal.onResize);
+        $(window).off('resize', Modal.updateMaxHeight).on('resize', Modal.updateMaxHeight);
         Modal.updateMaxHeight();
     },
 
